@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Patient Dashboard | Medico</title>
+
+<link rel="stylesheet" href="../assets/css/patient/patient.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="aurora">
+
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+    <div class="aurora-3"></div>
+
+</div>
+
+
+<div class="dashboard" id="dashboard">
+
+
+
+
+
+<aside class="sidebar">
+
+
+<button class="sidebar-toggle">
+
+    <i class="fa-solid fa-chevron-left"></i>
+
+</button>
+<button class="theme-toggle">
+
+    <i class="fa-solid fa-moon"></i>
+
+</button>
+
+
+<div class="logo">
+
+    🩺 Medico
+
+</div>
+
+
+
+<ul>
+
+
+<li class="active" data-tooltip="Dashboard">
+
+    <i class="fa-solid fa-house"></i>
+
+    <span>
+        Dashboard
+    </span>
+
+</li>
+
+
+
+<li data-tooltip="Appointments">
+
+    <i class="fa-solid fa-calendar"></i>
+
+    <span>
+        Appointments
+    </span>
+
+</li>
+
+
+
+<li data-tooltip="Medical Records">
+
+    <i class="fa-solid fa-file-medical"></i>
+
+    <span>
+        Medical Records
+    </span>
+
+</li>
+
+
+
+<li data-tooltip="AI Assistant">
+
+    <i class="fa-solid fa-robot"></i>
+
+    <span>
+        AI Assistant
+    </span>
+
+</li>
+
+
+
+<li data-tooltip="Doctors">
+
+    <i class="fa-solid fa-user-doctor"></i>
+
+    <span>
+        Doctors
+    </span>
+
+</li>
+
+
+
+<li data-tooltip="Notifications">
+
+    <i class="fa-solid fa-bell"></i>
+
+    <span>
+        Notifications
+    </span>
+
+</li>
+
+
+
+<li data-tooltip="Settings">
+
+    <i class="fa-solid fa-gear"></i>
+
+    <span>
+        Settings
+    </span>
+
+</li>
+
+
+</ul>
+
+
+
+
+<button class="logout" data-tooltip="Logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>
+    Logout
+</span>
+
+</button>
+
+
+</aside>
+
+
+
+
+
+
+<main class="main-content">
+
+
+<!-- ================= TOP NAVBAR ================= -->
+
+<nav class="topbar">
+
+    <div class="page-title">
+
+        <h2>
+            Dashboard
+        </h2>
+
+    </div>
+
+
+
+    <div class="top-actions">
+
+
+
+
+
+        <div class="profile-container">
+
+
+            <div class="profile">
+
+
+                <img src="../assets/images/avatar.png">
+
+
+                <span>
+                    Ali
+                </span>
+
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+
+            </div>
+
+
+
+
+            <div class="profile-menu">
+
+
+                <div class="profile-header">
+
+
+                    <img src="../assets/images/avatar.png">
+
+
+                    <div>
+
+                        <h4>
+                            Ali
+                        </h4>
+
+
+                        <p>
+                            Patient Account
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <hr>
+
+
+
+
+                <div class="menu-item">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </div>
+
+
+
+
+                <div class="menu-item">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    Health Data
+
+                </div>
+
+
+
+
+                <div class="menu-item">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </div>
+
+
+
+
+                <div class="menu-item logout-item">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</nav>
+
+
+
+<section class="welcome-card premium-glass">
+
+
+<span>
+    AI POWERED HEALTHCARE
+</span>
+
+
+
+<h1>
+    Good Evening, Ali 👋
+</h1>
+
+
+
+<p>
+Your health journey continues with AI-powered insights,
+smart recommendations and secure medical records.
+</p>
+
+
+
+
+<button class="primary-btn">
+
+Talk with AI
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+
+</section>
+<section class="stats-grid">
+
+
+<div class="stat-card premium-glass">
+
+<div class="stat-icon health">
+<i class="fa-solid fa-heart-pulse"></i>
+</div>
+
+
+<div class="stat-info">
+
+<h2 class="counter" data-target="98">
+0
+</h2>
+
+<h4>
+Health Score
+</h4>
+
+<p>
+Excellent Condition
+</p>
+
+</div>
+
+
+<span class="badge positive">
++2%
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="stat-card premium-glass">
+
+<div class="stat-icon appointment">
+<i class="fa-solid fa-calendar-days"></i>
+</div>
+
+
+<div class="stat-info">
+
+<h2 class="counter" data-target="3">
+0
+</h2>
+
+<h4>
+Appointments
+</h4>
+
+<p>
+Upcoming Visits
+</p>
+
+</div>
+
+
+<span class="badge">
+Tomorrow
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="stat-card premium-glass">
+
+<div class="stat-icon report">
+<i class="fa-solid fa-file-medical"></i>
+</div>
+
+
+<div class="stat-info">
+
+<h2 class="counter" data-target="12">
+0
+</h2>
+
+<h4>
+Medical Reports
+</h4>
+
+<p>
+Available Files
+</p>
+
+</div>
+
+
+<span class="badge">
+New
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="stat-card premium-glass">
+
+<div class="stat-icon ai">
+<i class="fa-solid fa-robot"></i>
+</div>
+
+
+<div class="stat-info">
+
+<h2 class="counter" data-target="48">
+0
+</h2>
+
+<h4>
+AI Sessions
+</h4>
+
+<p>
+This Month
+</p>
+
+</div>
+
+
+<span class="badge positive">
++14%
+</span>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="dashboard-grid">
+
+
+
+
+
+<div class="appointment-card premium-glass">
+
+
+<div class="widget-header">
+
+
+<div>
+
+<span>
+Next Appointment
+</span>
+
+
+<h2>
+Dr. Sarah Mitchell
+</h2>
+
+
+</div>
+
+
+
+<div class="doctor-icon">
+
+<i class="fa-solid fa-user-doctor"></i>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="appointment-info">
+
+
+<div>
+
+<i class="fa-solid fa-calendar"></i>
+
+
+<p>
+
+Tomorrow
+
+<br>
+
+<strong>
+10:30 AM
+</strong>
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div>
+
+<i class="fa-solid fa-location-dot"></i>
+
+
+<p>
+
+Medico Clinic
+
+<br>
+
+Room 204
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<button class="primary-btn">
+
+View Appointment
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="ai-card">
+
+
+<div class="ai-top">
+
+
+<div class="ai-icon">
+
+<i class="fa-solid fa-robot"></i>
+
+</div>
+
+
+<span>
+AI Assistant
+</span>
+
+
+</div>
+
+
+
+
+<h2>
+How are you feeling today?
+</h2>
+
+
+
+<p>
+Your AI health assistant is ready
+to help analyze your symptoms.
+</p>
+
+
+
+
+<button class="ai-btn">
+
+Start Chat
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="health-overview premium-glass">
+
+
+
+<div class="health-header">
+
+
+<div>
+
+<span>
+Health Overview
+</span>
+
+
+<h2>
+Your Current Health Status
+</h2>
+
+
+</div>
+
+
+
+<button class="primary-btn">
+
+View Full Profile
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="health-grid">
+
+
+
+<div class="health-item premium-glass">
+
+
+<div class="health-icon pressure">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+120/80
+</h3>
+
+<p>
+Blood Pressure
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="health-item premium-glass">
+
+
+<div class="health-icon heart">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+72 bpm
+</h3>
+
+<p>
+Heart Rate
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="health-item premium-glass">
+
+
+<div class="health-icon weight">
+
+<i class="fa-solid fa-weight-scale"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+78 kg
+</h3>
+
+<p>
+Weight
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="health-item premium-glass">
+
+
+<div class="health-icon check">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+
+<div>
+
+<h3>
+July 20
+</h3>
+
+<p>
+Last Checkup
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+</main>
+
+</div>
+
+
+
+
+
+<script src="../assets/js/patient/dashboard.js"></script>
+
+
+</body>
+
+</html>

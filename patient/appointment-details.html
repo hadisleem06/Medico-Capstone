@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Appointment Details | Medico</title>
+
+
+<link rel="stylesheet" href="../assets/css/patient/patient.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+<div class="aurora">
+
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+    <div class="aurora-3"></div>
+
+</div>
+
+
+
+
+
+<div class="dashboard" id="dashboard">
+
+
+
+
+
+
+
+<!-- =========================
+        SIDEBAR
+========================= -->
+
+
+<aside class="sidebar">
+
+
+
+<button class="sidebar-toggle">
+
+<i class="fa-solid fa-chevron-left"></i>
+
+</button>
+
+
+
+
+<button class="theme-toggle">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+
+
+
+
+
+<div class="logo">
+
+🩺 Medico
+
+</div>
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+<li data-tooltip="Dashboard">
+
+
+<i class="fa-solid fa-house"></i>
+
+
+<span>
+Dashboard
+</span>
+
+
+</li>
+
+
+
+
+
+
+
+<li class="active" data-tooltip="Appointments">
+
+
+<i class="fa-solid fa-calendar"></i>
+
+
+<span>
+Appointments
+</span>
+
+
+</li>
+
+
+
+
+
+
+
+
+<li data-tooltip="Medical Records">
+
+
+<i class="fa-solid fa-file-medical"></i>
+
+
+<span>
+Medical Records
+</span>
+
+
+</li>
+
+
+
+
+
+
+
+
+<li data-tooltip="AI Assistant">
+
+
+<i class="fa-solid fa-robot"></i>
+
+
+<span>
+AI Assistant
+</span>
+
+
+</li>
+
+
+
+
+
+
+
+
+<li data-tooltip="Doctors">
+
+
+<i class="fa-solid fa-user-doctor"></i>
+
+
+<span>
+Doctors
+</span>
+
+
+</li>
+
+
+
+
+
+
+
+
+<li data-tooltip="Notifications">
+
+
+<i class="fa-solid fa-bell"></i>
+
+
+<span>
+Notifications
+</span>
+
+
+</li>
+
+
+
+
+
+
+
+
+<li data-tooltip="Settings">
+
+
+<i class="fa-solid fa-gear"></i>
+
+
+<span>
+Settings
+</span>
+
+
+</li>
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+<button class="logout" data-tooltip="Logout">
+
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+
+<span>
+Logout
+</span>
+
+
+</button>
+
+
+
+
+
+</aside>
+<!-- =========================
+        MAIN CONTENT
+========================= -->
+
+
+<main class="main-content">
+
+
+
+
+
+
+
+<!-- =========================
+        TOPBAR
+========================= -->
+
+
+<nav class="topbar">
+
+
+
+
+
+<div class="page-title">
+
+
+<h2>
+
+Appointment Details
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="top-actions">
+
+
+
+
+
+<div class="profile-container">
+
+
+
+
+
+
+<div class="profile">
+
+
+
+<img src="../assets/images/avatar.png">
+
+
+
+<span>
+Ali
+</span>
+
+
+
+<i class="fa-solid fa-chevron-down"></i>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="profile-menu">
+
+
+
+
+
+<div class="profile-header">
+
+
+
+<img src="../assets/images/avatar.png">
+
+
+
+
+<div>
+
+
+<h4>
+Ali
+</h4>
+
+
+<p>
+Patient Account
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<div class="menu-item">
+
+
+<i class="fa-solid fa-user"></i>
+
+
+My Profile
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="menu-item">
+
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+
+Health Data
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="menu-item">
+
+
+<i class="fa-solid fa-gear"></i>
+
+
+Settings
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="menu-item logout-item">
+
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+
+Logout
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        APPOINTMENT HEADER
+========================= -->
+
+
+
+
+<section class="welcome-card premium-glass">
+
+
+
+
+
+<span>
+UPCOMING APPOINTMENT
+</span>
+
+
+
+
+
+<h1>
+
+Cardiology Consultation
+
+</h1>
+
+
+
+
+
+<p>
+
+Your appointment details are shown below.
+You can review the doctor information,
+schedule and manage your visit.
+
+</p>
+
+
+
+
+
+
+
+</section>
+<!-- =========================
+        APPOINTMENT DETAILS
+========================= -->
+
+
+
+<section class="dashboard-grid">
+
+
+
+
+
+
+<!-- DOCTOR CARD -->
+
+
+<div class="appointment-card premium-glass">
+
+
+
+
+
+<div class="widget-header">
+
+
+
+<div>
+
+
+<span>
+DOCTOR INFORMATION
+</span>
+
+
+
+<h2>
+
+Dr. Sarah Mitchell
+
+</h2>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="doctor-icon">
+
+
+<i class="fa-solid fa-user-doctor"></i>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="appointment-info">
+
+
+
+
+
+<div>
+
+
+<i class="fa-solid fa-stethoscope"></i>
+
+
+
+<p>
+
+
+Specialty
+
+<br>
+
+
+<strong>
+
+Cardiologist
+
+</strong>
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div>
+
+
+<i class="fa-solid fa-hospital"></i>
+
+
+
+<p>
+
+
+Clinic
+
+<br>
+
+
+<strong>
+
+Medico Clinic
+
+</strong>
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<button class="primary-btn">
+
+
+<i class="fa-solid fa-user-doctor"></i>
+
+
+View Doctor Profile
+
+
+</button>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- APPOINTMENT SUMMARY -->
+
+
+<div class="ai-card">
+
+
+
+
+
+<div class="ai-top">
+
+
+<div class="ai-icon">
+
+
+<i class="fa-solid fa-calendar-check"></i>
+
+
+</div>
+
+
+
+
+<span>
+
+APPOINTMENT
+
+</span>
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>
+
+Confirmed
+
+</h2>
+
+
+
+
+
+
+
+<p>
+
+Your appointment has been confirmed.
+Please arrive before your scheduled time.
+
+</p>
+
+
+
+
+
+
+
+<button class="ai-btn">
+
+
+<i class="fa-solid fa-video"></i>
+
+
+Join Meeting
+
+
+</button>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        VISIT DETAILS
+========================= -->
+
+
+
+
+<section class="health-overview premium-glass">
+
+
+
+
+
+<div class="health-header">
+
+
+
+<div>
+
+
+<span>
+SCHEDULE
+</span>
+
+
+<h2>
+
+Visit Information
+
+</h2>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="health-grid">
+
+
+
+
+
+
+
+<div class="health-item premium-glass">
+
+
+
+<div class="health-icon appointment">
+
+
+<i class="fa-solid fa-calendar"></i>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<h3>
+
+August 15
+
+</h3>
+
+
+<p>
+
+Date
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="health-item premium-glass">
+
+
+
+<div class="health-icon weight">
+
+
+<i class="fa-solid fa-clock"></i>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<h3>
+
+10:30 AM
+
+</h3>
+
+
+<p>
+
+Time
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="health-item premium-glass">
+
+
+
+<div class="health-icon check">
+
+
+<i class="fa-solid fa-location-dot"></i>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<h3>
+
+Room 204
+
+</h3>
+
+
+<p>
+
+Location
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="health-item premium-glass">
+
+
+
+<div class="health-icon heart">
+
+
+<i class="fa-solid fa-video"></i>
+
+
+</div>
+
+
+
+
+<div>
+
+
+<h3>
+
+Online
+
+</h3>
+
+
+<p>
+
+Meeting Type
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+        ACTIONS
+========================= -->
+
+
+
+<section class="manage-card premium-glass">
+
+
+<div class="health-header">
+
+<div>
+
+<span>
+MANAGE APPOINTMENT
+</span>
+
+<h2>
+Need Changes?
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<p class="manage-text">
+
+You can join the meeting, reschedule your visit,
+or cancel the appointment.
+
+</p>
+
+
+
+
+
+<div class="appointment-actions">
+
+
+<button class="primary-btn">
+
+<i class="fa-solid fa-video"></i>
+
+Join Meeting
+
+</button>
+
+
+
+
+
+<button class="primary-btn">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Reschedule
+
+</button>
+
+
+
+
+
+<button class="cancel-btn">
+
+<i class="fa-solid fa-xmark"></i>
+
+Cancel
+
+</button>
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script src="../assets/js/patient/dashboard.js"></script>
+
+
+</body>
+
+
+</html>

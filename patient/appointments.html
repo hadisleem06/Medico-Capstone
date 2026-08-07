@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Appointments | Medico</title>
+
+    <link rel="stylesheet" href="../assets/css/patient/patient.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="aurora">
+
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+    <div class="aurora-3"></div>
+
+</div>
+
+<div class="dashboard" id="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+<button class="sidebar-toggle">
+    <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+<button class="theme-toggle">
+    <i class="fa-solid fa-moon"></i>
+</button>
+
+<div class="logo">
+    🩺 Medico
+</div>
+
+<ul>
+
+<li data-tooltip="Dashboard">
+
+    <i class="fa-solid fa-house"></i>
+
+    
+
+    <span>Dashboard</span>
+
+    
+
+</li>
+
+<li class="active" data-tooltip="Appointments">
+
+    <i class="fa-solid fa-calendar-check"></i>
+
+    <span>Appointments</span>
+
+</li>
+
+<li data-tooltip="Medical Records">
+
+    <i class="fa-solid fa-file-medical"></i>
+
+    <span>Medical Records</span>
+
+</li>
+
+<li data-tooltip="AI Assistant">
+
+    <i class="fa-solid fa-robot"></i>
+
+    <span>AI Assistant</span>
+
+</li>
+
+<li data-tooltip="Doctors">
+
+    <i class="fa-solid fa-user-doctor"></i>
+
+    <span>Doctors</span>
+
+</li>
+
+<li data-tooltip="Notifications">
+
+    <i class="fa-solid fa-bell"></i>
+
+    <span>Notifications</span>
+
+</li>
+
+<li data-tooltip="Settings">
+
+    <i class="fa-solid fa-gear"></i>
+
+    <span>Settings</span>
+
+</li>
+
+</ul>
+
+<button class="logout" data-tooltip="Logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</button>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main-content">
+
+<nav class="topbar">
+
+<div class="page-title">
+
+<h2>
+Appointments
+</h2>
+
+</div>
+
+<div class="top-actions">
+
+<div class="profile-container">
+
+<div class="profile">
+
+<img src="../assets/images/avatar.png">
+
+<span>
+Ali
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="profile-menu">
+
+<div class="profile-header">
+
+<img src="../assets/images/avatar.png">
+
+<div>
+
+<h4>
+Ali
+</h4>
+
+<p>
+Patient Account
+</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="menu-item">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</div>
+
+<div class="menu-item">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+Health Data
+
+</div>
+
+<div class="menu-item">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</div>
+
+<div class="menu-item logout-item">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- =====================================
+            APPOINTMENTS HERO
+====================================== -->
+
+<section class="welcome-card premium-glass">
+
+    <span>
+        HEALTHCARE SCHEDULER
+    </span>
+
+    <h1>
+        Your Medical Appointments 📅
+    </h1>
+
+    <p>
+        Stay organized with your upcoming appointments, manage your bookings,
+        and review your complete consultation history with Medico.
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================
+            APPOINTMENT GRID
+====================================== -->
+
+<section class="dashboard-grid">
+    <!-- ================================
+        UPCOMING APPOINTMENT
+================================ -->
+
+<div class="appointment-card premium-glass">
+
+    <div class="widget-header">
+
+        <div>
+
+            <span>
+                Next Appointment
+            </span>
+
+            <h2>
+                Dr. Sarah Mitchell
+            </h2>
+
+        </div>
+
+        <div class="doctor-icon">
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="appointment-info">
+
+        <div>
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <p>
+
+                Tuesday
+
+                <br>
+
+                <strong>
+                    August 12, 2026
+                </strong>
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <i class="fa-solid fa-clock"></i>
+
+            <p>
+
+                Appointment Time
+
+                <br>
+
+                <strong>
+                    10:30 AM
+                </strong>
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <p>
+
+                Medico Hospital
+
+                <br>
+
+                <strong>
+                    Room 204
+                </strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="appointment-info">
+
+        <div>
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+            <p>
+
+                Department
+
+                <br>
+
+                <strong>
+                    Cardiology
+                </strong>
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <i class="fa-solid fa-notes-medical"></i>
+
+            <p>
+
+                Visit Type
+
+                <br>
+
+                <strong>
+                    Follow-up Consultation
+                </strong>
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <p>
+
+                Status
+
+                <br>
+
+                <strong>
+                    Confirmed
+                </strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <a href="appointment-details.html" class="primary-btn">
+    View Appointment
+    <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+
+
+<!-- ================================
+        QUICK ACTIONS
+================================ -->
+
+<div class="ai-card">
+
+    <div class="ai-top">
+
+        <div class="ai-icon">
+
+            <i class="fa-solid fa-calendar-plus"></i>
+
+        </div>
+
+        <span>
+            Quick Actions
+        </span>
+
+    </div>
+
+
+
+    <h2>
+        Manage Appointments
+    </h2>
+
+
+
+    <p>
+
+        Schedule a new visit, reschedule an existing appointment,
+        or cancel appointments with just one click.
+
+    </p>
+
+
+
+    <button class="ai-btn">
+
+        Book Appointment
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </button>
+
+</div>
+
+</section>
+<!-- =====================================
+            APPOINTMENT HISTORY
+===================================== -->
+
+
+<section class="health-overview premium-glass">
+
+
+<div class="health-header">
+
+
+<div>
+
+<span>
+APPOINTMENT HISTORY
+</span>
+
+
+<h2>
+Previous Medical Visits
+</h2>
+
+
+</div>
+
+
+
+<button class="primary-btn">
+
+View All
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="health-grid">
+
+
+
+<!-- HISTORY CARD 1 -->
+
+<div class="health-item premium-glass">
+
+
+<div class="health-icon check">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+
+
+<div>
+
+
+<h3>
+Dr. Karim Ali
+</h3>
+
+
+<p>
+Neurologist
+</p>
+
+
+<p>
+July 20 • Completed
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- HISTORY CARD 2 -->
+
+
+<div class="health-item premium-glass">
+
+
+<div class="health-icon heart">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+</div>
+
+
+
+<div>
+
+
+<h3>
+Dr. Sarah Mitchell
+</h3>
+
+
+<p>
+Cardiologist
+</p>
+
+
+<p>
+June 12 • Completed
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- HISTORY CARD 3 -->
+
+
+<div class="health-item premium-glass">
+
+
+<div class="health-icon weight">
+
+<i class="fa-solid fa-user-doctor"></i>
+
+</div>
+
+
+
+<div>
+
+
+<h3>
+Dr. Ahmad Hassan
+</h3>
+
+
+<p>
+General Medicine
+</p>
+
+
+<p>
+May 28 • Completed
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- HISTORY CARD 4 -->
+
+
+<div class="health-item premium-glass">
+
+
+<div class="health-icon pressure">
+
+<i class="fa-solid fa-xmark"></i>
+
+</div>
+
+
+
+<div>
+
+
+<h3>
+Dr. Lina George
+</h3>
+
+
+<p>
+Dermatologist
+</p>
+
+
+<p>
+May 10 • Cancelled
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+</main>
+
+</div>
+
+
+<script src="../assets/js/patient/dashboard.js"></script>
+
+</body>
+
+</html>
