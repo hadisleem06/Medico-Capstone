@@ -1,0 +1,1700 @@
+/* =========================================================
+   MEDICO
+   GLOBAL DESIGN SYSTEM
+========================================================= */
+
+
+/* =========================================================
+   THEME VARIABLES
+========================================================= */
+
+:root{
+
+    --bg:#020617;
+
+    --text:#ffffff;
+
+    --muted:#94a3b8;
+
+
+    --primary:#17afa2;
+
+    --primary-hover:#20cbbd;
+
+
+    --purple:#8b5cf6;
+
+    --blue:#2563eb;
+
+
+    --glass:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.035)
+        );
+
+
+    --glass-strong:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.045)
+        );
+
+
+    --glass-border:
+        rgba(255,255,255,.14);
+
+
+    --shadow:
+        0 25px 70px rgba(0,0,0,.35);
+
+}
+
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+.light-mode{
+
+    --bg:#eef4f9;
+
+    --text:#0f172a;
+
+    --muted:#64748b;
+
+
+    --glass:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.88),
+            rgba(255,255,255,.58)
+        );
+
+
+    --glass-strong:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.95),
+            rgba(255,255,255,.70)
+        );
+
+
+    --glass-border:
+        rgba(15,23,42,.10);
+
+
+    --shadow:
+        0 25px 70px rgba(15,23,42,.15);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    background:
+        var(--bg);
+
+    color:
+        var(--text);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    transition:
+        background .4s ease,
+        color .4s ease;
+
+}
+
+
+/* =========================================================
+   AURORA BACKGROUND
+========================================================= */
+
+/*
+   IMPORTANT:
+   The old version used negative z-index values.
+   That can push the aurora behind the body itself.
+
+   We keep the aurora above the body background,
+   but below the actual dashboard.
+*/
+
+.aurora{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+
+.aurora::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(23,175,162,.18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(139,92,246,.16),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(37,99,235,.14),
+            transparent 30%
+        );
+
+}
+
+
+/* =========================================================
+   AURORA GLOW 1
+========================================================= */
+
+.aurora-1{
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    border-radius:50%;
+
+    background:#17afa2;
+
+    top:-230px;
+
+    left:-220px;
+
+    opacity:.30;
+
+    filter:blur(140px);
+
+    animation:
+        auroraMove1 22s
+        infinite alternate
+        ease-in-out;
+
+}
+
+
+/* =========================================================
+   AURORA GLOW 2
+========================================================= */
+
+.aurora-2{
+
+    position:absolute;
+
+    width:550px;
+
+    height:550px;
+
+    border-radius:50%;
+
+    background:#8b5cf6;
+
+    right:-190px;
+
+    top:70px;
+
+    opacity:.27;
+
+    filter:blur(140px);
+
+    animation:
+        auroraMove2 25s
+        infinite alternate
+        ease-in-out;
+
+}
+
+
+/* =========================================================
+   AURORA GLOW 3
+========================================================= */
+
+.aurora-3{
+
+    position:absolute;
+
+    width:550px;
+
+    height:550px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    bottom:-250px;
+
+    left:35%;
+
+    opacity:.22;
+
+    filter:blur(150px);
+
+    animation:
+        auroraMove3 28s
+        infinite alternate
+        ease-in-out;
+
+}
+
+
+/* =========================================================
+   AURORA ANIMATIONS
+========================================================= */
+
+@keyframes auroraMove1{
+
+    from{
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    to{
+
+        transform:
+            translate(100px,70px)
+            scale(1.25);
+
+    }
+
+}
+
+
+@keyframes auroraMove2{
+
+    from{
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    to{
+
+        transform:
+            translate(-90px,70px)
+            scale(1.2);
+
+    }
+
+}
+
+
+@keyframes auroraMove3{
+
+    from{
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    to{
+
+        transform:
+            translate(80px,-80px)
+            scale(1.25);
+
+    }
+
+}
+
+
+/* =========================================================
+   DASHBOARD LAYER
+========================================================= */
+
+.dashboard{
+
+    position:relative;
+
+    z-index:1;
+
+    min-height:100vh;
+
+    transition:.35s;
+
+}
+
+
+/* =========================================================
+   GLOBAL GLASS
+========================================================= */
+
+.premium-glass{
+
+    background:
+        var(--glass);
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        0 25px 70px
+        rgba(0,0,0,.30);
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar{
+
+    position:fixed;
+
+    top:25px;
+
+    left:25px;
+
+    width:230px;
+
+    height:
+        calc(100vh - 50px);
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    border-radius:30px;
+
+    background:
+        var(--glass);
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
+
+    z-index:100;
+
+    transition:
+        width .4s ease,
+        padding .4s ease;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:45px;
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.sidebar ul{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    flex:1;
+
+}
+
+
+.sidebar li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 18px;
+
+    border-radius:16px;
+
+    color:var(--muted);
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+
+.sidebar li i{
+
+    width:22px;
+
+    text-align:center;
+
+    flex-shrink:0;
+
+}
+
+
+.sidebar li:hover{
+
+    background:
+        rgba(23,175,162,.12);
+
+    color:#5eead4;
+
+    transform:
+        translateX(6px);
+
+}
+
+
+.sidebar .active{
+
+    background:
+        #17afa2;
+
+    color:white;
+
+    box-shadow:
+        0 0 35px
+        rgba(23,175,162,.5);
+
+}
+
+
+/* =========================================================
+   SIDEBAR BUTTONS
+========================================================= */
+
+.sidebar-toggle{
+
+    position:absolute;
+
+    top:25px;
+
+    right:-15px;
+
+    width:35px;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+        var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:5;
+
+}
+
+
+.theme-toggle{
+
+    position:absolute;
+
+    top:75px;
+
+    right:-15px;
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    background:
+        var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:15px;
+
+    box-shadow:
+        0 0 25px
+        rgba(23,175,162,.5);
+
+    transition:.35s;
+
+}
+
+
+.theme-toggle:hover{
+
+    transform:scale(1.12);
+
+    box-shadow:
+        0 0 35px
+        rgba(23,175,162,.7);
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout{
+
+    height:55px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    color:var(--text);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+
+.logout:hover{
+
+    background:#ef4444;
+
+}
+
+
+/* =========================================================
+   SIDEBAR COLLAPSED
+========================================================= */
+
+.sidebar.collapsed{
+
+    width:90px;
+
+    padding:
+        30px 15px;
+
+}
+
+
+.sidebar.collapsed .logo{
+
+    font-size:0;
+
+    text-align:center;
+
+}
+
+
+.sidebar.collapsed .logo::after{
+
+    content:"🩺";
+
+    font-size:30px;
+
+}
+
+
+.sidebar.collapsed li{
+
+    justify-content:center;
+
+}
+
+
+.sidebar.collapsed span{
+
+    display:none;
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content{
+
+    margin-left:280px;
+
+    padding:
+        30px 35px;
+
+    transition:
+        margin-left .4s ease;
+
+}
+
+
+.main-content.collapsed{
+
+    margin-left:140px;
+
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:35px;
+
+}
+
+
+.topbar h2{
+
+    font-size:34px;
+
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.top-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+.profile-container{
+
+    position:relative;
+
+}
+
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:10px 18px;
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    backdrop-filter:
+        blur(25px);
+
+    cursor:pointer;
+
+}
+
+
+.profile img{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:
+        2px solid
+        var(--primary);
+
+}
+
+
+/* =========================================================
+   PROFILE MENU
+========================================================= */
+
+.profile-menu{
+
+    position:absolute;
+
+    top:70px;
+
+    right:0;
+
+    width:280px;
+
+    padding:20px;
+
+    border-radius:24px;
+
+    background:
+        var(--glass);
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    box-shadow:
+        var(--shadow);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translateY(-12px)
+        scale(.96);
+
+    transition:.35s ease;
+
+    z-index:1000;
+
+}
+
+
+.profile-menu.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+.profile-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+
+.profile-header img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:
+        2px solid
+        #17afa2;
+
+}
+
+
+.profile-header h4{
+
+    color:var(--text);
+
+    font-size:17px;
+
+}
+
+
+.profile-header p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+
+.profile-menu hr{
+
+    border:none;
+
+    height:1px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    margin:18px 0;
+
+}
+
+
+.menu-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:12px;
+
+    border-radius:14px;
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.menu-item i{
+
+    color:#5eead4;
+
+}
+
+
+.menu-item:hover{
+
+    background:
+        rgba(255,255,255,.06);
+
+}
+
+
+.logout-item{
+
+    color:#f87171;
+
+}
+
+
+.logout-item i{
+
+    color:#ef4444;
+
+}
+
+
+/* =========================================================
+   WELCOME CARD
+========================================================= */
+
+.welcome-card{
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:
+
+        radial-gradient(
+            circle at top right,
+            rgba(23,175,162,.20),
+            transparent 40%
+        ),
+
+        var(--glass);
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.welcome-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    right:-80px;
+
+    bottom:-80px;
+
+    background:#17afa2;
+
+    filter:blur(120px);
+
+    opacity:.18;
+
+    pointer-events:none;
+
+}
+
+
+.welcome-card span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:
+        rgba(23,175,162,.15);
+
+    color:#5eead4;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
+
+}
+
+
+.welcome-card h1{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+
+.welcome-card p{
+
+    max-width:700px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+
+/* =========================================================
+   GLOBAL PRIMARY BUTTON
+========================================================= */
+
+.primary-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    padding:16px 32px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+        var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+        0 10px 30px
+        rgba(23,175,162,.25);
+
+}
+
+
+.primary-btn:hover{
+
+    transform:
+        translateY(-5px);
+
+    background:
+        var(--primary-hover);
+
+    box-shadow:
+        0 15px 40px
+        rgba(23,175,162,.45);
+
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+
+.stat-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    min-height:190px;
+
+    border-radius:30px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.11),
+            rgba(255,255,255,.035)
+        );
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.10),
+
+        0 25px 70px
+        rgba(0,0,0,.30);
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            transparent 40%
+        );
+
+    pointer-events:none;
+
+}
+
+
+.stat-card:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(23,175,162,.40);
+
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        0 30px 80px
+        rgba(0,0,0,.40);
+
+}
+
+
+.stat-icon{
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:28px;
+
+}
+
+
+.stat-info h2{
+
+    font-size:42px;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--text),
+            #5eead4
+        );
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+
+.stat-info h4{
+
+    margin-bottom:8px;
+
+}
+
+
+.stat-info p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+}
+
+
+.badge{
+
+    position:absolute;
+
+    top:24px;
+
+    right:24px;
+
+    padding:7px 14px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
+
+
+.badge.positive{
+
+    background:
+        rgba(34,197,94,.15);
+
+    color:#22c55e;
+
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(12,1fr);
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+
+/* =========================================================
+   GENERIC LARGE CARD
+========================================================= */
+
+.appointment-card{
+
+    grid-column:
+        span 8;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.11),
+            rgba(255,255,255,.035)
+        );
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.10),
+
+        var(--shadow);
+
+}
+
+
+/* =========================================================
+   AI / SECONDARY CARD
+========================================================= */
+
+.ai-card{
+
+    grid-column:
+        span 4;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:
+
+        radial-gradient(
+            circle at top right,
+            rgba(139,92,246,.18),
+            transparent 50%
+        ),
+
+        radial-gradient(
+            circle at bottom left,
+            rgba(23,175,162,.10),
+            transparent 50%
+        ),
+
+        var(--glass);
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    box-shadow:
+        var(--shadow);
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+/* =========================================================
+   HEALTH / LARGE SECTION
+========================================================= */
+
+.health-overview{
+
+    margin-top:35px;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:
+        var(--glass);
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+/* =========================================================
+   HEALTH HEADER
+========================================================= */
+
+.health-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+
+.health-header span{
+
+    color:#5eead4;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+}
+
+
+.health-header h2{
+
+    margin-top:10px;
+
+    font-size:28px;
+
+}
+
+
+/* =========================================================
+   DASHBOARD GRID HEADER
+========================================================= */
+
+.widget-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.widget-header span{
+
+    color:#5eead4;
+
+    font-size:13px;
+
+}
+
+
+.widget-header h2{
+
+    margin-top:10px;
+
+    font-size:28px;
+
+}
+
+
+/* =========================================================
+   DESKTOP RESPONSIVE
+========================================================= */
+
+@media(max-width:1200px){
+
+    .stats-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        transform:
+            translateX(-120%);
+
+    }
+
+
+    .main-content{
+
+        margin-left:0;
+
+        padding:25px;
+
+    }
+
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .appointment-card,
+    .ai-card{
+
+        grid-column:
+            span 1;
+
+    }
+
+
+    .welcome-card h1{
+
+        font-size:36px;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .welcome-card{
+
+        padding:30px;
+
+    }
+
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+
+    .profile{
+
+        width:100%;
+
+    }
+
+}

@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Waiting Room | Medico</title>
+
+
+    <!-- GLOBAL CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/global.css"
+    >
+
+
+    <!-- NURSE CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/nurse.css"
+    >
+
+
+    <!-- RESPONSIVE -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/responsive.css"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+                    AURORA BACKGROUND
+===================================================== -->
+
+<div class="aurora">
+
+    <div class="aurora-1"></div>
+
+    <div class="aurora-2"></div>
+
+    <div class="aurora-3"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+                    DASHBOARD
+===================================================== -->
+
+<div
+    class="dashboard"
+    id="dashboard"
+>
+
+
+
+    <!-- =================================================
+                        SIDEBAR
+    ================================================= -->
+
+    <aside class="sidebar">
+
+
+        <button
+            class="sidebar-toggle"
+            type="button"
+        >
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+
+        <button
+            class="theme-toggle"
+            type="button"
+        >
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <ul>
+
+
+            <li
+                data-nurse-action="dashboard"
+                data-tooltip="Dashboard"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="waiting-room"
+                data-tooltip="Waiting Room"
+                class="active"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Waiting Room
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="register-patient"
+                data-tooltip="Register Patient"
+            >
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                <span>
+                    Register Patient
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="vitals"
+                data-tooltip="Vitals"
+            >
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <span>
+                    Vitals
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="patients"
+                data-tooltip="Patients"
+            >
+
+                <i class="fa-solid fa-hospital-user"></i>
+
+                <span>
+                    Patients
+                </span>
+
+            </li>
+
+
+        </ul>
+
+
+
+        <!-- LOGOUT -->
+
+        <button
+            class="logout"
+            type="button"
+            data-tooltip="Logout"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+                        MAIN CONTENT
+    ================================================= -->
+
+    <main class="main-content">
+
+
+
+        <!-- =================================================
+                            TOPBAR
+        ================================================= -->
+
+        <nav class="topbar">
+
+
+            <div class="page-title">
+
+                <h2>
+                    
+                </h2>
+
+            </div>
+
+
+
+            <div class="top-actions">
+
+
+                <div class="profile-container">
+
+
+                    <div class="profile">
+
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Profile"
+                        >
+
+
+                        <span>
+                            Ali
+                        </span>
+
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+
+                    </div>
+
+
+
+                    <!-- PROFILE MENU -->
+
+                    <div class="profile-menu">
+
+
+                        <div class="profile-header">
+
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Profile"
+                            >
+
+
+                            <div>
+
+                                <h4>
+                                    Ali
+                                </h4>
+
+                                <p>
+                                    Nurse Account
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <hr>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            My Profile
+
+                        </div>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </div>
+
+
+
+                        <div class="menu-item logout-item">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+                        PAGE HEADER
+        ================================================= -->
+
+        <section class="page-header">
+
+
+            <div>
+
+
+                <span class="section-label">
+                    PATIENT FLOW
+                </span>
+
+
+                <h1>
+                    Waiting Room
+                </h1>
+
+
+                <p>
+                    Manage patients currently waiting
+                    for their consultation.
+                </p>
+
+
+            </div>
+
+
+
+            <button
+                class="primary-btn"
+                id="refreshQueue"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh Queue
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                        QUEUE STATS
+        ================================================= -->
+
+        <section class="nurse-stats-grid">
+
+
+
+            <div class="nurse-stat-card premium-glass">
+
+
+                <div class="nurse-stat-icon waiting">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2
+                        class="counter"
+                        data-target="8"
+                    >
+                        0
+                    </h2>
+
+                    <p>
+                        Waiting Patients
+                    </p>
+
+                </div>
+
+
+                <span class="stat-status">
+                    Current
+                </span>
+
+
+            </div>
+
+
+
+            <div class="nurse-stat-card premium-glass">
+
+
+                <div class="nurse-stat-icon priority">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2
+                        class="counter"
+                        data-target="2"
+                    >
+                        0
+                    </h2>
+
+                    <p>
+                        Priority Cases
+                    </p>
+
+                </div>
+
+
+                <span class="stat-status priority-status">
+                    Attention
+                </span>
+
+
+            </div>
+
+
+
+            <div class="nurse-stat-card premium-glass">
+
+
+                <div class="nurse-stat-icon called">
+
+                    <i class="fa-solid fa-bullhorn"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2
+                        class="counter"
+                        data-target="3"
+                    >
+                        0
+                    </h2>
+
+                    <p>
+                        Called Today
+                    </p>
+
+                </div>
+
+
+                <span class="stat-status">
+                    Today
+                </span>
+
+
+            </div>
+
+
+
+            <div class="nurse-stat-card premium-glass">
+
+
+                <div class="nurse-stat-icon completed">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2
+                        class="counter"
+                        data-target="14"
+                    >
+                        0
+                    </h2>
+
+                    <p>
+                        Completed
+                    </p>
+
+                </div>
+
+
+                <span class="stat-status">
+                    Today
+                </span>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                    WAITING ROOM MAIN CARD
+        ================================================= -->
+
+        <section class="waiting-room-card premium-glass">
+
+
+
+            <!-- HEADER -->
+
+            <div class="waiting-header">
+
+
+                <div>
+
+
+                    <span class="section-label">
+                        LIVE QUEUE
+                    </span>
+
+
+                    <h2>
+                        Patients Waiting
+                    </h2>
+
+
+                </div>
+
+
+
+                <div class="queue-live">
+
+
+                    <span class="live-dot"></span>
+
+                    Live Queue
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CONTROLS -->
+
+            <div class="queue-controls">
+
+
+                <div class="search-box">
+
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                    <input
+                        type="text"
+                        id="patientSearch"
+                        placeholder="Search patient..."
+                    >
+
+
+                </div>
+
+
+
+                <div class="custom-filter" id="statusFilter">
+
+    <button
+        type="button"
+        class="filter-trigger"
+    >
+
+        <span>
+            All Patients
+        </span>
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+    </button>
+
+
+    <div class="filter-menu">
+
+        <button
+            type="button"
+            class="filter-option active"
+            data-value="all"
+        >
+            All Patients
+        </button>
+
+        <button
+            type="button"
+            class="filter-option"
+            data-value="waiting"
+        >
+            Waiting
+        </button>
+
+        <button
+            type="button"
+            class="filter-option"
+            data-value="priority"
+        >
+            Priority
+        </button>
+
+        <button
+            type="button"
+            class="filter-option"
+            data-value="called"
+        >
+            Called
+        </button>
+
+    </div>
+
+</div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                        PATIENT QUEUE
+            ================================================= -->
+
+            <div
+                class="patient-queue"
+                id="patientQueue"
+            >
+
+
+
+                <!-- PATIENT 1 -->
+
+                <div
+                    class="queue-patient"
+                    data-status="priority"
+                >
+
+
+                    <div class="queue-number priority-number">
+                        01
+                    </div>
+
+
+                    <div class="patient-avatar">
+                        AM
+                    </div>
+
+
+                    <div class="patient-details">
+
+                        <h3>
+                            Ahmad Mansour
+                        </h3>
+
+                        <p>
+                            #PT-1024 · 34 years
+                        </p>
+
+                    </div>
+
+
+                    <div class="patient-doctor">
+
+                        <span>
+                            Doctor
+                        </span>
+
+                        <strong>
+                            Dr. Sarah Mitchell
+                        </strong>
+
+                    </div>
+
+
+                    <div class="waiting-time priority-time">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        <span>
+                            18 min
+                        </span>
+
+                    </div>
+
+
+                    <span class="patient-status priority-badge">
+                        Priority
+                    </span>
+
+
+                    <div class="patient-actions">
+
+                        <button
+                            class="queue-action call"
+                            data-action="call"
+                            title="Call Patient"
+                        >
+
+                            <i class="fa-solid fa-bullhorn"></i>
+
+                        </button>
+
+
+                        <button
+                            class="queue-action vitals"
+                            data-action="vitals"
+                            title="Take Vitals"
+                        >
+
+                            <i class="fa-solid fa-heart-pulse"></i>
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PATIENT 2 -->
+
+                <div
+                    class="queue-patient"
+                    data-status="waiting"
+                >
+
+
+                    <div class="queue-number">
+                        02
+                    </div>
+
+
+                    <div class="patient-avatar">
+                        LN
+                    </div>
+
+
+                    <div class="patient-details">
+
+                        <h3>
+                            Lina Nassar
+                        </h3>
+
+                        <p>
+                            #PT-1087 · 27 years
+                        </p>
+
+                    </div>
+
+
+                    <div class="patient-doctor">
+
+                        <span>
+                            Doctor
+                        </span>
+
+                        <strong>
+                            Dr. Michael Reed
+                        </strong>
+
+                    </div>
+
+
+                    <div class="waiting-time">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        <span>
+                            11 min
+                        </span>
+
+                    </div>
+
+
+                    <span class="patient-status waiting-badge">
+                        Waiting
+                    </span>
+
+
+                    <div class="patient-actions">
+
+                        <button
+                            class="queue-action call"
+                            data-action="call"
+                            title="Call Patient"
+                        >
+
+                            <i class="fa-solid fa-bullhorn"></i>
+
+                        </button>
+
+
+                        <button
+                            class="queue-action vitals"
+                            data-action="vitals"
+                            title="Take Vitals"
+                        >
+
+                            <i class="fa-solid fa-heart-pulse"></i>
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PATIENT 3 -->
+
+                <div
+                    class="queue-patient"
+                    data-status="waiting"
+                >
+
+
+                    <div class="queue-number">
+                        03
+                    </div>
+
+
+                    <div class="patient-avatar">
+                        JK
+                    </div>
+
+
+                    <div class="patient-details">
+
+                        <h3>
+                            Joseph Khoury
+                        </h3>
+
+                        <p>
+                            #PT-1092 · 41 years
+                        </p>
+
+                    </div>
+
+
+                    <div class="patient-doctor">
+
+                        <span>
+                            Doctor
+                        </span>
+
+                        <strong>
+                            Dr. Sarah Mitchell
+                        </strong>
+
+                    </div>
+
+
+                    <div class="waiting-time">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        <span>
+                            8 min
+                        </span>
+
+                    </div>
+
+
+                    <span class="patient-status waiting-badge">
+                        Waiting
+                    </span>
+
+
+                    <div class="patient-actions">
+
+                        <button
+                            class="queue-action call"
+                            data-action="call"
+                            title="Call Patient"
+                        >
+
+                            <i class="fa-solid fa-bullhorn"></i>
+
+                        </button>
+
+
+                        <button
+                            class="queue-action vitals"
+                            data-action="vitals"
+                            title="Take Vitals"
+                        >
+
+                            <i class="fa-solid fa-heart-pulse"></i>
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PATIENT 4 -->
+
+                <div
+                    class="queue-patient"
+                    data-status="called"
+                >
+
+
+                    <div class="queue-number">
+                        04
+                    </div>
+
+
+                    <div class="patient-avatar">
+                        RM
+                    </div>
+
+
+                    <div class="patient-details">
+
+                        <h3>
+                            Rami Haddad
+                        </h3>
+
+                        <p>
+                            #PT-1101 · 52 years
+                        </p>
+
+                    </div>
+
+
+                    <div class="patient-doctor">
+
+                        <span>
+                            Doctor
+                        </span>
+
+                        <strong>
+                            Dr. Michael Reed
+                        </strong>
+
+                    </div>
+
+
+                    <div class="waiting-time">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        <span>
+                            5 min
+                        </span>
+
+                    </div>
+
+
+                    <span class="patient-status called-badge">
+                        Called
+                    </span>
+
+
+                    <div class="patient-actions">
+
+                        <button
+                            class="queue-action call disabled"
+                            disabled
+                        >
+
+                            <i class="fa-solid fa-bullhorn"></i>
+
+                        </button>
+
+
+                        <button
+                            class="queue-action vitals"
+                            data-action="vitals"
+                            title="Take Vitals"
+                        >
+
+                            <i class="fa-solid fa-heart-pulse"></i>
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PATIENT 5 -->
+
+                <div
+                    class="queue-patient"
+                    data-status="waiting"
+                >
+
+
+                    <div class="queue-number">
+                        05
+                    </div>
+
+
+                    <div class="patient-avatar">
+                        SN
+                    </div>
+
+
+                    <div class="patient-details">
+
+                        <h3>
+                            Sara Nehme
+                        </h3>
+
+                        <p>
+                            #PT-1110 · 29 years
+                        </p>
+
+                    </div>
+
+
+                    <div class="patient-doctor">
+
+                        <span>
+                            Doctor
+                        </span>
+
+                        <strong>
+                            Dr. Sarah Mitchell
+                        </strong>
+
+                    </div>
+
+
+                    <div class="waiting-time">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        <span>
+                            3 min
+                        </span>
+
+                    </div>
+
+
+                    <span class="patient-status waiting-badge">
+                        Waiting
+                    </span>
+
+
+                    <div class="patient-actions">
+
+                        <button
+                            class="queue-action call"
+                            data-action="call"
+                            title="Call Patient"
+                        >
+
+                            <i class="fa-solid fa-bullhorn"></i>
+
+                        </button>
+
+
+                        <button
+                            class="queue-action vitals"
+                            data-action="vitals"
+                            title="Take Vitals"
+                        >
+
+                            <i class="fa-solid fa-heart-pulse"></i>
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =====================================================
+                        JAVASCRIPT
+===================================================== -->
+
+<script
+    src="../../assets/js/global.js"
+></script>
+
+
+<script
+    src="../../assets/js/nurse.js"
+></script>
+
+
+</body>
+
+</html>

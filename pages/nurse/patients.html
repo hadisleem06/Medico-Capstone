@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Patients | Medico</title>
+
+<link rel="stylesheet" href="../../assets/css/global.css">
+
+<link rel="stylesheet" href="../../assets/css/nurse.css">
+
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="aurora">
+
+
+<div class="aurora-1"></div>
+
+<div class="aurora-2"></div>
+
+<div class="aurora-3"></div>
+
+
+</div>
+
+<div class="dashboard" id="dashboard">
+
+
+<aside class="sidebar">
+
+
+    <button class="sidebar-toggle" type="button">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+
+    <button class="theme-toggle" type="button">
+
+        <i class="fa-solid fa-moon"></i>
+
+    </button>
+
+
+    <div class="logo">
+
+        🩺 Medico
+
+    </div>
+
+
+    <ul>
+
+
+        <li
+            data-nurse-action="dashboard"
+            data-tooltip="Dashboard"
+        >
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </li>
+
+
+        <li
+            data-nurse-action="waiting-room"
+            data-tooltip="Waiting Room"
+        >
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Waiting Room
+            </span>
+
+        </li>
+
+
+        <li
+            data-nurse-action="register-patient"
+            data-tooltip="Register Patient"
+        >
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            <span>
+                Register Patient
+            </span>
+
+        </li>
+
+
+        <li
+            data-nurse-action="vitals"
+            data-tooltip="Vitals"
+        >
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <span>
+                Vitals
+            </span>
+
+        </li>
+
+
+        <li
+            data-nurse-action="patients"
+            data-tooltip="Patients"
+            class="active"
+        >
+
+            <i class="fa-solid fa-hospital-user"></i>
+
+            <span>
+                Patients
+            </span>
+
+        </li>
+
+
+    </ul>
+
+
+    <button
+        class="logout"
+        type="button"
+        data-tooltip="Logout"
+    >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        <span>
+            Logout
+        </span>
+
+    </button>
+
+
+</aside>
+
+
+<main class="main-content">
+
+
+    <nav class="topbar">
+
+
+        <div class="page-title">
+
+            <h2>
+            </h2>
+
+        </div>
+
+
+        <div class="top-actions">
+
+
+            <div class="profile-container">
+
+
+                <div class="profile">
+
+                    <img
+                        src="../../assets/images/avatar.png"
+                        alt="Profile"
+                    >
+
+                    <span>
+                        Ali
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+
+                <div class="profile-menu">
+
+
+                    <div class="profile-header">
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Profile"
+                        >
+
+                        <div>
+
+                            <h4>
+                                Ali
+                            </h4>
+
+                            <p>
+                                Nurse Account
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <hr>
+
+
+                    <div class="menu-item">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        My Profile
+
+                    </div>
+
+
+                    <div class="menu-item">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        Settings
+
+                    </div>
+
+
+                    <div class="menu-item logout-item">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </nav>
+
+
+    <section class="page-header">
+
+
+        <div>
+
+            <span class="section-label">
+                PATIENT MANAGEMENT
+            </span>
+
+            <h1>
+                Patients
+            </h1>
+
+            <p>
+                Search and manage registered patients.
+            </p>
+
+        </div>
+
+
+        <div class="patients-count">
+
+            <i class="fa-solid fa-hospital-user"></i>
+
+            <span>
+                5 Patients
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+    <section class="patients-toolbar premium-glass">
+
+
+        <div class="patients-search">
+
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+
+            <input
+                type="text"
+                id="patientsSearch"
+                placeholder="Search by name or patient ID..."
+                autocomplete="off"
+            >
+
+
+        </div>
+
+
+        <div
+            class="custom-filter patients-filter"
+            id="patientsFilter"
+        >
+
+
+            <button
+                type="button"
+                class="filter-trigger"
+                id="patientsFilterTrigger"
+            >
+
+                <span>
+                    All Patients
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+
+            <div class="filter-menu">
+
+
+                <button
+                    type="button"
+                    class="filter-option active"
+                    data-value="all"
+                >
+                    All Patients
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-option"
+                    data-value="male"
+                >
+                    Male
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-option"
+                    data-value="female"
+                >
+                    Female
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            type="button"
+            class="refresh-patients"
+            id="refreshPatients"
+            title="Refresh patients"
+        >
+
+            <i class="fa-solid fa-rotate"></i>
+
+        </button>
+
+
+    </section>
+
+
+    <section class="patients-card premium-glass">
+
+
+        <div class="patients-card-header">
+
+
+            <div>
+
+                <span class="section-label">
+                    REGISTERED PATIENTS
+                </span>
+
+                <h2>
+                    Patient List
+                </h2>
+
+            </div>
+
+
+            <div class="patients-card-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="patients-list" id="patientsList">
+
+
+            <article
+                class="patient-row"
+                data-gender="male"
+                data-patient-id="PT-1024"
+            >
+
+
+                <div class="patient-row-avatar">
+                    AM
+                </div>
+
+
+                <div class="patient-row-info">
+
+
+                    <h3>
+                        Ahmad Mansour
+                    </h3>
+
+
+                    <p>
+                        #PT-1024
+                    </p>
+
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Age
+                    </span>
+
+
+                    <strong>
+                        34 years
+                    </strong>
+
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Gender
+                    </span>
+
+
+                    <strong>
+                        Male
+                    </strong>
+
+
+                </div>
+
+
+                <div class="patient-row-status">
+
+                    <span class="patient-status active-status">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="patient-row-actions">
+
+
+                    <button
+                        type="button"
+                        class="patient-action view-patient"
+                        data-patient="PT-1024"
+                        title="View patient"
+                    >
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="patient-action take-vitals"
+                        data-patient="PT-1024"
+                        title="Take vitals"
+                    >
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </article>
+
+
+            <article
+                class="patient-row"
+                data-gender="female"
+                data-patient-id="PT-1087"
+            >
+
+
+                <div class="patient-row-avatar">
+                    LN
+                </div>
+
+
+                <div class="patient-row-info">
+
+
+                    <h3>
+                        Lina Nassar
+                    </h3>
+
+
+                    <p>
+                        #PT-1087
+                    </p>
+
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Age
+                    </span>
+
+
+                    <strong>
+                        27 years
+                    </strong>
+
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Gender
+                    </span>
+
+
+                    <strong>
+                        Female
+                    </strong>
+
+
+                </div>
+
+
+                <div class="patient-row-status">
+
+                    <span class="patient-status active-status">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="patient-row-actions">
+
+
+                    <button
+                        type="button"
+                        class="patient-action view-patient"
+                        data-patient="PT-1087"
+                        title="View patient"
+                    >
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="patient-action take-vitals"
+                        data-patient="PT-1087"
+                        title="Take vitals"
+                    >
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </article>
+
+
+            <article
+                class="patient-row"
+                data-gender="male"
+                data-patient-id="PT-1092"
+            >
+
+
+                <div class="patient-row-avatar">
+                    JK
+                </div>
+
+
+                <div class="patient-row-info">
+
+
+                    <h3>
+                        Joseph Khoury
+                    </h3>
+
+
+                    <p>
+                        #PT-1092
+                    </p>
+
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Age
+                    </span>
+
+
+                    <strong>
+                        41 years
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Gender
+                    </span>
+
+
+                    <strong>
+                        Male
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-row-status">
+
+                    <span class="patient-status active-status">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="patient-row-actions">
+
+
+                    <button
+                        type="button"
+                        class="patient-action view-patient"
+                        data-patient="PT-1092"
+                        title="View patient"
+                    >
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="patient-action take-vitals"
+                        data-patient="PT-1092"
+                        title="Take vitals"
+                    >
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </article>
+
+
+            <article
+                class="patient-row"
+                data-gender="male"
+                data-patient-id="PT-1101"
+            >
+
+
+                <div class="patient-row-avatar">
+                    RH
+                </div>
+
+
+                <div class="patient-row-info">
+
+
+                    <h3>
+                        Rami Haddad
+                    </h3>
+
+
+                    <p>
+                        #PT-1101
+                    </p>
+
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Age
+                    </span>
+
+
+                    <strong>
+                        52 years
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Gender
+                    </span>
+
+
+                    <strong>
+                        Male
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-row-status">
+
+                    <span class="patient-status active-status">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="patient-row-actions">
+
+
+                    <button
+                        type="button"
+                        class="patient-action view-patient"
+                        data-patient="PT-1101"
+                        title="View patient"
+                    >
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="patient-action take-vitals"
+                        data-patient="PT-1101"
+                        title="Take vitals"
+                    >
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </article>
+
+
+            <article
+                class="patient-row"
+                data-gender="female"
+                data-patient-id="PT-1110"
+            >
+
+
+                <div class="patient-row-avatar">
+                    SN
+                </div>
+
+
+                <div class="patient-row-info">
+
+
+                    <h3>
+                        Sara Nehme
+                    </h3>
+
+
+                    <p>
+                        #PT-1110
+                    </p>
+
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Age
+                    </span>
+
+
+                    <strong>
+                        29 years
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-row-detail">
+
+
+                    <span>
+                        Gender
+                    </span>
+
+
+                    <strong>
+                        Female
+                    </strong>
+
+                </div>
+
+
+                <div class="patient-row-status">
+
+                    <span class="patient-status active-status">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="patient-row-actions">
+
+
+                    <button
+                        type="button"
+                        class="patient-action view-patient"
+                        data-patient="PT-1110"
+                        title="View patient"
+                    >
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="patient-action take-vitals"
+                        data-patient="PT-1110"
+                        title="Take vitals"
+                    >
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </article>
+
+
+            <div
+                class="patients-empty"
+                id="patientsEmpty"
+                style="display:none;"
+            >
+
+                <i class="fa-solid fa-user-slash"></i>
+
+                <h3>
+                    No patients found
+                </h3>
+
+                <p>
+                    Try changing your search or filter.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+</div>
+
+<script src="../../assets/js/global.js"></script>
+
+<script src="../../assets/js/nurse.js"></script>
+
+</body>
+
+</html>

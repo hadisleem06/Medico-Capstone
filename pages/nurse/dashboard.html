@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nurse Dashboard | Medico</title>
+
+
+    <!-- ===============================
+         GLOBAL CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/global.css"
+    >
+
+
+    <!-- ===============================
+         NURSE CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/nurse.css"
+    >
+
+
+    <!-- ===============================
+         RESPONSIVE CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/responsive.css"
+    >
+
+
+    <!-- ===============================
+         FONT AWESOME
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     AURORA BACKGROUND
+====================================================== -->
+
+<div class="aurora">
+
+    <div class="aurora-1"></div>
+
+    <div class="aurora-2"></div>
+
+    <div class="aurora-3"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+     DASHBOARD
+====================================================== -->
+
+<div
+    class="dashboard"
+    id="dashboard"
+>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Sidebar Collapse -->
+
+        <button
+            class="sidebar-toggle"
+            aria-label="Toggle sidebar"
+        >
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+
+        <!-- Theme -->
+
+        <button
+            class="theme-toggle"
+            aria-label="Toggle theme"
+        >
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <ul>
+
+
+            <li
+                class="active"
+                data-nurse-action="dashboard"
+                data-tooltip="Dashboard"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="waiting-room"
+                data-tooltip="Waiting Room"
+            >
+
+                <i class="fa-solid fa-clock"></i>
+
+                <span>
+                    Waiting Room
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="register-patient"
+                data-tooltip="Register Patient"
+            >
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                <span>
+                    Register Patient
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="vitals"
+                data-tooltip="Vitals"
+            >
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <span>
+                    Vitals
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="patients"
+                data-tooltip="Patients"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Patients
+                </span>
+
+            </li>
+
+
+        </ul>
+
+
+
+        <!-- Logout -->
+
+        <button
+            class="logout"
+            data-tooltip="Logout"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <nav class="topbar">
+
+
+            <div class="page-title">
+
+                <h2>
+                    Dashboard
+                </h2>
+
+            </div>
+
+
+
+            <div class="top-actions">
+
+
+                <!-- Profile -->
+
+                <div class="profile-container">
+
+
+                    <div class="profile">
+
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Nurse profile"
+                        >
+
+
+                        <span>
+                            Sarah
+                        </span>
+
+
+                        <i
+                            class="fa-solid fa-chevron-down"
+                        ></i>
+
+
+                    </div>
+
+
+
+                    <!-- Profile Menu -->
+
+                    <div class="profile-menu">
+
+
+                        <div class="profile-header">
+
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Profile"
+                            >
+
+
+                            <div>
+
+                                <h4>
+                                    Sarah
+                                </h4>
+
+                                <p>
+                                    Nurse Account
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <hr>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            My Profile
+
+                        </div>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-heart-pulse"></i>
+
+                            My Activity
+
+                        </div>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </div>
+
+
+
+                        <div class="menu-item logout-item">
+
+                            <i
+                                class="fa-solid fa-right-from-bracket"
+                            ></i>
+
+                            Logout
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             WELCOME CARD
+        ================================================== -->
+
+        <section class="welcome-card premium-glass">
+
+
+            <span>
+                NURSE WORKSPACE
+            </span>
+
+
+            <h1>
+                Good Morning, Hadi 👋
+            </h1>
+
+
+            <p>
+                Manage patients, monitor vital signs,
+                organize the waiting room and keep
+                today's clinical workflow running smoothly.
+            </p>
+
+
+            <button
+                class="primary-btn"
+                data-nurse-action="waiting-room"
+            >
+
+                Open Waiting Room
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             NURSE STATISTICS
+        ================================================== -->
+
+        <section class="stats-grid nurse-stats">
+
+
+            <!-- Patients Today -->
+
+            <div class="stat-card premium-glass">
+
+
+                <div class="stat-icon nurse-patients">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2
+                        class="nurse-counter"
+                        data-target="24"
+                    >
+                        0
+                    </h2>
+
+                    <h4>
+                        Patients Today
+                    </h4>
+
+                    <p>
+                        Registered Patients
+                    </p>
+
+                </div>
+
+
+                <span class="badge">
+                    Today
+                </span>
+
+
+            </div>
+
+
+
+            <!-- Waiting -->
+
+            <div class="stat-card premium-glass">
+
+
+                <div class="stat-icon nurse-waiting">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2
+                        class="nurse-counter"
+                        data-target="7"
+                    >
+                        0
+                    </h2>
+
+                    <h4>
+                        Waiting
+                    </h4>
+
+                    <p>
+                        Patients in Queue
+                    </p>
+
+                </div>
+
+
+                <span class="badge">
+                    Now
+                </span>
+
+
+            </div>
+
+
+
+            <!-- Vitals -->
+
+            <div class="stat-card premium-glass">
+
+
+                <div class="stat-icon nurse-vitals">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2
+                        class="nurse-counter"
+                        data-target="18"
+                    >
+                        0
+                    </h2>
+
+                    <h4>
+                        Vitals Recorded
+                    </h4>
+
+                    <p>
+                        Today's Measurements
+                    </p>
+
+                </div>
+
+
+                <span class="badge positive">
+                    +6
+                </span>
+
+
+            </div>
+
+
+
+            <!-- Completed -->
+
+            <div class="stat-card premium-glass">
+
+
+                <div class="stat-icon nurse-completed">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2
+                        class="nurse-counter"
+                        data-target="15"
+                    >
+                        0
+                    </h2>
+
+                    <h4>
+                        Completed
+                    </h4>
+
+                    <p>
+                        Patients Processed
+                    </p>
+
+                </div>
+
+
+                <span class="badge positive">
+                    Today
+                </span>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             WORKSPACE GRID
+        ================================================== -->
+
+        <section class="dashboard-grid nurse-dashboard-grid">
+
+
+            <!-- =================================================
+                 WAITING ROOM
+            ================================================== -->
+
+            <div class="appointment-card premium-glass">
+
+
+                <div class="widget-header">
+
+
+                    <div>
+
+                        <span>
+                            WAITING ROOM
+                        </span>
+
+                        <h2>
+                            Patients Waiting
+                        </h2>
+
+                    </div>
+
+
+                    <div class="doctor-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="waiting-summary">
+
+
+                    <div class="queue-number">
+
+                        <strong>
+                            7
+                        </strong>
+
+                        <span>
+                            patients waiting
+                        </span>
+
+                    </div>
+
+
+                    <div class="queue-status">
+
+                        <i
+                            class="fa-solid fa-circle"
+                        ></i>
+
+                        Active Queue
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="mini-patients">
+
+
+                    <div class="mini-patient">
+
+                        <div class="patient-avatar">
+                            JD
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                John Doe
+                            </strong>
+
+                            <p>
+                                Waiting · 08 min
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="mini-patient">
+
+                        <div class="patient-avatar">
+                            EM
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Emma Miller
+                            </strong>
+
+                            <p>
+                                Waiting · 14 min
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="mini-patient">
+
+                        <div class="patient-avatar">
+                            MK
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Michael King
+                            </strong>
+
+                            <p>
+                                Waiting · 21 min
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    class="primary-btn"
+                    data-nurse-action="waiting-room"
+                >
+
+                    View Waiting Room
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 QUICK ACTIONS
+            ================================================== -->
+
+            <div class="ai-card nurse-quick-actions">
+
+
+                <div class="ai-top">
+
+
+                    <div class="ai-icon">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                    </div>
+
+
+                    <span>
+                        QUICK ACTIONS
+                    </span>
+
+
+                </div>
+
+
+
+                <h2>
+                    What do you need?
+                </h2>
+
+
+                <p>
+                    Quickly access the most common
+                    nursing tasks.
+                </p>
+
+
+
+                <div class="quick-action-list">
+
+
+                    <button
+                        class="nurse-action"
+                        data-nurse-action="register-patient"
+                    >
+
+                        <i
+                            class="fa-solid fa-user-plus"
+                        ></i>
+
+                        Register Patient
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                        ></i>
+
+                    </button>
+
+
+
+                    <button
+                        class="nurse-action"
+                        data-nurse-action="vitals"
+                    >
+
+                        <i
+                            class="fa-solid fa-heart-pulse"
+                        ></i>
+
+                        Record Vitals
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                        ></i>
+
+                    </button>
+
+
+
+                    <button
+                        class="nurse-action"
+                        data-nurse-action="patients"
+                    >
+
+                        <i
+                            class="fa-solid fa-users"
+                        ></i>
+
+                        View Patients
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                        ></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             TODAY'S PATIENTS
+        ================================================== -->
+
+        <section class="health-overview premium-glass nurse-patients-section">
+
+
+            <div class="health-header">
+
+
+                <div>
+
+                    <span>
+                        PATIENT MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Today's Patients
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    data-nurse-action="patients"
+                >
+
+                    View All
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <div class="nurse-patient-list">
+
+
+                <!-- Patient 1 -->
+
+                <div class="nurse-patient-row">
+
+
+                    <div class="patient-info">
+
+
+                        <div class="patient-avatar large">
+                            JD
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                John Doe
+                            </h3>
+
+                            <p>
+                                Patient #MC-1024
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="patient-status waiting">
+
+                        <i
+                            class="fa-solid fa-clock"
+                        ></i>
+
+                        Waiting
+
+                    </div>
+
+
+
+                    <div class="patient-time">
+
+                        10:05 AM
+
+                    </div>
+
+
+
+                    <button
+                        class="nurse-view-link"
+                        data-nurse-action="vitals"
+                    >
+
+                        Vitals
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                        ></i>
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- Patient 2 -->
+
+                <div class="nurse-patient-row">
+
+
+                    <div class="patient-info">
+
+
+                        <div class="patient-avatar large">
+                            EM
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Emma Miller
+                            </h3>
+
+                            <p>
+                                Patient #MC-1025
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="patient-status completed">
+
+                        <i
+                            class="fa-solid fa-circle-check"
+                        ></i>
+
+                        Vitals Recorded
+
+                    </div>
+
+
+
+                    <div class="patient-time">
+
+                        09:42 AM
+
+                    </div>
+
+
+
+                    <button
+                        class="nurse-view-link"
+                        data-nurse-action="vitals"
+                    >
+
+                        View
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                        ></i>
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- Patient 3 -->
+
+                <div class="nurse-patient-row">
+
+
+                    <div class="patient-info">
+
+
+                        <div class="patient-avatar large">
+                            MK
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Michael King
+                            </h3>
+
+                            <p>
+                                Patient #MC-1026
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="patient-status processing">
+
+                        <i
+                            class="fa-solid fa-spinner"
+                        ></i>
+
+                        With Doctor
+
+                    </div>
+
+
+
+                    <div class="patient-time">
+
+                        09:25 AM
+
+                    </div>
+
+
+
+                    <button
+                        class="nurse-view-link"
+                        data-nurse-action="patients"
+                    >
+
+                        View
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                        ></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+    src="../../assets/js/global.js"
+></script>
+
+
+<script
+    src="../../assets/js/nurse.js"
+></script>
+
+
+</body>
+
+</html>

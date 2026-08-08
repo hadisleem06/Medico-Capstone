@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<title>Vitals | Medico</title>
+
+<link
+    rel="stylesheet"
+    href="../../assets/css/global.css"
+>
+
+<link
+    rel="stylesheet"
+    href="../../assets/css/nurse.css"
+>
+
+<link
+    rel="stylesheet"
+    href="../../assets/css/responsive.css"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+
+</head>
+
+<body>
+
+<div class="aurora">
+
+
+<div class="aurora-1"></div>
+<div class="aurora-2"></div>
+<div class="aurora-3"></div>
+
+
+</div>
+
+<div
+    class="dashboard"
+    id="dashboard"
+>
+
+<aside class="sidebar">
+
+
+<button
+    class="sidebar-toggle"
+    type="button"
+>
+
+    <i class="fa-solid fa-chevron-left"></i>
+
+</button>
+
+
+<button
+    class="theme-toggle"
+    type="button"
+>
+
+    <i class="fa-solid fa-moon"></i>
+
+</button>
+
+
+<div class="logo">
+
+    🩺 Medico
+
+</div>
+
+
+<ul>
+
+
+    <li
+        data-nurse-action="dashboard"
+        data-tooltip="Dashboard"
+    >
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>
+            Dashboard
+        </span>
+
+    </li>
+
+
+    <li
+        data-nurse-action="waiting-room"
+        data-tooltip="Waiting Room"
+    >
+
+        <i class="fa-solid fa-users"></i>
+
+        <span>
+            Waiting Room
+        </span>
+
+    </li>
+
+
+    <li
+        data-nurse-action="register-patient"
+        data-tooltip="Register Patient"
+    >
+
+        <i class="fa-solid fa-user-plus"></i>
+
+        <span>
+            Register Patient
+        </span>
+
+    </li>
+
+
+    <li
+        data-nurse-action="vitals"
+        data-tooltip="Vitals"
+        class="active"
+    >
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        <span>
+            Vitals
+        </span>
+
+    </li>
+
+
+    <li
+        data-nurse-action="patients"
+        data-tooltip="Patients"
+    >
+
+        <i class="fa-solid fa-hospital-user"></i>
+
+        <span>
+            Patients
+        </span>
+
+    </li>
+
+
+</ul>
+
+
+<button
+    class="logout"
+    type="button"
+    data-tooltip="Logout"
+>
+
+    <i class="fa-solid fa-right-from-bracket"></i>
+
+    <span>
+        Logout
+    </span>
+
+</button>
+</aside>
+
+<main class="main-content">
+
+
+<nav class="topbar">
+
+
+    <div class="page-title">
+
+        <h2></h2>
+
+    </div>
+
+
+    <div class="top-actions">
+
+
+        <div class="profile-container">
+
+
+            <div class="profile">
+
+                <img
+                    src="../../assets/images/avatar.png"
+                    alt="Profile"
+                >
+
+                <span>
+                    Ali
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+
+            <div class="profile-menu">
+
+
+                <div class="profile-header">
+
+                    <img
+                        src="../../assets/images/avatar.png"
+                        alt="Profile"
+                    >
+
+                    <div>
+
+                        <h4>
+                            Ali
+                        </h4>
+
+                        <p>
+                            Nurse Account
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <hr>
+
+
+                <div class="menu-item">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </div>
+
+
+                <div class="menu-item logout-item">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</nav>
+
+
+<section class="page-header">
+
+
+    <div>
+
+        <span class="section-label">
+            PATIENT MONITORING
+        </span>
+
+        <h1>
+            Record Vitals
+        </h1>
+
+        <p>
+            Record and monitor the patient's
+            vital signs before consultation.
+        </p>
+
+    </div>
+
+
+    <div class="vitals-status">
+
+        <span class="live-dot"></span>
+
+        Ready to Record
+
+    </div>
+
+
+</section>
+
+
+<section class="vitals-patient-card premium-glass">
+
+
+    <div class="vitals-card-header">
+
+
+        <div>
+
+            <span class="section-label">
+                PATIENT
+            </span>
+
+            <h2>
+                Select Patient
+            </h2>
+
+        </div>
+
+
+        <div class="patient-selection-icon">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="patient-selector">
+
+
+        <label>
+            Patient
+        </label>
+
+
+        <!-- CUSTOM PATIENT DROPDOWN -->
+
+        <div
+            class="custom-filter patient-custom-filter"
+            id="vitalsPatientDropdown"
+        >
+
+
+            <button
+                type="button"
+                class="filter-trigger"
+                id="vitalsPatientTrigger"
+            >
+
+                <span>
+                    Select a patient...
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+
+            <div class="filter-menu">
+
+
+                <button
+                    type="button"
+                    class="filter-option active"
+                    data-value=""
+                >
+                    Select a patient...
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-option"
+                    data-value="PT-1024"
+                    data-name="Ahmad Mansour"
+                    data-initials="AM"
+                >
+                    Ahmad Mansour — #PT-1024
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-option"
+                    data-value="PT-1087"
+                    data-name="Lina Nassar"
+                    data-initials="LN"
+                >
+                    Lina Nassar — #PT-1087
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-option"
+                    data-value="PT-1092"
+                    data-name="Joseph Khoury"
+                    data-initials="JK"
+                >
+                    Joseph Khoury — #PT-1092
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-option"
+                    data-value="PT-1101"
+                    data-name="Rami Haddad"
+                    data-initials="RH"
+                >
+                    Rami Haddad — #PT-1101
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter-option"
+                    data-value="PT-1110"
+                    data-name="Sara Nehme"
+                    data-initials="SN"
+                >
+                    Sara Nehme — #PT-1110
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Hidden value used by JS -->
+
+        <input
+            type="hidden"
+            id="vitalsPatient"
+            name="patient"
+            value=""
+        >
+
+
+    </div>
+
+
+    <div
+        class="selected-patient"
+        id="selectedPatient"
+    >
+
+
+        <div class="patient-avatar">
+            --
+        </div>
+
+
+        <div class="patient-details">
+
+            <h3>
+                No patient selected
+            </h3>
+
+            <p>
+                Select a patient to begin recording vitals.
+            </p>
+
+        </div>
+
+
+        <div class="patient-meta">
+
+            <span>
+                Patient ID
+            </span>
+
+            <strong>
+                --
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<form
+    class="vitals-form"
+    id="vitalsForm"
+>
+
+
+    <section class="vitals-main-card premium-glass">
+
+
+        <div class="vitals-card-header">
+
+
+            <div>
+
+                <span class="section-label">
+                    MEASUREMENTS
+                </span>
+
+                <h2>
+                    Vital Signs
+                </h2>
+
+            </div>
+
+
+            <div class="vitals-main-icon">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="vitals-grid">
+
+
+            <div class="vital-input-card">
+
+
+                <div class="vital-input-header">
+
+                    <div class="vital-icon blood-pressure">
+
+                        <i class="fa-solid fa-droplet"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Blood Pressure
+                        </h3>
+
+                        <span>
+                            mmHg
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="blood-pressure-inputs">
+
+
+                    <div>
+
+                        <label for="systolic">
+                            Systolic
+                        </label>
+
+                        <input
+                            type="number"
+                            id="systolic"
+                            name="systolic"
+                            placeholder="120"
+                            min="50"
+                            max="250"
+                        >
+
+                    </div>
+
+
+                    <span class="bp-separator">
+                        /
+                    </span>
+
+
+                    <div>
+
+                        <label for="diastolic">
+                            Diastolic
+                        </label>
+
+                        <input
+                            type="number"
+                            id="diastolic"
+                            name="diastolic"
+                            placeholder="80"
+                            min="30"
+                            max="150"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="vital-input-card">
+
+
+                <div class="vital-input-header">
+
+                    <div class="vital-icon heart-rate">
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Heart Rate
+                        </h3>
+
+                        <span>
+                            BPM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="single-vital-input">
+
+                    <input
+                        type="number"
+                        id="heartRate"
+                        name="heartRate"
+                        placeholder="72"
+                        min="20"
+                        max="250"
+                    >
+
+                    <span>
+                        bpm
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="vital-input-card">
+
+
+                <div class="vital-input-header">
+
+                    <div class="vital-icon temperature">
+
+                        <i class="fa-solid fa-temperature-half"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Temperature
+                        </h3>
+
+                        <span>
+                            Celsius
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="single-vital-input">
+
+                    <input
+                        type="number"
+                        id="temperature"
+                        name="temperature"
+                        placeholder="36.7"
+                        step="0.1"
+                        min="30"
+                        max="45"
+                    >
+
+                    <span>
+                        °C
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="vital-input-card">
+
+
+                <div class="vital-input-header">
+
+                    <div class="vital-icon oxygen">
+
+                        <i class="fa-solid fa-lungs"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Oxygen Saturation
+                        </h3>
+
+                        <span>
+                            SpO₂
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="single-vital-input">
+
+                    <input
+                        type="number"
+                        id="oxygen"
+                        name="oxygen"
+                        placeholder="98"
+                        min="50"
+                        max="100"
+                    >
+
+                    <span>
+                        %
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="vital-input-card">
+
+
+                <div class="vital-input-header">
+
+                    <div class="vital-icon respiratory">
+
+                        <i class="fa-solid fa-wind"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Respiratory Rate
+                        </h3>
+
+                        <span>
+                            breaths/min
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="single-vital-input">
+
+                    <input
+                        type="number"
+                        id="respiratoryRate"
+                        name="respiratoryRate"
+                        placeholder="16"
+                        min="5"
+                        max="80"
+                    >
+
+                    <span>
+                        /min
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="vital-input-card">
+
+
+                <div class="vital-input-header">
+
+                    <div class="vital-icon weight">
+
+                        <i class="fa-solid fa-weight-scale"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Weight
+                        </h3>
+
+                        <span>
+                            Kilograms
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="single-vital-input">
+
+                    <input
+                        type="number"
+                        id="weight"
+                        name="weight"
+                        placeholder="70"
+                        step="0.1"
+                        min="1"
+                        max="400"
+                    >
+
+                    <span>
+                        kg
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="vital-input-card">
+
+
+                <div class="vital-input-header">
+
+                    <div class="vital-icon height">
+
+                        <i class="fa-solid fa-ruler-vertical"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Height
+                        </h3>
+
+                        <span>
+                            Centimeters
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="single-vital-input">
+
+                    <input
+                        type="number"
+                        id="height"
+                        name="height"
+                        placeholder="175"
+                        step="0.1"
+                        min="30"
+                        max="250"
+                    >
+
+                    <span>
+                        cm
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="vital-input-card bmi-card">
+
+
+                <div class="vital-input-header">
+
+                    <div class="vital-icon bmi">
+
+                        <i class="fa-solid fa-calculator"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            BMI
+                        </h3>
+
+                        <span>
+                            Calculated
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bmi-result">
+
+
+                    <strong id="bmiValue">
+                        --
+                    </strong>
+
+
+                    <span id="bmiStatus">
+                        Waiting for height and weight
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <section class="vitals-notes-card premium-glass">
+
+
+        <div class="vitals-card-header">
+
+
+            <div>
+
+                <span class="section-label">
+                    CLINICAL NOTES
+                </span>
+
+                <h2>
+                    Additional Notes
+                </h2>
+
+            </div>
+
+
+            <div class="notes-icon">
+
+                <i class="fa-solid fa-notes-medical"></i>
+
+            </div>
+
+
+        </div>
+
+
+        <textarea
+            id="vitalsNotes"
+            name="vitalsNotes"
+            rows="5"
+            placeholder="Add any observations or relevant notes..."
+        ></textarea>
+
+
+    </section>
+
+
+    <div class="vitals-actions">
+
+
+        <button
+            type="reset"
+            class="secondary-btn"
+            id="clearVitals"
+        >
+
+            <i class="fa-solid fa-rotate-left"></i>
+
+            Clear
+
+        </button>
+
+
+        <button
+            type="submit"
+            class="primary-btn"
+        >
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Vitals
+
+        </button>
+
+
+    </div>
+
+
+</form>
+
+
+</main>
+
+</div>
+
+<script
+    src="../../assets/js/global.js"
+></script>
+
+<script
+    src="../../assets/js/nurse.js"
+></script>
+
+</body>
+
+</html>

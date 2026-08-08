@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Register Patient | Medico</title>
+
+
+    <!-- GLOBAL CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/global.css"
+    >
+
+
+    <!-- NURSE CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/nurse.css"
+    >
+
+
+    <!-- RESPONSIVE -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/responsive.css"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+                    AURORA BACKGROUND
+===================================================== -->
+
+<div class="aurora">
+
+    <div class="aurora-1"></div>
+
+    <div class="aurora-2"></div>
+
+    <div class="aurora-3"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+                    DASHBOARD
+===================================================== -->
+
+<div
+    class="dashboard"
+    id="dashboard"
+>
+
+
+    <!-- =================================================
+                        SIDEBAR
+    ================================================= -->
+
+    <aside class="sidebar">
+
+
+        <button
+            class="sidebar-toggle"
+            type="button"
+        >
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+
+        <button
+            class="theme-toggle"
+            type="button"
+        >
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <ul>
+
+
+            <li
+                data-nurse-action="dashboard"
+                data-tooltip="Dashboard"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="waiting-room"
+                data-tooltip="Waiting Room"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Waiting Room
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="register-patient"
+                data-tooltip="Register Patient"
+                class="active"
+            >
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                <span>
+                    Register Patient
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="vitals"
+                data-tooltip="Vitals"
+            >
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <span>
+                    Vitals
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-nurse-action="patients"
+                data-tooltip="Patients"
+            >
+
+                <i class="fa-solid fa-hospital-user"></i>
+
+                <span>
+                    Patients
+                </span>
+
+            </li>
+
+
+        </ul>
+
+
+
+        <!-- LOGOUT -->
+
+        <button
+            class="logout"
+            type="button"
+            data-tooltip="Logout"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+                        MAIN CONTENT
+    ================================================= -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+                            TOPBAR
+        ================================================= -->
+
+        <nav class="topbar">
+
+
+            <div class="page-title">
+
+                <h2>
+                    
+                </h2>
+
+            </div>
+
+
+
+            <div class="top-actions">
+
+
+                <div class="profile-container">
+
+
+                    <div class="profile">
+
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Profile"
+                        >
+
+
+                        <span>
+                            Ali
+                        </span>
+
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+
+                    </div>
+
+
+
+                    <!-- PROFILE MENU -->
+
+                    <div class="profile-menu">
+
+
+                        <div class="profile-header">
+
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Profile"
+                            >
+
+
+                            <div>
+
+                                <h4>
+                                    Ali
+                                </h4>
+
+                                <p>
+                                    Nurse Account
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <hr>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            My Profile
+
+                        </div>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </div>
+
+
+
+                        <div class="menu-item logout-item">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+                        PAGE HEADER
+        ================================================= -->
+
+        <section class="page-header">
+
+
+            <div>
+
+                <span class="section-label">
+                    PATIENT MANAGEMENT
+                </span>
+
+
+                <h1>
+                    Register New Patient
+                </h1>
+
+
+                <p>
+                    Create a new patient record and
+                    add them to the clinic system.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+                    REGISTRATION FORM
+        ================================================= -->
+
+        <section class="patient-register-card premium-glass">
+
+
+            <!-- FORM HEADER -->
+
+            <div class="form-section-header">
+
+                <div class="form-section-icon">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span class="section-label">
+                        PATIENT INFORMATION
+                    </span>
+
+                    <h2>
+                        Personal Details
+                    </h2>
+
+                    <p>
+                        Enter the patient's information
+                        carefully before submitting.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form id="registerPatientForm">
+
+
+                <!-- =================================================
+                            PERSONAL INFORMATION
+                ================================================= -->
+
+                <div class="form-section">
+
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        <h3>
+                            Personal Information
+                        </h3>
+
+                    </div>
+
+
+
+                    <div class="form-grid">
+
+
+                        <!-- FIRST NAME -->
+
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    placeholder="Enter first name"
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+
+                        <!-- LAST NAME -->
+
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    placeholder="Enter last name"
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+
+                        <!-- DATE OF BIRTH -->
+
+                        <div class="form-group">
+
+                            <label for="dateOfBirth">
+                                Date of Birth
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-calendar"></i>
+
+                                <input
+                                    type="date"
+                                    id="dateOfBirth"
+                                    name="dateOfBirth"
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+
+                        <!-- GENDER -->
+
+                        <div class="form-group">
+
+                            <label for="gender">
+                                Gender
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-venus-mars"></i>
+
+                                <select
+                                    id="gender"
+                                    name="gender"
+                                    required
+                                >
+
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled
+                                    >
+                                        Select gender
+                                    </option>
+
+                                    <option value="male">
+                                        Male
+                                    </option>
+
+                                    <option value="female">
+                                        Female
+                                    </option>
+
+
+                                </select>
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                            CONTACT INFORMATION
+                ================================================= -->
+
+                <div class="form-section">
+
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-address-book"></i>
+
+                        <h3>
+                            Contact Information
+                        </h3>
+
+                    </div>
+
+
+
+                    <div class="form-grid">
+
+
+                        <!-- PHONE -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+961 XX XXX XXX"
+                                    required
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="patient@email.com"
+                                >
+
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="form-group full-width">
+
+                            <label for="address">
+                                Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <input
+                                    type="text"
+                                    id="address"
+                                    name="address"
+                                    placeholder="Enter patient's address"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                            EMERGENCY CONTACT
+                ================================================= -->
+
+                <div class="form-section">
+
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        <h3>
+                            Emergency Contact
+                        </h3>
+
+                    </div>
+
+
+
+                    <div class="form-grid">
+
+
+                        <!-- CONTACT NAME -->
+
+                        <div class="form-group">
+
+                            <label for="emergencyName">
+                                Contact Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-user-shield"></i>
+
+                                <input
+                                    type="text"
+                                    id="emergencyName"
+                                    name="emergencyName"
+                                    placeholder="Full name"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- CONTACT PHONE -->
+
+                        <div class="form-group">
+
+                            <label for="emergencyPhone">
+                                Contact Phone
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="emergencyPhone"
+                                    name="emergencyPhone"
+                                    placeholder="+961 XX XXX XXX"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- RELATIONSHIP -->
+
+                        <div class="form-group">
+
+                            <label for="relationship">
+                                Relationship
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-people-arrows"></i>
+
+                                <select
+                                    id="relationship"
+                                    name="relationship"
+                                >
+
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled
+                                    >
+                                        Select relationship
+                                    </option>
+
+                                    <option value="parent">
+                                        Parent
+                                    </option>
+
+                                    <option value="spouse">
+                                        Spouse
+                                    </option>
+
+                                    <option value="sibling">
+                                        Sibling
+                                    </option>
+
+                                    <option value="child">
+                                        Child
+                                    </option>
+
+                                    <option value="relative">
+                                        Relative
+                                    </option>
+
+                                    <option value="friend">
+                                        Friend
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                            MEDICAL INFORMATION
+                ================================================= -->
+
+                <div class="form-section">
+
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-notes-medical"></i>
+
+                        <h3>
+                            Medical Information
+                        </h3>
+
+                    </div>
+
+
+
+                    <div class="form-grid">
+
+
+                        <!-- BLOOD TYPE -->
+
+                        <div class="form-group">
+
+                            <label for="bloodType">
+                                Blood Type
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-droplet"></i>
+
+                                <select
+                                    id="bloodType"
+                                    name="bloodType"
+                                >
+
+                                    <option
+                                        value=""
+                                        selected
+                                    >
+                                        Select blood type
+                                    </option>
+
+                                    <option value="A+">
+                                        A+
+                                    </option>
+
+                                    <option value="A-">
+                                        A-
+                                    </option>
+
+                                    <option value="B+">
+                                        B+
+                                    </option>
+
+                                    <option value="B-">
+                                        B-
+                                    </option>
+
+                                    <option value="AB+">
+                                        AB+
+                                    </option>
+
+                                    <option value="AB-">
+                                        AB-
+                                    </option>
+
+                                    <option value="O+">
+                                        O+
+                                    </option>
+
+                                    <option value="O-">
+                                        O-
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ALLERGIES -->
+
+                        <div class="form-group">
+
+                            <label for="allergies">
+                                Known Allergies
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-hand-dots"></i>
+
+                                <input
+                                    type="text"
+                                    id="allergies"
+                                    name="allergies"
+                                    placeholder="e.g. Penicillin"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- MEDICAL HISTORY -->
+
+                        <div class="form-group full-width">
+
+                            <label for="medicalHistory">
+                                Medical History
+                            </label>
+
+                            <textarea
+                                id="medicalHistory"
+                                name="medicalHistory"
+                                rows="4"
+                                placeholder="Enter relevant medical history..."
+                            ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                            FORM ACTIONS
+                ================================================= -->
+
+                <div class="form-actions">
+
+
+                    <button
+                        type="reset"
+                        class="secondary-btn"
+                    >
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        Clear Form
+
+                    </button>
+
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Register Patient
+
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =====================================================
+                        JAVASCRIPT
+===================================================== -->
+
+<script
+    src="../../assets/js/global.js"
+></script>
+
+
+<script
+    src="../../assets/js/nurse.js"
+></script>
+
+
+</body>
+
+</html>
