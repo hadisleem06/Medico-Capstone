@@ -1962,6 +1962,25 @@
         LIGHT MODE
 ===================================================== */
 
+.light-mode .filter-trigger{
+
+    background:
+        rgba(15,23,42,.04);
+
+}
+
+
+.light-mode .filter-trigger:hover{
+
+    background:
+        rgba(23,175,162,.08);
+
+    border-color:
+        rgba(23,175,162,.35);
+
+}
+
+
 .light-mode .filter-menu{
 
     background:

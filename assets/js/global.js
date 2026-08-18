@@ -241,7 +241,7 @@ if(profile && profileMenu){
 
 const counters =
     document.querySelectorAll(
-        ".counter, .nurse-counter"
+        ".counter, .nurse-counter, .admin-counter"
     );
 
 

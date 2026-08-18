@@ -1,3 +1,65 @@
+/* =========================================================
+   MEDICO
+   LANDING PAGE
+   (aligned to the global design system:
+    Inter · tokens · animated aurora · glass recipe)
+========================================================= */
+
+
+/* =========================================================
+   THEME VARIABLES
+   (mirrors assets/css/global.css)
+========================================================= */
+
+:root{
+
+    --bg:#020617;
+
+    --text:#ffffff;
+
+    --muted:#94a3b8;
+
+
+    --primary:#17afa2;
+
+    --primary-hover:#20cbbd;
+
+
+    --purple:#8b5cf6;
+
+    --blue:#2563eb;
+
+
+    --glass:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.035)
+        );
+
+
+    --glass-strong:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.045)
+        );
+
+
+    --glass-border:
+        rgba(255,255,255,.14);
+
+
+    --shadow:
+        0 25px 70px rgba(0,0,0,.35);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
     margin:0;
     padding:0;
@@ -7,73 +69,223 @@
 
 body{
 
-    background:#020617;
+    background:var(--bg);
 
-    color:white;
+    color:var(--text);
 
-    font-family:Arial,sans-serif;
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
 
     overflow-x:hidden;
 
 }
 
 
+/* =========================================================
+   AURORA BACKGROUND
+   (identical system to the dashboard pages)
+========================================================= */
 
-/* BACKGROUND GLOW */
-
-
-body::before{
-
-    content:"";
+.aurora{
 
     position:fixed;
 
-    z-index:-1;
+    inset:0;
 
-    width:700px;
+    overflow:hidden;
 
-    height:700px;
+    pointer-events:none;
 
-    background:#17afa2;
-
-    filter:blur(220px);
-
-    opacity:.25;
-
-    top:-300px;
-
-    left:-200px;
+    z-index:0;
 
 }
 
 
-
-body::after{
+.aurora::before{
 
     content:"";
 
-    position:fixed;
+    position:absolute;
 
-    z-index:-1;
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(23,175,162,.18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(139,92,246,.16),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(37,99,235,.14),
+            transparent 30%
+        );
+
+}
+
+
+.aurora-1{
+
+    position:absolute;
 
     width:600px;
 
     height:600px;
 
-    background:#8b5cf6;
+    border-radius:50%;
 
-    filter:blur(220px);
+    background:var(--primary);
 
-    opacity:.2;
+    top:-230px;
 
-    right:-200px;
+    left:-220px;
 
-    bottom:-200px;
+    opacity:.30;
+
+    filter:blur(140px);
+
+    animation:
+        auroraMove1 22s
+        infinite alternate
+        ease-in-out;
 
 }
 
 
+.aurora-2{
 
+    position:absolute;
+
+    width:550px;
+
+    height:550px;
+
+    border-radius:50%;
+
+    background:var(--purple);
+
+    right:-190px;
+
+    top:70px;
+
+    opacity:.27;
+
+    filter:blur(140px);
+
+    animation:
+        auroraMove2 25s
+        infinite alternate
+        ease-in-out;
+
+}
+
+
+.aurora-3{
+
+    position:absolute;
+
+    width:550px;
+
+    height:550px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    bottom:-250px;
+
+    left:35%;
+
+    opacity:.22;
+
+    filter:blur(150px);
+
+    animation:
+        auroraMove3 28s
+        infinite alternate
+        ease-in-out;
+
+}
+
+
+@keyframes auroraMove1{
+
+    from{
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to{
+        transform:
+            translate(100px,70px)
+            scale(1.25);
+    }
+
+}
+
+
+@keyframes auroraMove2{
+
+    from{
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to{
+        transform:
+            translate(-90px,70px)
+            scale(1.2);
+    }
+
+}
+
+
+@keyframes auroraMove3{
+
+    from{
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to{
+        transform:
+            translate(80px,-80px)
+            scale(1.25);
+    }
+
+}
+
+
+/* =========================================================
+   CONTENT LAYER
+   Every major block sits above the z-0 aurora
+   (mirrors .dashboard{position:relative;z-index:1}).
+========================================================= */
+
+.hero,
+.stats-section,
+.features-section,
+.section-divider,
+footer{
+
+    position:relative;
+
+    z-index:1;
+
+}
 
 
 /* ================= NAVBAR ================= */
@@ -98,19 +310,31 @@ nav{
     z-index:10;
 
 
-    background:rgba(255,255,255,.06);
+    background:var(--glass);
 
-    backdrop-filter:blur(25px);
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
 
-    border:1px solid rgba(255,255,255,.15);
+    border:
+        1px solid
+        var(--glass-border);
 
     border-radius:40px;
 
 
     box-shadow:
 
-    0 20px 60px rgba(0,0,0,.35);
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
 
 }
 
@@ -138,7 +362,7 @@ nav{
 
 .links a{
 
-    color:#94a3b8;
+    color:var(--muted);
 
     text-decoration:none;
 
@@ -149,7 +373,7 @@ nav{
 
 .links a:hover{
 
-    color:#17afa2;
+    color:var(--primary);
 
 }
 
@@ -158,7 +382,7 @@ nav{
 
 nav button{
 
-    background:#17afa2;
+    background:var(--primary);
 
     border:none;
 
@@ -186,7 +410,7 @@ nav button:hover{
 
     transform:translateY(-4px) scale(1.05);
 
-    background:#20cbbd;
+    background:var(--primary-hover);
 
     box-shadow:
 
@@ -257,7 +481,7 @@ nav button:hover{
 
     font-size:20px;
 
-    color:#94a3b8;
+    color:var(--muted);
 
     line-height:1.8;
 
@@ -287,7 +511,7 @@ nav button:hover{
 
     border:none;
 
-    background:#17afa2;
+    background:var(--primary);
 
     color:white;
 
@@ -322,7 +546,7 @@ nav button:hover{
 
     background:rgba(23,175,162,.05);
 
-    border:1px solid #17afa2;
+    border:1px solid var(--primary);
 
 }
 
@@ -330,7 +554,7 @@ nav button:hover{
 
 .buttons .outline:hover{
 
-    background:#17afa2;
+    background:var(--primary);
 
 }
 
@@ -405,17 +629,21 @@ nav button:hover{
     padding:20px;
 
 
-    background:
-
-    rgba(255,255,255,.1);
+    background:var(--glass);
 
 
     border:
+        1px solid
+        var(--glass-border);
 
-    1px solid rgba(255,255,255,.2);
 
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
-    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
 
     border-radius:20px;
@@ -434,7 +662,7 @@ nav button:hover{
 
     transform:translateY(-8px) scale(1.03);
 
-    border-color:#17afa2;
+    border-color:var(--primary);
 
     box-shadow:
 
@@ -482,7 +710,7 @@ nav button:hover{
 
     transparent,
 
-    #17afa2,
+    var(--primary),
 
     transparent
 
@@ -494,8 +722,6 @@ nav button:hover{
     0 0 25px rgba(23,175,162,.8);
 
 }
-
-
 
 
 
@@ -540,15 +766,13 @@ nav button:hover{
 
 .section-title p{
 
-    color:#94a3b8;
+    color:var(--muted);
 
     font-size:18px;
 
     line-height:1.7;
 
 }
-
-
 
 
 
@@ -582,25 +806,21 @@ nav button:hover{
 .stat-card{
 
 
-    background:
-
-    linear-gradient(
-
-    135deg,
-
-    rgba(255,255,255,.12),
-
-    rgba(255,255,255,.04)
-
-    );
+    background:var(--glass);
 
 
     border:
+        1px solid
+        var(--glass-border);
 
-    1px solid rgba(255,255,255,.15);
 
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
-    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
 
     border-radius:28px;
@@ -612,8 +832,16 @@ nav button:hover{
     text-align:center;
 
 
-    transition:.35s;
+    box-shadow:
 
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
+
+
+    transition:.35s;
 
 }
 
@@ -623,7 +851,7 @@ nav button:hover{
 
     transform:translateY(-12px);
 
-    border-color:#17afa2;
+    border-color:rgba(23,175,162,.40);
 
     box-shadow:
 
@@ -637,7 +865,7 @@ nav button:hover{
 
     font-size:50px;
 
-    color:#17afa2;
+    color:var(--primary);
 
     text-shadow:
 
@@ -651,11 +879,9 @@ nav button:hover{
 
 .stat-card p{
 
-    color:#94a3b8;
+    color:var(--muted);
 
 }
-
-
 
 
 
@@ -689,22 +915,12 @@ nav button:hover{
 .feature-card{
 
 
-    background:
-
-    linear-gradient(
-
-    135deg,
-
-    rgba(255,255,255,.12),
-
-    rgba(255,255,255,.04)
-
-    );
+    background:var(--glass);
 
 
     border:
-
-    1px solid rgba(255,255,255,.15);
+        1px solid
+        var(--glass-border);
 
 
     border-radius:30px;
@@ -713,11 +929,25 @@ nav button:hover{
     padding:35px;
 
 
-    backdrop-filter:blur(25px);
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
 
 
     transition:.35s;
-
 
 }
 
@@ -727,7 +957,7 @@ nav button:hover{
 
     transform:translateY(-12px);
 
-    border-color:#17afa2;
+    border-color:rgba(23,175,162,.40);
 
 
     box-shadow:
@@ -768,13 +998,11 @@ nav button:hover{
 
 .feature-card p{
 
-    color:#94a3b8;
+    color:var(--muted);
 
     line-height:1.7;
 
 }
-
-
 
 
 
@@ -910,7 +1138,7 @@ letter-spacing:4px;
 
 margin-top:25px;
 
-color:#ffffff;
+color:var(--text);
 
 text-shadow:
 
@@ -924,7 +1152,7 @@ text-shadow:
 
 margin-top:10px;
 
-color:#94a3b8;
+color:var(--muted);
 
 font-size:15px;
 
@@ -997,12 +1225,12 @@ width:180px;
 height:2px;
 
 
-background:#17afa2;
+background:var(--primary);
 
 
 box-shadow:
 
-0 0 25px #17afa2;
+0 0 25px var(--primary);
 
 }
 
@@ -1130,6 +1358,8 @@ transform:rotate(360deg);
 
 position:relative;
 
+z-index:1;
+
 margin-top:140px;
 
 padding:100px 90px 35px;
@@ -1158,7 +1388,7 @@ width:700px;
 
 height:350px;
 
-background:#17afa2;
+background:var(--primary);
 
 filter:blur(170px);
 
@@ -1198,7 +1428,7 @@ margin-bottom:25px;
 
 .footer-brand p{
 
-color:#94a3b8;
+color:var(--muted);
 
 line-height:1.9;
 
@@ -1210,25 +1440,13 @@ max-width:420px;
 
 
 
-.footer-links{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:50px;
-
-}
-
-
-
 .footer-column h4{
 
 font-size:22px;
 
 margin-bottom:25px;
 
-color:white;
+color:var(--text);
 
 }
 
@@ -1248,7 +1466,7 @@ flex-direction:column;
 
 text-decoration:none;
 
-color:#94a3b8;
+color:var(--muted);
 
 margin-bottom:16px;
 
@@ -1262,7 +1480,7 @@ font-size:16px;
 
 .footer-column a:hover{
 
-color:#17afa2;
+color:var(--primary);
 
 transform:translateX(8px);
 
@@ -1270,31 +1488,9 @@ transform:translateX(8px);
 
 
 
-.footer-bottom{
-
-position:relative;
-
-z-index:2;
-
-margin-top:70px;
-
-padding-top:35px;
-
-border-top:1px solid rgba(255,255,255,.08);
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-}
-
-
-
 .footer-bottom span{
 
-color:#94a3b8;
+color:var(--muted);
 
 }
 
@@ -1342,7 +1538,7 @@ transition:.35s;
 
 .socials a:hover{
 
-background:#17afa2;
+background:var(--primary);
 
 transform:translateY(-6px);
 
@@ -1402,9 +1598,9 @@ text-align:center;
     background:
     linear-gradient(
         30deg,
-        #8b5cf6,
-        #17afa2,
-        #8b5cf6
+        var(--purple),
+        var(--primary),
+        var(--purple)
     );
 
     background-size:300% 300%;
@@ -1462,6 +1658,8 @@ text-align:center;
 footer{
 
     position:relative;
+
+    z-index:1;
 
     margin-top:120px;
 
@@ -1540,25 +1738,29 @@ footer::before{
 
 
 
-    background:
-
-    rgba(255,255,255,.04);
+    background:var(--glass);
 
 
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
 
 
     border-top:
 
-    1px solid rgba(255,255,255,.1);
+    1px solid var(--glass-border);
 
 
 
     border-bottom:
 
-    1px solid rgba(255,255,255,.1);
+    1px solid var(--glass-border);
 
 
 
@@ -1610,8 +1812,8 @@ footer::before{
 
     linear-gradient(
         30deg,
-        #8b5cf6,
-        #17afa2
+        var(--purple),
+        var(--primary)
     );
 
 
@@ -1687,21 +1889,23 @@ footer::before{
 
 
 
-    background:
-
-    rgba(255,255,255,.06);
+    background:var(--glass);
 
 
 
     backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
-    blur(30px);
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
 
 
     border:
 
-    1px solid rgba(255,255,255,.12);
+    1px solid var(--glass-border);
 
 
 
@@ -1709,10 +1913,13 @@ footer::before{
 
 
 
-
     box-shadow:
 
-    0 25px 70px rgba(0,0,0,.35);
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
 
 
 
@@ -1736,7 +1943,7 @@ footer::before{
     font-weight:700;
 
 
-    color:white;
+    color:var(--text);
 
 
 }
@@ -1752,7 +1959,7 @@ footer::before{
     max-width:330px;
 
 
-    color:#94a3b8;
+    color:var(--muted);
 
 
     font-size:14px;
@@ -1792,7 +1999,7 @@ footer::before{
     position:relative;
 
 
-    color:#94a3b8;
+    color:var(--muted);
 
 
     text-decoration:none;
@@ -1843,7 +2050,7 @@ footer::before{
 
 
 
-    background:#17afa2;
+    background:var(--primary);
 
 
 
@@ -1933,7 +2140,7 @@ footer::before{
 
 
 
-    background:#17afa2;
+    background:var(--primary);
 
 
 
@@ -2057,7 +2264,7 @@ footer::before{
 
 
 
-    background:#20cbbd;
+    background:var(--primary-hover);
 
 
 

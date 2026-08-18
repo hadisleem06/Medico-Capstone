@@ -1,25 +1,25 @@
 /* =========================================================
    MEDICO
-   MEDICATION ASSISTANT
+   ICD-10 CODING
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const resultsBox =
         document.querySelector(
-            "#medResults"
+            "#icdResults"
         );
 
 
-    const planBox =
+    const selectedBox =
         document.querySelector(
-            "#medPlan"
+            "#icdSelected"
         );
 
 
     if (
         !resultsBox ||
-        !planBox
+        !selectedBox
     ) {
 
         return;
@@ -29,45 +29,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const searchInput =
         document.querySelector(
-            "#medSearch"
+            "#icdSearch"
         );
 
 
     const emptyState =
         document.querySelector(
-            "#medEmpty"
+            "#icdEmpty"
         );
 
 
     const saveButton =
         document.querySelector(
-            "#saveMedBtn"
+            "#saveIcdBtn"
         );
 
 
     /* =====================================================
-       MOCK FORMULARY
+       MOCK ICD-10 DATASET
     ===================================================== */
 
-    const formulary = [
+    const codes = [
 
-        { name: "Atorvastatin", drugClass: "Statin",         dose: "20 mg once daily" },
-        { name: "Lisinopril",   drugClass: "ACE inhibitor",  dose: "10 mg once daily" },
-        { name: "Metformin",    drugClass: "Biguanide",      dose: "500 mg twice daily" },
-        { name: "Amlodipine",   drugClass: "Calcium blocker",dose: "5 mg once daily" },
-        { name: "Aspirin",      drugClass: "Antiplatelet",   dose: "81 mg once daily" },
-        { name: "Metoprolol",   drugClass: "Beta blocker",   dose: "50 mg twice daily" },
-        { name: "Warfarin",     drugClass: "Anticoagulant",  dose: "5 mg once daily" },
-        { name: "Omeprazole",   drugClass: "PPI",            dose: "20 mg once daily" }
+        { code: "I10",    label: "Essential (primary) hypertension" },
+        { code: "I25.10", label: "Atherosclerotic heart disease" },
+        { code: "I48.91", label: "Atrial fibrillation, unspecified" },
+        { code: "I50.9",  label: "Heart failure, unspecified" },
+        { code: "E11.9",  label: "Type 2 diabetes without complications" },
+        { code: "E78.5",  label: "Hyperlipidemia, unspecified" },
+        { code: "R07.9",  label: "Chest pain, unspecified" },
+        { code: "R00.2",  label: "Palpitations" },
+        { code: "J45.909",label: "Unspecified asthma, uncomplicated" },
+        { code: "N18.3",  label: "Chronic kidney disease, stage 3" }
 
     ];
 
 
     /* =====================================================
-       PLAN STATE
+       SELECTED STATE
     ===================================================== */
 
-    const plan = [];
+    const selected = [];
 
 
     /* =====================================================
@@ -85,17 +87,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         const matches =
-            formulary.filter(drug => {
+            codes.filter(entry => {
 
                 if (!term) {
                     return true;
                 }
 
                 return (
-                    drug.name
+                    entry.code
                         .toLowerCase()
                         .includes(term) ||
-                    drug.drugClass
+                    entry.label
                         .toLowerCase()
                         .includes(term)
                 );
@@ -109,8 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!matches.length) {
 
             resultsBox.innerHTML = `
-                <p class="med-no-results">
-                    No medications match "${term}".
+                <p class="icd-no-results">
+                    No codes match "${term}".
                 </p>
             `;
 
@@ -119,45 +121,47 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        matches.forEach(drug => {
+        matches.forEach(entry => {
 
             const isAdded =
-                plan.some(
+                selected.some(
                     item =>
-                        item.name === drug.name
+                        item.code === entry.code
                 );
 
 
-            const button =
+            const row =
                 document.createElement(
-                    "button"
+                    "div"
                 );
 
 
-            button.type = "button";
+            row.className =
+                "icd-result";
 
 
-            button.className =
-                `med-result ${isAdded ? "selected" : ""}`;
+            row.innerHTML = `
+                <div class="icd-code">
+                    ${entry.code}
+                </div>
 
+                <div class="icd-desc">
+                    ${entry.label}
+                </div>
 
-            button.dataset.drug =
-                drug.name;
-
-
-            button.innerHTML = `
-                <span class="med-result-info">
-                    <strong>${drug.name}</strong>
-                    <span>${drug.drugClass} · ${drug.dose}</span>
-                </span>
-
-                <span class="med-result-add">
+                <button
+                    type="button"
+                    class="icd-add"
+                    data-code="${entry.code}"
+                    ${isAdded ? "disabled" : ""}
+                >
                     <i class="fa-solid ${isAdded ? "fa-check" : "fa-plus"}"></i>
-                </span>
+                    ${isAdded ? "Added" : "Add"}
+                </button>
             `;
 
 
-            resultsBox.appendChild(button);
+            resultsBox.appendChild(row);
 
         });
 
@@ -165,25 +169,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       RENDER PLAN
+       RENDER SELECTED
     ===================================================== */
 
-    function renderPlan() {
+    function renderSelected() {
 
-        planBox.innerHTML = "";
+        selectedBox.innerHTML = "";
 
 
         if (emptyState) {
 
             emptyState.style.display =
-                plan.length
+                selected.length
                     ? "none"
                     : "";
 
         }
 
 
-        plan.forEach(drug => {
+        selected.forEach(entry => {
 
             const chip =
                 document.createElement(
@@ -192,27 +196,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             chip.className =
-                "inv-chip";
+                "icd-chip";
 
 
             chip.innerHTML = `
                 <div>
-                    <strong>${drug.name}</strong>
-                    <span>${drug.dose}</span>
+                    <strong>${entry.code}</strong>
+                    <span>${entry.label}</span>
                 </div>
 
                 <button
                     type="button"
-                    class="inv-chip-remove"
-                    data-drug="${drug.name}"
-                    aria-label="Remove medication"
+                    class="icd-chip-remove"
+                    data-code="${entry.code}"
+                    aria-label="Remove code"
                 >
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             `;
 
 
-            planBox.appendChild(chip);
+            selectedBox.appendChild(chip);
 
         });
 
@@ -220,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ADD FROM RESULTS
+       ADD / REMOVE
     ===================================================== */
 
     resultsBox.addEventListener(
@@ -229,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const button =
                 event.target.closest(
-                    ".med-result"
+                    ".icd-add"
                 );
 
 
@@ -238,41 +242,33 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            const name =
-                button.dataset.drug;
+            const code =
+                button.dataset.code;
 
 
-            const drug =
-                formulary.find(
+            const entry =
+                codes.find(
                     item =>
-                        item.name === name
+                        item.code === code
                 );
 
 
-            if (!drug) {
+            if (
+                !entry ||
+                selected.some(
+                    item =>
+                        item.code === code
+                )
+            ) {
+
                 return;
-            }
-
-
-            const index =
-                plan.findIndex(
-                    item =>
-                        item.name === name
-                );
-
-
-            if (index > -1) {
-
-                plan.splice(index, 1);
-
-            } else {
-
-                plan.push(drug);
 
             }
 
 
-            renderPlan();
+            selected.push(entry);
+
+            renderSelected();
 
             renderResults();
 
@@ -280,17 +276,13 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =====================================================
-       REMOVE FROM PLAN
-    ===================================================== */
-
-    planBox.addEventListener(
+    selectedBox.addEventListener(
         "click",
         event => {
 
             const button =
                 event.target.closest(
-                    ".inv-chip-remove"
+                    ".icd-chip-remove"
                 );
 
 
@@ -299,22 +291,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            const name =
-                button.dataset.drug;
+            const code =
+                button.dataset.code;
 
 
             const index =
-                plan.findIndex(
+                selected.findIndex(
                     item =>
-                        item.name === name
+                        item.code === code
                 );
 
 
             if (index > -1) {
 
-                plan.splice(index, 1);
+                selected.splice(index, 1);
 
-                renderPlan();
+                renderSelected();
 
                 renderResults();
 
@@ -339,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ADD TO PLAN
+       SAVE
     ===================================================== */
 
     if (saveButton) {
@@ -351,11 +343,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 event.preventDefault();
 
 
-                if (!plan.length) {
+                if (!selected.length) {
 
                     showDoctorToast(
-                        "Plan is empty",
-                        "Add at least one medication first.",
+                        "No codes selected",
+                        "Add at least one ICD-10 code before saving.",
                         "fa-triangle-exclamation"
                     );
 
@@ -365,15 +357,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 console.log(
-                    "Prescription plan saved:",
-                    plan.map(item => item.name)
+                    "Saved ICD-10 codes:",
+                    selected.map(item => item.code)
                 );
 
 
                 showDoctorToast(
-                    "Plan updated",
-                    `${plan.length} medication(s) added to the care plan.`,
-                    "fa-pills"
+                    "Codes saved",
+                    `${selected.length} diagnosis code(s) added to the encounter.`,
+                    "fa-check"
                 );
 
             }
@@ -388,6 +380,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderResults();
 
-    renderPlan();
+    renderSelected();
 
 });

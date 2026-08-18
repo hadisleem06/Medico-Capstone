@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medico | Consultation</title>
+
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/doctor.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     AURORA BACKGROUND
+========================================================= -->
+
+<div class="aurora">
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+    <div class="aurora-3"></div>
+</div>
+
+
+<div class="dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+        <ul>
+
+            <li data-page="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li data-page="appointments.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Appointments</span>
+            </li>
+
+            <li class="active" data-page="consultation.html">
+                <i class="fa-solid fa-stethoscope"></i>
+                <span>Consultation</span>
+            </li>
+
+            <li data-page="patients.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Patients</span>
+            </li>
+
+            <li data-page="patient-profile.html">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Patient Profile</span>
+            </li>
+
+            <li data-page="icd10.html">
+                <i class="fa-solid fa-code"></i>
+                <span>ICD-10</span>
+            </li>
+
+            <li data-page="investigation.html">
+                <i class="fa-solid fa-microscope"></i>
+                <span>Investigation</span>
+            </li>
+
+            <li data-page="lab-analysis.html">
+                <i class="fa-solid fa-vials"></i>
+                <span>Lab Analysis</span>
+            </li>
+
+            <li data-page="radiology-analysis.html">
+                <i class="fa-solid fa-x-ray"></i>
+                <span>Radiology</span>
+            </li>
+
+            <li data-page="medication-assistant.html">
+                <i class="fa-solid fa-pills"></i>
+                <span>Medication AI</span>
+            </li>
+
+            <li data-page="reports.html">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Reports</span>
+            </li>
+
+            <li data-page="soap.html">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>SOAP Notes</span>
+            </li>
+
+        </ul>
+
+        <button class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+                <div class="doctor-breadcrumb">
+                    <span>MEDICO</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    Doctor Workspace
+                </div>
+                <h2>Live Consultation</h2>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="profile-container">
+
+                    <div class="profile">
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Doctor profile"
+                        >
+
+                        <div class="profile-info">
+                            <strong>Dr. Sarah Mitchell</strong>
+                            <span>Cardiology</span>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                    <div class="profile-menu">
+
+                        <div class="profile-header">
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Doctor profile"
+                            >
+
+                            <div>
+                                <h4>Dr. Sarah Mitchell</h4>
+                                <p>Cardiology Specialist</p>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="menu-item">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <span>My Profile</span>
+                        </div>
+
+                        <div class="menu-item">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span>
+                        </div>
+
+                        <div class="menu-item logout-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONSULTATION HEADER
+        ================================================== -->
+
+        <section class="consultation-header premium-glass">
+
+            <div class="patient-banner-main">
+
+                <div class="patient-banner-avatar avatar-purple">
+                    JM
+                </div>
+
+                <div class="patient-banner-info">
+
+                    <div class="patient-banner-name">
+                        <h1>James Miller</h1>
+                        <span class="risk-tag moderate">Moderate</span>
+                    </div>
+
+                    <p class="patient-banner-meta">
+                        52 years · Male · MRN #10255 · Chest pain
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="consult-session">
+
+                <div class="consult-timer" id="consultTimer">
+                    <i class="fa-solid fa-circle consult-live-dot"></i>
+                    <span id="consultTimerValue">00:00</span>
+                </div>
+
+                <button class="primary-btn" id="completeConsultBtn">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Complete Consultation
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VITALS
+        ================================================== -->
+
+        <section class="profile-vitals">
+
+            <div class="vital-card">
+                <span class="vital-label">Blood Pressure</span>
+                <strong class="vital-value">146/94</strong>
+                <span class="vital-unit">mmHg</span>
+            </div>
+
+            <div class="vital-card">
+                <span class="vital-label">Heart Rate</span>
+                <strong class="vital-value">92</strong>
+                <span class="vital-unit">bpm</span>
+            </div>
+
+            <div class="vital-card">
+                <span class="vital-label">Temperature</span>
+                <strong class="vital-value">37.1</strong>
+                <span class="vital-unit">°C</span>
+            </div>
+
+            <div class="vital-card">
+                <span class="vital-label">SpO₂</span>
+                <strong class="vital-value">96</strong>
+                <span class="vital-unit">%</span>
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WORKSPACE
+        ================================================== -->
+
+        <section class="consult-layout">
+
+            <!-- EDITOR -->
+
+            <div class="consult-editor premium-glass">
+
+                <span class="section-kicker">CONSULTATION NOTES</span>
+
+                <div class="consult-field">
+                    <label for="chiefComplaint">Chief complaint</label>
+                    <textarea
+                        id="chiefComplaint"
+                        rows="3"
+                        placeholder="Reason for visit..."
+                    >Intermittent chest tightness on exertion for the past week.</textarea>
+                </div>
+
+                <div class="consult-field">
+                    <label for="clinicalNotes">Clinical notes</label>
+                    <textarea
+                        id="clinicalNotes"
+                        rows="8"
+                        placeholder="History, examination findings, assessment..."
+                    ></textarea>
+                </div>
+
+                <div class="consult-editor-actions">
+
+                    <button class="doctor-secondary-btn" id="saveDraftBtn">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save Draft
+                    </button>
+
+                    <span class="consult-autosave" id="consultAutosave">
+                        <i class="fa-solid fa-cloud"></i>
+                        All changes saved
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <aside class="consult-side">
+
+                <div class="consult-quicklinks premium-glass">
+
+                    <span class="section-kicker">CLINICAL TOOLS</span>
+
+                    <button class="quicklink" data-page="soap.html">
+                        <div class="quicklink-icon teal">
+                            <i class="fa-solid fa-notes-medical"></i>
+                        </div>
+                        <div class="quicklink-text">
+                            <strong>SOAP Note</strong>
+                            <span>Structured documentation</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <button class="quicklink" data-page="icd10.html">
+                        <div class="quicklink-icon purple">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="quicklink-text">
+                            <strong>ICD-10 Codes</strong>
+                            <span>Assign diagnoses</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <button class="quicklink" data-page="investigation.html">
+                        <div class="quicklink-icon blue">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <div class="quicklink-text">
+                            <strong>Investigations</strong>
+                            <span>Order tests</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <button class="quicklink" data-page="medication-assistant.html">
+                        <div class="quicklink-icon orange">
+                            <i class="fa-solid fa-pills"></i>
+                        </div>
+                        <div class="quicklink-text">
+                            <strong>Medication AI</strong>
+                            <span>Prescribe safely</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="../../assets/js/global.js"></script>
+<script src="../../assets/js/doctor.js"></script>
+<script src="../../assets/js/consultation.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Audit Logs | Admin | Medico</title>
+
+
+    <!-- ===============================
+         GLOBAL CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/global.css"
+    >
+
+
+    <!-- ===============================
+         ADMIN CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/admin.css"
+    >
+
+
+    <!-- ===============================
+         RESPONSIVE CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/responsive.css"
+    >
+
+
+    <!-- ===============================
+         FONT AWESOME
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     AURORA BACKGROUND
+====================================================== -->
+
+<div class="aurora">
+
+    <div class="aurora-1"></div>
+
+    <div class="aurora-2"></div>
+
+    <div class="aurora-3"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+     DASHBOARD
+====================================================== -->
+
+<div
+    class="dashboard"
+    id="dashboard"
+>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <button
+            class="sidebar-toggle"
+            aria-label="Toggle sidebar"
+        >
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+        <button
+            class="theme-toggle"
+            aria-label="Toggle theme"
+        >
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <ul>
+
+
+            <li
+                data-admin-action="dashboard"
+                data-tooltip="Dashboard"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </li>
+
+
+
+            <li
+                data-admin-action="users"
+                data-tooltip="Users"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Users
+                </span>
+
+            </li>
+
+
+
+            <li
+                class="active"
+                data-admin-action="audit-logs"
+                data-tooltip="Audit Logs"
+            >
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>
+                    Audit Logs
+                </span>
+
+            </li>
+
+
+        </ul>
+
+
+
+        <!-- Logout -->
+
+        <button
+            class="logout"
+            data-tooltip="Logout"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <nav class="topbar">
+
+
+            <div class="page-title">
+
+                <div class="page-breadcrumb">
+                    <span>MEDICO</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    Admin Workspace
+                </div>
+
+                <h2>
+                    Audit Logs
+                </h2>
+
+            </div>
+
+
+
+            <div class="top-actions">
+
+
+                <div class="profile-container">
+
+
+                    <div class="profile">
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Admin profile"
+                        >
+
+                        <span>
+                            Hadi
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+
+
+                    <div class="profile-menu">
+
+
+                        <div class="profile-header">
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Profile"
+                            >
+
+                            <div>
+
+                                <h4>
+                                    Hadi
+                                </h4>
+
+                                <p>
+                                    Administrator Account
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <hr>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            My Profile
+
+                        </div>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            Security
+
+                        </div>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </div>
+
+
+
+                        <div class="menu-item logout-item">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <section class="page-hero">
+
+            <div class="page-hero-content">
+
+                <span class="page-eyebrow">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    SYSTEM MONITORING
+                </span>
+
+                <h1>
+                    Track every
+                    <span>action.</span>
+                </h1>
+
+                <p>
+                    Monitor important activity across the
+                    Medico platform.
+                </p>
+
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="refreshLogs"
+                >
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Refresh Logs
+
+                </button>
+
+            </div>
+
+
+            <div class="page-hero-visual">
+                <i class="fa-solid fa-clipboard-list page-hero-glyph"></i>
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             AUDIT STATISTICS
+        ================================================== -->
+
+        <section class="stats-grid admin-log-stats">
+
+
+            <div class="stat-card premium-glass">
+
+                <div class="stat-icon admin-users">
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                </div>
+
+                <div class="stat-info">
+
+                    <h2>
+                        248
+                    </h2>
+
+                    <h4>
+                        Total Events
+                    </h4>
+
+                    <p>
+                        Recorded system activity
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card premium-glass">
+
+                <div class="stat-icon admin-patients">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+                <div class="stat-info">
+
+                    <h2>
+                        32
+                    </h2>
+
+                    <h4>
+                        User Actions
+                    </h4>
+
+                    <p>
+                        Account activity today
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card premium-glass">
+
+                <div class="stat-icon admin-doctors">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div class="stat-info">
+
+                    <h2>
+                        12
+                    </h2>
+
+                    <h4>
+                        Admin Actions
+                    </h4>
+
+                    <p>
+                        Administrative events
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card premium-glass">
+
+                <div class="stat-icon admin-nurses">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                </div>
+
+                <div class="stat-info">
+
+                    <h2>
+                        3
+                    </h2>
+
+                    <h4>
+                        Warnings
+                    </h4>
+
+                    <p>
+                        Events requiring attention
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             AUDIT LOG CARD
+        ================================================== -->
+
+        <section class="health-overview premium-glass admin-logs-card">
+
+
+            <!-- Header -->
+
+            <div class="health-header">
+
+                <div>
+
+                    <span>
+                        SYSTEM ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent Events
+                    </h2>
+
+                </div>
+
+
+                <span
+                    class="admin-log-count"
+                    id="logCount"
+                >
+                    7 Events
+                </span>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TOOLBAR
+            ================================================== -->
+
+            <div class="admin-logs-toolbar">
+
+
+                <!-- Search -->
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="logSearch"
+                        placeholder="Search activity..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+
+                <!-- Action Filter -->
+
+                <div
+                    class="admin-filter"
+                    id="logActionFilter"
+                >
+
+                    <button
+                        type="button"
+                        class="filter-trigger"
+                        id="logActionFilterTrigger"
+                    >
+
+                        <span>
+                            All Actions
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+
+                    <div class="filter-menu">
+
+                        <button
+                            type="button"
+                            class="filter-option active"
+                            data-value=""
+                        >
+                            All Actions
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="login"
+                        >
+                            Login
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="user"
+                        >
+                            User Management
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="record"
+                        >
+                            Medical Records
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="security"
+                        >
+                            Security
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Date Filter -->
+
+                <div
+                    class="admin-filter"
+                    id="logDateFilter"
+                >
+
+                    <button
+                        type="button"
+                        class="filter-trigger"
+                        id="logDateFilterTrigger"
+                    >
+
+                        <span>
+                            All Dates
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+
+                    <div class="filter-menu">
+
+                        <button
+                            type="button"
+                            class="filter-option active"
+                            data-value=""
+                        >
+                            All Dates
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="today"
+                        >
+                            Today
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="yesterday"
+                        >
+                            Yesterday
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="week"
+                        >
+                            This Week
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 AUDIT LOG LIST
+            ================================================== -->
+
+            <div
+                class="admin-logs-list"
+                id="logsList"
+            >
+
+
+                <!-- Log 1 -->
+
+                <div
+                    class="admin-log-row"
+                    data-action="login"
+                    data-date="today"
+                    data-search="Sarah Nehme logged into the system"
+                >
+
+                    <div class="admin-log-icon login">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                    </div>
+
+
+                    <div class="admin-log-info">
+
+                        <h3>
+                            Sarah Nehme logged into the system
+                        </h3>
+
+                        <p>
+                            Nurse · NUR-118
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-log-meta">
+
+                        <span class="admin-log-status success">
+                            Successful
+                        </span>
+
+                        <span>
+                            Today · 10:42 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Log 2 -->
+
+                <div
+                    class="admin-log-row"
+                    data-action="user"
+                    data-date="today"
+                    data-search="New patient Ahmad Mansour registered"
+                >
+
+                    <div class="admin-log-icon user">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                    </div>
+
+
+                    <div class="admin-log-info">
+
+                        <h3>
+                            New patient Ahmad Mansour registered
+                        </h3>
+
+                        <p>
+                            Patient · PT-1024
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-log-meta">
+
+                        <span class="admin-log-status success">
+                            Completed
+                        </span>
+
+                        <span>
+                            Today · 10:25 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Log 3 -->
+
+                <div
+                    class="admin-log-row"
+                    data-action="record"
+                    data-date="today"
+                    data-search="Vitals recorded for Lina Nassar"
+                >
+
+                    <div class="admin-log-icon record">
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </div>
+
+
+                    <div class="admin-log-info">
+
+                        <h3>
+                            Vitals recorded for Lina Nassar
+                        </h3>
+
+                        <p>
+                            Nurse · Sarah Nehme
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-log-meta">
+
+                        <span class="admin-log-status success">
+                            Completed
+                        </span>
+
+                        <span>
+                            Today · 09:58 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Log 4 -->
+
+                <div
+                    class="admin-log-row"
+                    data-action="user"
+                    data-date="today"
+                    data-search="Doctor account approval pending"
+                >
+
+                    <div class="admin-log-icon user">
+
+                        <i class="fa-solid fa-user-doctor"></i>
+
+                    </div>
+
+
+                    <div class="admin-log-info">
+
+                        <h3>
+                            Doctor account approval pending
+                        </h3>
+
+                        <p>
+                            Dr. Joseph Haddad · DOC-219
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-log-meta">
+
+                        <span class="admin-log-status warning">
+                            Pending
+                        </span>
+
+                        <span>
+                            Today · 09:41 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Log 5 -->
+
+                <div
+                    class="admin-log-row"
+                    data-action="security"
+                    data-date="yesterday"
+                    data-search="Failed login attempt detected"
+                >
+
+                    <div class="admin-log-icon security">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+
+                    <div class="admin-log-info">
+
+                        <h3>
+                            Failed login attempt detected
+                        </h3>
+
+                        <p>
+                            Security monitoring
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-log-meta">
+
+                        <span class="admin-log-status danger">
+                            Warning
+                        </span>
+
+                        <span>
+                            Yesterday · 08:13 PM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Log 6 -->
+
+                <div
+                    class="admin-log-row"
+                    data-action="record"
+                    data-date="yesterday"
+                    data-search="Medical report uploaded"
+                >
+
+                    <div class="admin-log-icon record">
+
+                        <i class="fa-solid fa-file-medical"></i>
+
+                    </div>
+
+
+                    <div class="admin-log-info">
+
+                        <h3>
+                            Medical report uploaded
+                        </h3>
+
+                        <p>
+                            Patient · Joseph Khoury
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-log-meta">
+
+                        <span class="admin-log-status success">
+                            Completed
+                        </span>
+
+                        <span>
+                            Yesterday · 04:36 PM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Log 7 -->
+
+                <div
+                    class="admin-log-row"
+                    data-action="login"
+                    data-date="week"
+                    data-search="Dr. Lina Nassar logged into the system"
+                >
+
+                    <div class="admin-log-icon login">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                    </div>
+
+
+                    <div class="admin-log-info">
+
+                        <h3>
+                            Dr. Lina Nassar logged into the system
+                        </h3>
+
+                        <p>
+                            Doctor · DOC-204
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-log-meta">
+
+                        <span class="admin-log-status success">
+                            Successful
+                        </span>
+
+                        <span>
+                            Aug 10 · 02:14 PM
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Empty State -->
+
+            <div
+                class="admin-empty-state"
+                id="emptyLogs"
+            >
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <h3>
+                    No activity found
+                </h3>
+
+                <p>
+                    Try changing your search or filters.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+    src="../../assets/js/global.js"
+></script>
+
+
+<script
+    src="../../assets/js/admin.js"
+></script>
+
+
+</body>
+
+</html>

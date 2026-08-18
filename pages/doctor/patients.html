@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medico | Patients</title>
+
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/doctor.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     AURORA BACKGROUND
+========================================================= -->
+
+<div class="aurora">
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+    <div class="aurora-3"></div>
+</div>
+
+
+<div class="dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+        <ul>
+
+            <li data-page="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li data-page="appointments.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Appointments</span>
+            </li>
+
+            <li data-page="consultation.html">
+                <i class="fa-solid fa-stethoscope"></i>
+                <span>Consultation</span>
+            </li>
+
+            <li class="active" data-page="patients.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Patients</span>
+            </li>
+
+            <li data-page="patient-profile.html">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Patient Profile</span>
+            </li>
+
+            <li data-page="icd10.html">
+                <i class="fa-solid fa-code"></i>
+                <span>ICD-10</span>
+            </li>
+
+            <li data-page="investigation.html">
+                <i class="fa-solid fa-microscope"></i>
+                <span>Investigation</span>
+            </li>
+
+            <li data-page="lab-analysis.html">
+                <i class="fa-solid fa-vials"></i>
+                <span>Lab Analysis</span>
+            </li>
+
+            <li data-page="radiology-analysis.html">
+                <i class="fa-solid fa-x-ray"></i>
+                <span>Radiology</span>
+            </li>
+
+            <li data-page="medication-assistant.html">
+                <i class="fa-solid fa-pills"></i>
+                <span>Medication AI</span>
+            </li>
+
+            <li data-page="reports.html">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Reports</span>
+            </li>
+
+            <li data-page="soap.html">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>SOAP Notes</span>
+            </li>
+
+        </ul>
+
+        <button class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+                <div class="doctor-breadcrumb">
+                    <span>MEDICO</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    Doctor Workspace
+                </div>
+                <h2>Patient Directory</h2>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="profile-container">
+
+                    <div class="profile">
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Doctor profile"
+                        >
+
+                        <div class="profile-info">
+                            <strong>Dr. Sarah Mitchell</strong>
+                            <span>Cardiology</span>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                    <div class="profile-menu">
+
+                        <div class="profile-header">
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Doctor profile"
+                            >
+
+                            <div>
+                                <h4>Dr. Sarah Mitchell</h4>
+                                <p>Cardiology Specialist</p>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="menu-item">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <span>My Profile</span>
+                        </div>
+
+                        <div class="menu-item">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span>
+                        </div>
+
+                        <div class="menu-item logout-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="doctor-page-hero patients-hero">
+
+            <div class="doctor-hero-content">
+
+                <span class="doctor-eyebrow">
+                    <i class="fa-solid fa-users"></i>
+                    PATIENT POPULATION
+                </span>
+
+                <h1>
+                    Every patient,
+                    <span>one clear view.</span>
+                </h1>
+
+                <p>
+                    Browse, search and triage your entire
+                    patient population. Open a chart, review
+                    risk and jump straight into a consultation.
+                </p>
+
+                <div class="hero-actions">
+
+                    <button class="primary-btn" id="addPatientBtn">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Add Patient
+                    </button>
+
+                    <button class="doctor-secondary-btn" id="exportPatientsBtn">
+                        <i class="fa-solid fa-file-export"></i>
+                        Export
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="patients-hero-visual">
+
+                <div class="population-ring">
+                    <strong>124</strong>
+                    <span>Active patients</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATS
+        ================================================== -->
+
+        <section class="appointment-stats">
+
+            <div class="appointment-stat-card">
+                <div class="appointment-stat-icon teal">
+                    <i class="fa-solid fa-user-group"></i>
+                </div>
+                <div>
+                    <span>Total Patients</span>
+                    <strong>124</strong>
+                    <small>Across all clinics</small>
+                </div>
+            </div>
+
+            <div class="appointment-stat-card">
+                <div class="appointment-stat-icon blue">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <div>
+                    <span>Active Cases</span>
+                    <strong>98</strong>
+                    <small>Under current care</small>
+                </div>
+            </div>
+
+            <div class="appointment-stat-card">
+                <div class="appointment-stat-icon orange">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div>
+                    <span>High Risk</span>
+                    <strong>08</strong>
+                    <small>Require close review</small>
+                </div>
+            </div>
+
+            <div class="appointment-stat-card">
+                <div class="appointment-stat-icon purple">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <div>
+                    <span>New This Month</span>
+                    <strong>12</strong>
+                    <small>Recently registered</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WORKSPACE
+        ================================================== -->
+
+        <section class="patients-workspace premium-glass">
+
+            <div class="patients-toolbar">
+
+                <div class="patients-toolbar-title">
+                    <span class="section-kicker">PATIENT RECORDS</span>
+                    <h2>All patients</h2>
+                </div>
+
+                <div class="patients-controls">
+
+                    <div class="patients-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input
+                            type="text"
+                            id="patientSearch"
+                            placeholder="Search by name or condition..."
+                        >
+                    </div>
+
+                    <!-- RISK FILTER -->
+                    <div class="admin-filter" id="patientRiskFilter">
+
+                        <button type="button" class="filter-trigger">
+                            <span>All Risk</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="filter-menu">
+                            <button type="button" class="filter-option active" data-value="">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <span>All Risk</span>
+                            </button>
+                            <button type="button" class="filter-option" data-value="high">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>High</span>
+                            </button>
+                            <button type="button" class="filter-option" data-value="moderate">
+                                <i class="fa-solid fa-circle-half-stroke"></i>
+                                <span>Moderate</span>
+                            </button>
+                            <button type="button" class="filter-option" data-value="stable">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Stable</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- STATUS FILTER -->
+                    <div class="admin-filter" id="patientStatusFilter">
+
+                        <button type="button" class="filter-trigger">
+                            <span>All Status</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="filter-menu">
+                            <button type="button" class="filter-option active" data-value="">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <span>All Status</span>
+                            </button>
+                            <button type="button" class="filter-option" data-value="active">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Active</span>
+                            </button>
+                            <button type="button" class="filter-option" data-value="followup">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <span>Follow-up</span>
+                            </button>
+                            <button type="button" class="filter-option" data-value="discharged">
+                                <i class="fa-solid fa-door-open"></i>
+                                <span>Discharged</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PATIENT GRID -->
+
+            <div class="patients-grid" id="patientsGrid">
+
+                <article class="patient-directory-card" data-name="Amelia Morgan" data-risk="stable" data-status="active">
+                    <div class="patient-card-top">
+                        <div class="patient-card-avatar avatar-teal">AM</div>
+                        <span class="risk-tag stable">Stable</span>
+                    </div>
+                    <h3 class="patient-card-name">Amelia Morgan</h3>
+                    <p class="patient-card-meta">34 yrs · Female</p>
+                    <div class="patient-card-condition">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        Hypertension
+                    </div>
+                    <div class="patient-card-stats">
+                        <div><span>Last visit</span><strong>Aug 12</strong></div>
+                        <div><span>MRN</span><strong>#10241</strong></div>
+                    </div>
+                    <div class="patient-card-actions">
+                        <button class="doctor-secondary-btn" data-page="patient-profile.html">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Open Profile
+                        </button>
+                        <button class="icon-btn" title="Message"><i class="fa-solid fa-comment-medical"></i></button>
+                    </div>
+                </article>
+
+                <article class="patient-directory-card" data-name="James Miller" data-risk="moderate" data-status="active">
+                    <div class="patient-card-top">
+                        <div class="patient-card-avatar avatar-purple">JM</div>
+                        <span class="risk-tag moderate">Moderate</span>
+                    </div>
+                    <h3 class="patient-card-name">James Miller</h3>
+                    <p class="patient-card-meta">52 yrs · Male</p>
+                    <div class="patient-card-condition">
+                        <i class="fa-solid fa-heart-circle-bolt"></i>
+                        Chest pain
+                    </div>
+                    <div class="patient-card-stats">
+                        <div><span>Last visit</span><strong>Aug 14</strong></div>
+                        <div><span>MRN</span><strong>#10255</strong></div>
+                    </div>
+                    <div class="patient-card-actions">
+                        <button class="doctor-secondary-btn" data-page="patient-profile.html">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Open Profile
+                        </button>
+                        <button class="icon-btn" title="Message"><i class="fa-solid fa-comment-medical"></i></button>
+                    </div>
+                </article>
+
+                <article class="patient-directory-card" data-name="Robert Brooks" data-risk="high" data-status="active">
+                    <div class="patient-card-top">
+                        <div class="patient-card-avatar avatar-pink">RB</div>
+                        <span class="risk-tag high">High</span>
+                    </div>
+                    <h3 class="patient-card-name">Robert Brooks</h3>
+                    <p class="patient-card-meta">61 yrs · Male</p>
+                    <div class="patient-card-condition">
+                        <i class="fa-solid fa-wave-square"></i>
+                        Cardiac monitoring
+                    </div>
+                    <div class="patient-card-stats">
+                        <div><span>Last visit</span><strong>Aug 16</strong></div>
+                        <div><span>MRN</span><strong>#10188</strong></div>
+                    </div>
+                    <div class="patient-card-actions">
+                        <button class="doctor-secondary-btn" data-page="patient-profile.html">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Open Profile
+                        </button>
+                        <button class="icon-btn" title="Message"><i class="fa-solid fa-comment-medical"></i></button>
+                    </div>
+                </article>
+
+                <article class="patient-directory-card" data-name="Olivia Lewis" data-risk="stable" data-status="followup">
+                    <div class="patient-card-top">
+                        <div class="patient-card-avatar avatar-blue">OL</div>
+                        <span class="risk-tag stable">Stable</span>
+                    </div>
+                    <h3 class="patient-card-name">Olivia Lewis</h3>
+                    <p class="patient-card-meta">41 yrs · Female</p>
+                    <div class="patient-card-condition">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        Arrhythmia
+                    </div>
+                    <div class="patient-card-stats">
+                        <div><span>Last visit</span><strong>Aug 09</strong></div>
+                        <div><span>MRN</span><strong>#10203</strong></div>
+                    </div>
+                    <div class="patient-card-actions">
+                        <button class="doctor-secondary-btn" data-page="patient-profile.html">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Open Profile
+                        </button>
+                        <button class="icon-btn" title="Message"><i class="fa-solid fa-comment-medical"></i></button>
+                    </div>
+                </article>
+
+                <article class="patient-directory-card" data-name="Daniel Carter" data-risk="moderate" data-status="followup">
+                    <div class="patient-card-top">
+                        <div class="patient-card-avatar avatar-orange">DC</div>
+                        <span class="risk-tag moderate">Moderate</span>
+                    </div>
+                    <h3 class="patient-card-name">Daniel Carter</h3>
+                    <p class="patient-card-meta">57 yrs · Male</p>
+                    <div class="patient-card-condition">
+                        <i class="fa-solid fa-droplet"></i>
+                        Blood pressure
+                    </div>
+                    <div class="patient-card-stats">
+                        <div><span>Last visit</span><strong>Aug 05</strong></div>
+                        <div><span>MRN</span><strong>#10161</strong></div>
+                    </div>
+                    <div class="patient-card-actions">
+                        <button class="doctor-secondary-btn" data-page="patient-profile.html">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Open Profile
+                        </button>
+                        <button class="icon-btn" title="Message"><i class="fa-solid fa-comment-medical"></i></button>
+                    </div>
+                </article>
+
+                <article class="patient-directory-card" data-name="Emma Wilson" data-risk="stable" data-status="active">
+                    <div class="patient-card-top">
+                        <div class="patient-card-avatar avatar-teal">EW</div>
+                        <span class="risk-tag stable">Stable</span>
+                    </div>
+                    <h3 class="patient-card-name">Emma Wilson</h3>
+                    <p class="patient-card-meta">34 yrs · Female</p>
+                    <div class="patient-card-condition">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        Cardiology follow-up
+                    </div>
+                    <div class="patient-card-stats">
+                        <div><span>Last visit</span><strong>Aug 15</strong></div>
+                        <div><span>MRN</span><strong>#10298</strong></div>
+                    </div>
+                    <div class="patient-card-actions">
+                        <button class="doctor-secondary-btn" data-page="patient-profile.html">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Open Profile
+                        </button>
+                        <button class="icon-btn" title="Message"><i class="fa-solid fa-comment-medical"></i></button>
+                    </div>
+                </article>
+
+                <article class="patient-directory-card" data-name="Sophia Turner" data-risk="high" data-status="active">
+                    <div class="patient-card-top">
+                        <div class="patient-card-avatar avatar-purple">ST</div>
+                        <span class="risk-tag high">High</span>
+                    </div>
+                    <h3 class="patient-card-name">Sophia Turner</h3>
+                    <p class="patient-card-meta">68 yrs · Female</p>
+                    <div class="patient-card-condition">
+                        <i class="fa-solid fa-heart-circle-exclamation"></i>
+                        Heart failure
+                    </div>
+                    <div class="patient-card-stats">
+                        <div><span>Last visit</span><strong>Aug 17</strong></div>
+                        <div><span>MRN</span><strong>#10102</strong></div>
+                    </div>
+                    <div class="patient-card-actions">
+                        <button class="doctor-secondary-btn" data-page="patient-profile.html">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Open Profile
+                        </button>
+                        <button class="icon-btn" title="Message"><i class="fa-solid fa-comment-medical"></i></button>
+                    </div>
+                </article>
+
+                <article class="patient-directory-card" data-name="Noah Bennett" data-risk="stable" data-status="discharged">
+                    <div class="patient-card-top">
+                        <div class="patient-card-avatar avatar-blue">NB</div>
+                        <span class="risk-tag stable">Stable</span>
+                    </div>
+                    <h3 class="patient-card-name">Noah Bennett</h3>
+                    <p class="patient-card-meta">45 yrs · Male</p>
+                    <div class="patient-card-condition">
+                        <i class="fa-solid fa-stethoscope"></i>
+                        Post-op review
+                    </div>
+                    <div class="patient-card-stats">
+                        <div><span>Last visit</span><strong>Jul 28</strong></div>
+                        <div><span>MRN</span><strong>#10077</strong></div>
+                    </div>
+                    <div class="patient-card-actions">
+                        <button class="doctor-secondary-btn" data-page="patient-profile.html">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Open Profile
+                        </button>
+                        <button class="icon-btn" title="Message"><i class="fa-solid fa-comment-medical"></i></button>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div class="patients-empty" id="patientsEmpty" hidden>
+                <div class="empty-state-icon">
+                    <i class="fa-solid fa-user-slash"></i>
+                </div>
+                <h3>No patients found</h3>
+                <p>No patients match the current search and filters.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     ADD PATIENT MODAL
+========================================================= -->
+
+<div
+    class="appointment-modal-overlay"
+    id="addPatientModal"
+>
+
+    <div class="appointment-modal">
+
+        <!-- MODAL HEADER -->
+
+        <div class="appointment-modal-header">
+
+            <div>
+
+                <span class="doctor-eyebrow">
+                    <i class="fa-solid fa-user-plus"></i>
+                    PATIENT REGISTRATION
+                </span>
+
+                <h2>
+                    Add Patient
+                </h2>
+
+                <p>
+                    Register a new patient into your directory.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeAddPatient"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- MODAL BODY -->
+
+        <form
+            class="appointment-form"
+            id="addPatientForm"
+        >
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="newPatientName">
+                    <i class="fa-solid fa-user"></i>
+                    Full name
+                </label>
+
+                <div class="form-input-wrapper">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="newPatientName"
+                        placeholder="e.g. Amelia Morgan"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- AGE + SEX -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="newPatientAge">
+                        <i class="fa-solid fa-cake-candles"></i>
+                        Age
+                    </label>
+
+                    <div class="form-input-wrapper">
+
+                        <i class="fa-solid fa-hashtag"></i>
+
+                        <input
+                            type="number"
+                            id="newPatientAge"
+                            min="0"
+                            max="120"
+                            placeholder="e.g. 45"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="newPatientSex">
+                        <i class="fa-solid fa-venus-mars"></i>
+                        Sex
+                    </label>
+
+                    <div class="form-input-wrapper">
+
+                        <i class="fa-solid fa-venus-mars"></i>
+
+                        <select
+                            id="newPatientSex"
+                            required
+                        >
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONDITION -->
+
+            <div class="form-group">
+
+                <label for="newPatientCondition">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    Primary condition
+                </label>
+
+                <div class="form-input-wrapper">
+
+                    <i class="fa-solid fa-notes-medical"></i>
+
+                    <input
+                        type="text"
+                        id="newPatientCondition"
+                        placeholder="e.g. Hypertension"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- RISK + STATUS -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="newPatientRisk">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Risk level
+                    </label>
+
+                    <div class="form-input-wrapper">
+
+                        <i class="fa-solid fa-gauge-high"></i>
+
+                        <select
+                            id="newPatientRisk"
+                            required
+                        >
+                            <option value="stable">Stable</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="high">High</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="newPatientStatus">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Status
+                    </label>
+
+                    <div class="form-input-wrapper">
+
+                        <i class="fa-solid fa-clipboard-check"></i>
+
+                        <select
+                            id="newPatientStatus"
+                            required
+                        >
+                            <option value="active">Active</option>
+                            <option value="followup">Follow-up</option>
+                            <option value="discharged">Discharged</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="appointment-modal-actions">
+
+                <button
+                    type="button"
+                    class="doctor-secondary-btn"
+                    id="cancelAddPatient"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add Patient
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="../../assets/js/global.js"></script>
+<script src="../../assets/js/doctor.js"></script>
+<script src="../../assets/js/patients.js"></script>
+
+</body>
+
+</html>

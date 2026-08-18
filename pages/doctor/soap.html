@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medico | SOAP Notes</title>
+
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/doctor.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     AURORA BACKGROUND
+========================================================= -->
+
+<div class="aurora">
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+    <div class="aurora-3"></div>
+</div>
+
+
+<div class="dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+        <ul>
+
+            <li data-page="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li data-page="appointments.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Appointments</span>
+            </li>
+
+            <li data-page="consultation.html">
+                <i class="fa-solid fa-stethoscope"></i>
+                <span>Consultation</span>
+            </li>
+
+            <li data-page="patients.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Patients</span>
+            </li>
+
+            <li data-page="patient-profile.html">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Patient Profile</span>
+            </li>
+
+            <li data-page="icd10.html">
+                <i class="fa-solid fa-code"></i>
+                <span>ICD-10</span>
+            </li>
+
+            <li data-page="investigation.html">
+                <i class="fa-solid fa-microscope"></i>
+                <span>Investigation</span>
+            </li>
+
+            <li data-page="lab-analysis.html">
+                <i class="fa-solid fa-vials"></i>
+                <span>Lab Analysis</span>
+            </li>
+
+            <li data-page="radiology-analysis.html">
+                <i class="fa-solid fa-x-ray"></i>
+                <span>Radiology</span>
+            </li>
+
+            <li data-page="medication-assistant.html">
+                <i class="fa-solid fa-pills"></i>
+                <span>Medication AI</span>
+            </li>
+
+            <li data-page="reports.html">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Reports</span>
+            </li>
+
+            <li class="active" data-page="soap.html">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>SOAP Notes</span>
+            </li>
+
+        </ul>
+
+        <button class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+                <div class="doctor-breadcrumb">
+                    <span>MEDICO</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    Doctor Workspace
+                </div>
+                <h2>SOAP Notes</h2>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="profile-container">
+
+                    <div class="profile">
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Doctor profile"
+                        >
+
+                        <div class="profile-info">
+                            <strong>Dr. Sarah Mitchell</strong>
+                            <span>Cardiology</span>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+                    <div class="profile-menu">
+
+                        <div class="profile-header">
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Doctor profile"
+                            >
+
+                            <div>
+                                <h4>Dr. Sarah Mitchell</h4>
+                                <p>Cardiology Specialist</p>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="menu-item">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <span>My Profile</span>
+                        </div>
+
+                        <div class="menu-item">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span>
+                        </div>
+
+                        <div class="menu-item logout-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             TOPLINE
+        ================================================== -->
+
+        <section class="soap-topline premium-glass">
+
+            <div class="soap-topline-title">
+                <span class="section-kicker">CLINICAL DOCUMENTATION</span>
+                <h2>New SOAP Note</h2>
+                <p>Structured Subjective · Objective · Assessment · Plan</p>
+            </div>
+
+            <div class="soap-topline-controls">
+
+                <div class="soap-select">
+                    <label for="soapPatient">Patient</label>
+                    <select id="soapPatient">
+                        <option value="Amelia Morgan">Amelia Morgan</option>
+                        <option value="James Miller">James Miller</option>
+                        <option value="Robert Brooks">Robert Brooks</option>
+                        <option value="Olivia Lewis">Olivia Lewis</option>
+                    </select>
+                </div>
+
+                <div class="soap-select">
+                    <label for="soapTemplate">Template</label>
+                    <select id="soapTemplate">
+                        <option value="general">General</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="followup">Follow-up</option>
+                    </select>
+                </div>
+
+                <span class="consult-autosave" id="soapAutosave">
+                    <i class="fa-solid fa-cloud"></i>
+                    Draft saved
+                </span>
+
+                <button class="primary-btn" id="saveSoapBtn">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Save Note
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOAP SECTIONS
+        ================================================== -->
+
+        <section class="soap-grid">
+
+            <div class="soap-section premium-glass">
+                <div class="soap-section-head">
+                    <span class="soap-letter teal">S</span>
+                    <div>
+                        <h3>Subjective</h3>
+                        <p>Symptoms in the patient's own words</p>
+                    </div>
+                </div>
+                <textarea
+                    class="soap-textarea"
+                    rows="6"
+                    placeholder="Chief complaint, history of present illness, review of systems..."
+                ></textarea>
+            </div>
+
+            <div class="soap-section premium-glass">
+                <div class="soap-section-head">
+                    <span class="soap-letter purple">O</span>
+                    <div>
+                        <h3>Objective</h3>
+                        <p>Measurable findings and vitals</p>
+                    </div>
+                </div>
+                <textarea
+                    class="soap-textarea"
+                    rows="6"
+                    placeholder="Vitals, physical examination, lab and imaging results..."
+                ></textarea>
+            </div>
+
+            <div class="soap-section premium-glass">
+                <div class="soap-section-head">
+                    <span class="soap-letter blue">A</span>
+                    <div>
+                        <h3>Assessment</h3>
+                        <p>Diagnosis and clinical impression</p>
+                    </div>
+                </div>
+                <textarea
+                    class="soap-textarea"
+                    rows="6"
+                    placeholder="Primary and differential diagnoses, clinical reasoning..."
+                ></textarea>
+            </div>
+
+            <div class="soap-section premium-glass">
+                <div class="soap-section-head">
+                    <span class="soap-letter orange">P</span>
+                    <div>
+                        <h3>Plan</h3>
+                        <p>Treatment and next steps</p>
+                    </div>
+                </div>
+                <textarea
+                    class="soap-textarea"
+                    rows="6"
+                    placeholder="Medications, investigations, referrals, follow-up..."
+                ></textarea>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="../../assets/js/global.js"></script>
+<script src="../../assets/js/doctor.js"></script>
+<script src="../../assets/js/soap.js"></script>
+
+</body>
+
+</html>

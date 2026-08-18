@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medico | Appointments</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/doctor.css">
+</head>
+
+<body>
+
+<div class="aurora">
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+    <div class="aurora-3"></div>
+</div>
+
+<div class="dashboard">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+        <button class="sidebar-toggle">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="theme-toggle">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <ul>
+
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li class="active">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Appointments</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-stethoscope"></i>
+                <span>Consultation</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-users"></i>
+                <span>Patients</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Patient Profile</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-code"></i>
+                <span>ICD-10</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-flask"></i>
+                <span>Investigation</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-vials"></i>
+                <span>Lab Analysis</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-x-ray"></i>
+                <span>Radiology</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-pills"></i>
+                <span>Medication AI</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Reports</span>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>SOAP Notes</span>
+            </li>
+
+        </ul>
+
+        <button class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+                <h2>Appointments</h2>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="profile-container">
+
+                    <div class="profile">
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Doctor profile"
+                        >
+
+                        <div>
+                            <strong>Dr. Sarah Mitchell</strong>
+                            <small>Cardiologist</small>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+
+                    <!-- PROFILE MENU -->
+
+                    <div class="profile-menu">
+
+                        <div class="profile-header">
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Doctor"
+                            >
+
+                            <div>
+                                <h4>Dr. Sarah Mitchell</h4>
+                                <p>Cardiology</p>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <span>
+                                My Profile
+                            </span>
+
+                        </div>
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            <span>
+                                Settings
+                            </span>
+
+                        </div>
+
+                        <div class="menu-item logout-item">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            <span>
+                                Logout
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             APPOINTMENT HERO
+        ================================================== -->
+
+        <section class="doctor-page-hero appointments-hero">
+
+            <div class="appointments-hero-content">
+
+                <span class="doctor-eyebrow">
+
+                    <i class="fa-solid fa-calendar-day"></i>
+
+                    TODAY'S CLINICAL SCHEDULE
+
+                </span>
+
+
+                <h1>
+
+                    Your day,
+
+                    <span>
+                        under control.
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Manage consultations, monitor patient flow,
+                    and keep your clinical schedule organized
+                    from one intelligent workspace.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <button
+                        class="primary-btn"
+                        id="newAppointmentBtn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        New Appointment
+
+                    </button>
+
+
+                    <button
+                        class="doctor-secondary-btn"
+                        id="todayBtn"
+                    >
+
+                        <i class="fa-solid fa-calendar-day"></i>
+
+                        Today
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CREATIVE SCHEDULE VISUAL -->
+
+            <div class="schedule-orbit">
+
+                <div class="orbit-glow"></div>
+
+                <div class="orbit-ring orbit-ring-outer"></div>
+
+                <div class="orbit-ring orbit-ring-middle"></div>
+
+                <div class="orbit-ring orbit-ring-inner"></div>
+
+
+                <div class="orbit-center">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <strong>08</strong>
+
+                    <small>
+                        Appointments
+                    </small>
+
+                </div>
+
+
+                <div class="orbit-point point-one">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="orbit-point point-two">
+
+                    <i class="fa-solid fa-stethoscope"></i>
+
+                </div>
+
+
+                <div class="orbit-point point-three">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             APPOINTMENT STATS
+        ================================================== -->
+
+        <section class="appointment-stats">
+
+            <div class="appointment-stat-card">
+
+                <div class="appointment-stat-icon teal">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Today
+                    </span>
+
+                    <strong>
+                        08
+                    </strong>
+
+                    <small>
+                        Scheduled appointments
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-stat-card">
+
+                <div class="appointment-stat-icon purple">
+
+                    <i class="fa-solid fa-hourglass-half"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Waiting
+                    </span>
+
+                    <strong>
+                        02
+                    </strong>
+
+                    <small>
+                        Patients waiting
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-stat-card">
+
+                <div class="appointment-stat-icon blue">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Completed
+                    </span>
+
+                    <strong>
+                        04
+                    </strong>
+
+                    <small>
+                        Consultations finished
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-stat-card">
+
+                <div class="appointment-stat-icon orange">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Next Patient
+                    </span>
+
+                    <strong>
+                        14:30
+                    </strong>
+
+                    <small>
+                        In 25 minutes
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             APPOINTMENT WORKSPACE
+        ================================================== -->
+
+        <section class="appointments-workspace">
+
+
+            <!-- =================================================
+                 TOOLBAR
+            ================================================== -->
+
+            <div class="appointments-toolbar">
+
+
+                <!-- TITLE -->
+
+                <div class="appointments-toolbar-title">
+
+                    <span class="doctor-eyebrow">
+                        CLINICAL WORKSPACE
+                    </span>
+
+                    <h2>
+                        Today's appointments
+                    </h2>
+
+                </div>
+
+
+                <!-- =================================================
+                     FILTERS
+                ================================================== -->
+
+                <div class="appointments-filters">
+
+
+                    <!-- STATUS FILTER -->
+
+                    <div
+                        class="admin-filter"
+                        id="appointmentStatusFilter"
+                    >
+
+                        <button
+                            type="button"
+                            class="filter-trigger"
+                            id="appointmentStatusFilterTrigger"
+                        >
+
+                            <span>
+                                All Status
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+
+                        <div class="filter-menu">
+
+
+                            <button
+                                type="button"
+                                class="filter-option active"
+                                data-value=""
+                            >
+
+                                <i class="fa-solid fa-layer-group"></i>
+
+                                <span>
+                                    All Status
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="filter-option"
+                                data-value="upcoming"
+                            >
+
+                                <i class="fa-solid fa-clock"></i>
+
+                                <span>
+                                    Upcoming
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="filter-option"
+                                data-value="completed"
+                            >
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                <span>
+                                    Completed
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="filter-option"
+                                data-value="cancelled"
+                            >
+
+                                <i class="fa-solid fa-circle-xmark"></i>
+
+                                <span>
+                                    Cancelled
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATE FILTER -->
+
+                    <div
+                        class="admin-filter"
+                        id="appointmentDateFilter"
+                    >
+
+                        <button
+                            type="button"
+                            class="filter-trigger"
+                            id="appointmentDateFilterTrigger"
+                        >
+
+                            <span>
+                                All Dates
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+
+                        <div class="filter-menu">
+
+
+                            <button
+                                type="button"
+                                class="filter-option active"
+                                data-value=""
+                            >
+
+                                <i class="fa-solid fa-calendar"></i>
+
+                                <span>
+                                    All Dates
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="filter-option"
+                                data-value="today"
+                            >
+
+                                <i class="fa-solid fa-calendar-day"></i>
+
+                                <span>
+                                    Today
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="filter-option"
+                                data-value="tomorrow"
+                            >
+
+                                <i class="fa-solid fa-calendar-plus"></i>
+
+                                <span>
+                                    Tomorrow
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="filter-option"
+                                data-value="week"
+                            >
+
+                                <i class="fa-solid fa-calendar-week"></i>
+
+                                <span>
+                                    This Week
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 APPOINTMENT TIMELINE
+            ================================================== -->
+
+            <div class="appointment-timeline">
+
+
+                <!-- =================================================
+                     APPOINTMENT 1
+                ================================================== -->
+
+                <article
+                    class="doctor-appointment-card upcoming"
+                    data-status="upcoming"
+                    data-date="today"
+                    data-patient="Emma Wilson"
+                >
+
+                    <div class="appointment-time">
+
+                        <strong>
+                            14:30
+                        </strong>
+
+                        <span>
+                            30 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="timeline-line">
+
+                        <div class="timeline-dot"></div>
+
+                    </div>
+
+
+                    <div class="appointment-patient">
+
+                        <div class="patient-avatar avatar-teal">
+                            EW
+                        </div>
+
+                        <div class="patient-details">
+
+                            <h3>
+                                Emma Wilson
+                            </h3>
+
+                            <p>
+
+                                <i class="fa-solid fa-user"></i>
+
+                                34 years · Female
+
+                            </p>
+
+                            <span class="appointment-condition">
+
+                                Cardiology follow-up
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-status">
+
+                        <span class="status-badge upcoming-status">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            Upcoming
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="appointment-actions">
+
+                        <button
+                            class="icon-btn"
+                            title="View patient"
+                        >
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </button>
+
+
+                        <button
+                            class="icon-btn"
+                            title="More"
+                        >
+
+                            <i class="fa-solid fa-ellipsis"></i>
+
+                        </button>
+
+
+                        <button
+                            class="primary-btn appointment-start"
+                        >
+
+                            <i class="fa-solid fa-stethoscope"></i>
+
+                            Start
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     APPOINTMENT 2
+                ================================================== -->
+
+                <article
+                    class="doctor-appointment-card waiting"
+                    data-status="waiting"
+                    data-date="today"
+                    data-patient="Daniel Carter"
+                >
+
+                    <div class="appointment-time">
+
+                        <strong>
+                            15:00
+                        </strong>
+
+                        <span>
+                            30 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="timeline-line">
+
+                        <div class="timeline-dot waiting-dot"></div>
+
+                    </div>
+
+
+                    <div class="appointment-patient">
+
+                        <div class="patient-avatar avatar-purple">
+                            DC
+                        </div>
+
+                        <div class="patient-details">
+
+                            <h3>
+                                Daniel Carter
+                            </h3>
+
+                            <p>
+
+                                <i class="fa-solid fa-user"></i>
+
+                                52 years · Male
+
+                            </p>
+
+                            <span class="appointment-condition">
+
+                                Blood pressure review
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-status">
+
+                        <span class="status-badge waiting-status">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                            Waiting
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="appointment-actions">
+
+                        <button
+                            class="icon-btn"
+                            title="View patient"
+                        >
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </button>
+
+
+                        <button
+                            class="icon-btn"
+                            title="More"
+                        >
+
+                            <i class="fa-solid fa-ellipsis"></i>
+
+                        </button>
+
+
+                        <button
+                            class="primary-btn appointment-start"
+                        >
+
+                            <i class="fa-solid fa-stethoscope"></i>
+
+                            Start
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     APPOINTMENT 3
+                ================================================== -->
+
+                <article
+                    class="doctor-appointment-card completed"
+                    data-status="completed"
+                    data-date="today"
+                    data-patient="Olivia Bennett"
+                >
+
+                    <div class="appointment-time">
+
+                        <strong>
+                            13:30
+                        </strong>
+
+                        <span>
+                            45 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="timeline-line">
+
+                        <div class="timeline-dot completed-dot"></div>
+
+                    </div>
+
+
+                    <div class="appointment-patient">
+
+                        <div class="patient-avatar avatar-blue">
+                            OB
+                        </div>
+
+                        <div class="patient-details">
+
+                            <h3>
+                                Olivia Bennett
+                            </h3>
+
+                            <p>
+
+                                <i class="fa-solid fa-user"></i>
+
+                                41 years · Female
+
+                            </p>
+
+                            <span class="appointment-condition">
+
+                                Routine cardiac review
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-status">
+
+                        <span class="status-badge completed-status">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            Completed
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="appointment-actions">
+
+                        <button
+                            class="icon-btn"
+                            title="Medical record"
+                        >
+
+                            <i class="fa-solid fa-file-medical"></i>
+
+                        </button>
+
+
+                        <button
+                            class="icon-btn"
+                            title="More"
+                        >
+
+                            <i class="fa-solid fa-ellipsis"></i>
+
+                        </button>
+
+
+                        <button
+                            class="doctor-secondary-btn"
+                        >
+
+                            View Notes
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     APPOINTMENT 4
+                ================================================== -->
+
+                <article
+                    class="doctor-appointment-card upcoming"
+                    data-status="upcoming"
+                    data-date="today"
+                    data-patient="James Anderson"
+                >
+
+                    <div class="appointment-time">
+
+                        <strong>
+                            16:00
+                        </strong>
+
+                        <span>
+                            30 min
+                        </span>
+
+                    </div>
+
+
+                    <div class="timeline-line">
+
+                        <div class="timeline-dot"></div>
+
+                    </div>
+
+
+                    <div class="appointment-patient">
+
+                        <div class="patient-avatar avatar-orange">
+                            JA
+                        </div>
+
+                        <div class="patient-details">
+
+                            <h3>
+                                James Anderson
+                            </h3>
+
+                            <p>
+
+                                <i class="fa-solid fa-user"></i>
+
+                                47 years · Male
+
+                            </p>
+
+                            <span class="appointment-condition">
+
+                                Chest pain assessment
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-status">
+
+                        <span class="status-badge upcoming-status">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            Upcoming
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="appointment-actions">
+
+                        <button
+                            class="icon-btn"
+                            title="View patient"
+                        >
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </button>
+
+
+                        <button
+                            class="icon-btn"
+                            title="More"
+                        >
+
+                            <i class="fa-solid fa-ellipsis"></i>
+
+                        </button>
+
+
+                        <button
+                            class="primary-btn appointment-start"
+                        >
+
+                            <i class="fa-solid fa-stethoscope"></i>
+
+                            Start
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+        <!-- =====================================================
+     NEW APPOINTMENT MODAL
+====================================================== -->
+
+<div
+    class="appointment-modal-overlay"
+    id="appointmentModal"
+>
+
+    <div class="appointment-modal">
+
+        <!-- MODAL HEADER -->
+
+        <div class="appointment-modal-header">
+
+            <div>
+
+                <span class="doctor-eyebrow">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    APPOINTMENT MANAGEMENT
+                </span>
+
+                <h2>
+                    New Appointment
+                </h2>
+
+                <p>
+                    Schedule a consultation for a patient.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeAppointmentModal"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- MODAL BODY -->
+
+        <form
+            class="appointment-form"
+            id="appointmentForm"
+        >
+
+            <!-- PATIENT -->
+
+            <div class="form-group">
+
+                <label for="appointmentPatient">
+                    <i class="fa-solid fa-user"></i>
+                    Patient
+                </label>
+
+                <div class="form-input-wrapper">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <select
+                        id="appointmentPatient"
+                        required
+                    >
+
+                        <option value="">
+                            Select patient
+                        </option>
+
+                        <option value="Emma Wilson">
+                            Emma Wilson
+                        </option>
+
+                        <option value="Daniel Carter">
+                            Daniel Carter
+                        </option>
+
+                        <option value="Olivia Bennett">
+                            Olivia Bennett
+                        </option>
+
+                        <option value="James Anderson">
+                            James Anderson
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATE + TIME -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="appointmentDate">
+
+                        <i class="fa-solid fa-calendar"></i>
+
+                        Date
+
+                    </label>
+
+                    <div class="form-input-wrapper">
+
+                        <i class="fa-solid fa-calendar-day"></i>
+
+                        <input
+                            type="date"
+                            id="appointmentDate"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="appointmentTime">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        Time
+
+                    </label>
+
+                    <div class="form-input-wrapper">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <input
+                            type="time"
+                            id="appointmentTime"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- APPOINTMENT TYPE -->
+
+            <div class="form-group">
+
+                <label for="appointmentType">
+
+                    <i class="fa-solid fa-stethoscope"></i>
+
+                    Appointment Type
+
+                </label>
+
+                <div class="form-input-wrapper">
+
+                    <i class="fa-solid fa-stethoscope"></i>
+
+                    <select
+                        id="appointmentType"
+                        required
+                    >
+
+                        <option value="">
+                            Select appointment type
+                        </option>
+
+                        <option value="General Consultation">
+                            General Consultation
+                        </option>
+
+                        <option value="Follow-up">
+                            Follow-up
+                        </option>
+
+                        <option value="Cardiology Review">
+                            Cardiology Review
+                        </option>
+
+                        <option value="Routine Check-up">
+                            Routine Check-up
+                        </option>
+
+                        <option value="Emergency Consultation">
+                            Emergency Consultation
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- DURATION -->
+
+            <div class="form-group">
+
+                <label for="appointmentDuration">
+
+                    <i class="fa-solid fa-hourglass-half"></i>
+
+                    Duration
+
+                </label>
+
+                <div class="form-input-wrapper">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <select
+                        id="appointmentDuration"
+                        required
+                    >
+
+                        <option value="15">
+                            15 minutes
+                        </option>
+
+                        <option
+                            value="30"
+                            selected
+                        >
+                            30 minutes
+                        </option>
+
+                        <option value="45">
+                            45 minutes
+                        </option>
+
+                        <option value="60">
+                            60 minutes
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTES -->
+
+            <div class="form-group">
+
+                <label for="appointmentNotes">
+
+                    <i class="fa-solid fa-notes-medical"></i>
+
+                    Clinical Notes
+                    <span class="optional">
+                        Optional
+                    </span>
+
+                </label>
+
+                <textarea
+                    id="appointmentNotes"
+                    placeholder="Add a short note about the appointment..."
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="appointment-modal-summary">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Appointment Summary
+                    </strong>
+
+                    <span id="appointmentSummary">
+                        Select a patient, date and time
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="appointment-modal-actions">
+
+                <button
+                    type="button"
+                    class="doctor-secondary-btn"
+                    id="cancelAppointmentModal"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+
+                    <i class="fa-solid fa-calendar-plus"></i>
+
+                    Create Appointment
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="../../assets/js/global.js"></script>
+<script src="../../assets/js/doctor.js"></script>
+
+</body>
+
+</html>

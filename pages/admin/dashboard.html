@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | Medico</title>
+
+
+    <!-- ===============================
+         GLOBAL CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/global.css"
+    >
+
+
+    <!-- ===============================
+         ADMIN CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/admin.css"
+    >
+
+
+    <!-- ===============================
+         RESPONSIVE CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/responsive.css"
+    >
+
+
+    <!-- ===============================
+         FONT AWESOME
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     AURORA BACKGROUND
+====================================================== -->
+
+<div class="aurora">
+
+    <div class="aurora-1"></div>
+
+    <div class="aurora-2"></div>
+
+    <div class="aurora-3"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+     DASHBOARD
+====================================================== -->
+
+<div
+    class="dashboard"
+    id="dashboard"
+>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Sidebar Collapse -->
+
+        <button
+            class="sidebar-toggle"
+            aria-label="Toggle sidebar"
+        >
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+
+        <!-- Theme -->
+
+        <button
+            class="theme-toggle"
+            aria-label="Toggle theme"
+        >
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <ul>
+
+
+            <!-- Dashboard -->
+
+            <li
+                class="active"
+                data-admin-action="dashboard"
+                data-tooltip="Dashboard"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </li>
+
+
+
+            <!-- Users -->
+
+            <li
+                data-admin-action="users"
+                data-tooltip="Users"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Users
+                </span>
+
+            </li>
+
+
+
+            <!-- Audit Logs -->
+
+            <li
+                data-admin-action="audit-logs"
+                data-tooltip="Audit Logs"
+            >
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>
+                    Audit Logs
+                </span>
+
+            </li>
+
+
+        </ul>
+
+
+
+        <!-- Logout -->
+
+        <button
+            class="logout"
+            data-tooltip="Logout"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <nav class="topbar">
+
+
+            <div class="page-title">
+
+                <div class="page-breadcrumb">
+                    <span>MEDICO</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    Admin Workspace
+                </div>
+
+                <h2>
+                    Dashboard
+                </h2>
+
+            </div>
+
+
+
+            <div class="top-actions">
+
+
+                <!-- Profile -->
+
+                <div class="profile-container">
+
+
+                    <div class="profile">
+
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Admin profile"
+                        >
+
+
+                        <span>
+                            Hadi
+                        </span>
+
+
+                        <i
+                            class="fa-solid fa-chevron-down"
+                        ></i>
+
+
+                    </div>
+
+
+
+                    <!-- Profile Menu -->
+
+                    <div class="profile-menu">
+
+
+                        <div class="profile-header">
+
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Profile"
+                            >
+
+
+                            <div>
+
+                                <h4>
+                                    Hadi
+                                </h4>
+
+                                <p>
+                                    Administrator Account
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <hr>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            My Profile
+
+                        </div>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            Security
+
+                        </div>
+
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </div>
+
+
+
+                        <div class="menu-item logout-item">
+
+                            <i
+                                class="fa-solid fa-right-from-bracket"
+                            ></i>
+
+                            Logout
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             WELCOME CARD
+        ================================================== -->
+
+        <section class="page-hero">
+
+
+            <div class="page-hero-content">
+
+
+                <span class="page-eyebrow">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    ADMIN WORKSPACE
+                </span>
+
+
+                <h1>
+                    Good morning,
+                    <span>Hadi.</span>
+                </h1>
+
+
+                <p>
+                    Monitor the Medico platform, manage users,
+                    review system activity and keep the healthcare
+                    environment running smoothly.
+                </p>
+
+
+                <button
+                    class="primary-btn"
+                    data-admin-action="users"
+                >
+
+                    Manage Users
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+            <div class="page-hero-visual">
+                <i class="fa-solid fa-shield-halved page-hero-glyph"></i>
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ADMIN STATISTICS
+        ================================================== -->
+
+        <section class="stats-grid admin-stats">
+
+
+            <!-- Total Users -->
+
+            <div class="stat-card premium-glass">
+
+
+                <div class="stat-icon admin-users">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2
+                        class="admin-counter"
+                        data-target="156"
+                    >
+                        0
+                    </h2>
+
+                    <h4>
+                        Total Users
+                    </h4>
+
+                    <p>
+                        Registered Accounts
+                    </p>
+
+                </div>
+
+
+                <span class="badge positive">
+                    +12
+                </span>
+
+
+            </div>
+
+
+
+            <!-- Patients -->
+
+            <div class="stat-card premium-glass">
+
+
+                <div class="stat-icon admin-patients">
+
+                    <i class="fa-solid fa-user-injured"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2
+                        class="admin-counter"
+                        data-target="112"
+                    >
+                        0
+                    </h2>
+
+                    <h4>
+                        Patients
+                    </h4>
+
+                    <p>
+                        Registered Patients
+                    </p>
+
+                </div>
+
+
+                <span class="badge">
+                    Active
+                </span>
+
+
+            </div>
+
+
+
+            <!-- Doctors -->
+
+            <div class="stat-card premium-glass">
+
+
+                <div class="stat-icon admin-doctors">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2
+                        class="admin-counter"
+                        data-target="28"
+                    >
+                        0
+                    </h2>
+
+                    <h4>
+                        Doctors
+                    </h4>
+
+                    <p>
+                        Medical Staff
+                    </p>
+
+                </div>
+
+
+                <span class="badge positive">
+                    +3
+                </span>
+
+
+            </div>
+
+
+
+            <!-- Nurses -->
+
+            <div class="stat-card premium-glass">
+
+
+                <div class="stat-icon admin-nurses">
+
+                    <i class="fa-solid fa-user-nurse"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2
+                        class="admin-counter"
+                        data-target="16"
+                    >
+                        0
+                    </h2>
+
+                    <h4>
+                        Nurses
+                    </h4>
+
+                    <p>
+                        Nursing Staff
+                    </p>
+
+                </div>
+
+
+                <span class="badge positive">
+                    +2
+                </span>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             WORKSPACE GRID
+        ================================================== -->
+
+        <section class="dashboard-grid admin-dashboard-grid">
+
+
+            <!-- =================================================
+                 USER OVERVIEW
+            ================================================== -->
+
+            <div class="appointment-card premium-glass">
+
+
+                <div class="widget-header">
+
+
+                    <div>
+
+                        <span>
+                            USER OVERVIEW
+                        </span>
+
+                        <h2>
+                            Platform Users
+                        </h2>
+
+                    </div>
+
+
+                    <div class="doctor-icon">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="admin-user-overview">
+
+
+                    <!-- Patients -->
+
+                    <div class="admin-overview-row">
+
+
+                        <div class="admin-overview-info">
+
+                            <div class="admin-overview-icon patients">
+
+                                <i class="fa-solid fa-user-injured"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Patients
+                                </strong>
+
+                                <p>
+                                    112 registered
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-overview-value">
+
+                            <strong>
+                                72%
+                            </strong>
+
+                            <div class="admin-progress">
+
+                                <span
+                                    style="width: 72%;"
+                                ></span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Doctors -->
+
+                    <div class="admin-overview-row">
+
+
+                        <div class="admin-overview-info">
+
+                            <div class="admin-overview-icon doctors">
+
+                                <i class="fa-solid fa-user-doctor"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Doctors
+                                </strong>
+
+                                <p>
+                                    28 registered
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-overview-value">
+
+                            <strong>
+                                18%
+                            </strong>
+
+                            <div class="admin-progress">
+
+                                <span
+                                    style="width: 18%;"
+                                ></span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Nurses -->
+
+                    <div class="admin-overview-row">
+
+
+                        <div class="admin-overview-info">
+
+                            <div class="admin-overview-icon nurses">
+
+                                <i class="fa-solid fa-user-nurse"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Nurses
+                                </strong>
+
+                                <p>
+                                    16 registered
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-overview-value">
+
+                            <strong>
+                                10%
+                            </strong>
+
+                            <div class="admin-progress">
+
+                                <span
+                                    style="width: 10%;"
+                                ></span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    class="primary-btn"
+                    data-admin-action="users"
+                >
+
+                    Manage Users
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SYSTEM ACTIVITY
+            ================================================== -->
+
+            <div class="ai-card admin-activity-card">
+
+
+                <div class="ai-top">
+
+
+                    <div class="ai-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+
+                    <span>
+                        SYSTEM MONITORING
+                    </span>
+
+
+                </div>
+
+
+
+                <h2>
+                    Recent Activity
+                </h2>
+
+
+                <p>
+                    Monitor the latest activity across
+                    the Medico platform.
+                </p>
+
+
+
+                <div class="admin-activity-list">
+
+
+                    <!-- Activity 1 -->
+
+                    <div class="admin-activity-item">
+
+
+                        <div class="admin-activity-icon user">
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                New patient registered
+                            </strong>
+
+                            <p>
+                                5 minutes ago
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Activity 2 -->
+
+                    <div class="admin-activity-item">
+
+
+                        <div class="admin-activity-icon doctor">
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Doctor account created
+                            </strong>
+
+                            <p>
+                                24 minutes ago
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Activity 3 -->
+
+                    <div class="admin-activity-item">
+
+
+                        <div class="admin-activity-icon security">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Security settings updated
+                            </strong>
+
+                            <p>
+                                1 hour ago
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Activity 4 -->
+
+                    <div class="admin-activity-item">
+
+
+                        <div class="admin-activity-icon nurse">
+
+                            <i class="fa-solid fa-user-nurse"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Nurse account activated
+                            </strong>
+
+                            <p>
+                                2 hours ago
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    class="admin-text-btn"
+                    data-admin-action="audit-logs"
+                >
+
+                    View Audit Logs
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RECENT USERS
+        ================================================== -->
+
+        <section class="health-overview premium-glass admin-users-section">
+
+
+            <div class="health-header">
+
+
+                <div>
+
+                    <span>
+                        USER MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Recent Users
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    data-admin-action="users"
+                >
+
+                    View All
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <div class="admin-user-list">
+
+
+                <!-- User 1 -->
+
+                <div class="admin-user-row">
+
+
+                    <div class="admin-user-info">
+
+
+                        <div class="admin-user-avatar">
+                            AM
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Ahmad Mansour
+                            </h3>
+
+                            <p>
+                                PT-1024 · Patient
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="admin-user-role patient">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Patient
+
+                    </div>
+
+
+
+                    <div class="admin-user-status active">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Active
+
+                    </div>
+
+
+
+                    <div class="admin-user-time">
+
+                        Today
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- User 2 -->
+
+                <div class="admin-user-row">
+
+
+                    <div class="admin-user-info">
+
+
+                        <div class="admin-user-avatar doctor">
+                            LN
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Dr. Lina Nassar
+                            </h3>
+
+                            <p>
+                                DOC-204 · Doctor
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="admin-user-role doctor">
+
+                        <i class="fa-solid fa-user-doctor"></i>
+
+                        Doctor
+
+                    </div>
+
+
+
+                    <div class="admin-user-status active">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Active
+
+                    </div>
+
+
+
+                    <div class="admin-user-time">
+
+                        Today
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- User 3 -->
+
+                <div class="admin-user-row">
+
+
+                    <div class="admin-user-info">
+
+
+                        <div class="admin-user-avatar nurse">
+                            SN
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Sarah Nehme
+                            </h3>
+
+                            <p>
+                                NUR-118 · Nurse
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="admin-user-role nurse">
+
+                        <i class="fa-solid fa-user-nurse"></i>
+
+                        Nurse
+
+                    </div>
+
+
+
+                    <div class="admin-user-status active">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Active
+
+                    </div>
+
+
+
+                    <div class="admin-user-time">
+
+                        Yesterday
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+    src="../../assets/js/global.js"
+></script>
+
+
+<script
+    src="../../assets/js/admin.js"
+></script>
+
+
+</body>
+
+</html>

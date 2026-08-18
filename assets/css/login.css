@@ -1,6 +1,59 @@
-/* =====================================
-        MEDICO GLASS LOGIN UI
-===================================== */
+/* =========================================================
+   MEDICO
+   GLASS LOGIN UI
+   (aligned to the global design system:
+    Inter · tokens · animated aurora · glass recipe)
+========================================================= */
+
+
+/* =========================================================
+   THEME VARIABLES
+   (mirrors assets/css/global.css)
+========================================================= */
+
+:root{
+
+    --bg:#020617;
+
+    --text:#ffffff;
+
+    --muted:#94a3b8;
+
+
+    --primary:#17afa2;
+
+    --primary-hover:#20cbbd;
+
+
+    --purple:#8b5cf6;
+
+    --blue:#2563eb;
+
+
+    --glass:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.035)
+        );
+
+
+    --glass-strong:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.045)
+        );
+
+
+    --glass-border:
+        rgba(255,255,255,.14);
+
+
+    --shadow:
+        0 25px 70px rgba(0,0,0,.35);
+
+}
 
 
 /* RESET */
@@ -18,11 +71,14 @@ body{
 
     min-height:100vh;
 
-    font-family:Arial, sans-serif;
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
 
-    background:#020617;
+    background:var(--bg);
 
-    color:white;
+    color:var(--text);
 
     overflow:hidden;
 
@@ -31,7 +87,8 @@ body{
 
 
 /* =====================================
-        BACKGROUND
+        AURORA BACKGROUND
+        (identical system to the dashboard pages)
 ===================================== */
 
 
@@ -48,8 +105,39 @@ body{
 }
 
 
+.background::before{
 
-/* Animated blobs */
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(23,175,162,.18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(139,92,246,.16),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(37,99,235,.14),
+            transparent 30%
+        );
+
+}
+
+
+
+/* Aurora glows */
 
 
 .blob{
@@ -58,11 +146,7 @@ body{
 
     border-radius:50%;
 
-    filter:blur(120px);
-
-    opacity:.35;
-
-    animation:moveBlob 15s infinite alternate ease-in-out;
+    filter:blur(140px);
 
 }
 
@@ -70,15 +154,22 @@ body{
 
 .blob-one{
 
-    width:500px;
+    width:600px;
 
-    height:500px;
+    height:600px;
 
-    background:#17afa2;
+    background:var(--primary);
 
-    top:-150px;
+    top:-230px;
 
-    left:-150px;
+    left:-220px;
+
+    opacity:.30;
+
+    animation:
+        auroraMove1 22s
+        infinite alternate
+        ease-in-out;
 
 }
 
@@ -86,17 +177,22 @@ body{
 
 .blob-two{
 
-    width:450px;
+    width:550px;
 
-    height:450px;
+    height:550px;
 
-    background:#8b5cf6;
+    background:var(--purple);
 
-    right:-150px;
+    right:-190px;
 
-    bottom:-120px;
+    top:70px;
 
-    animation-delay:3s;
+    opacity:.27;
+
+    animation:
+        auroraMove2 25s
+        infinite alternate
+        ease-in-out;
 
 }
 
@@ -104,36 +200,75 @@ body{
 
 .blob-three{
 
-    width:300px;
+    width:550px;
 
-    height:300px;
+    height:550px;
 
-    background:#0ea5e9;
+    background:var(--blue);
 
-    top:40%;
+    bottom:-250px;
 
-    left:45%;
+    left:35%;
 
-    animation-delay:6s;
+    opacity:.22;
+
+    filter:blur(150px);
+
+    animation:
+        auroraMove3 28s
+        infinite alternate
+        ease-in-out;
 
 }
 
 
 
-@keyframes moveBlob{
-
+@keyframes auroraMove1{
 
     from{
-
-        transform:translate(0,0);
-
+        transform:
+            translate(0,0)
+            scale(1);
     }
 
+    to{
+        transform:
+            translate(100px,70px)
+            scale(1.25);
+    }
+
+}
+
+
+@keyframes auroraMove2{
+
+    from{
+        transform:
+            translate(0,0)
+            scale(1);
+    }
 
     to{
+        transform:
+            translate(-90px,70px)
+            scale(1.2);
+    }
 
-        transform:translate(80px,-60px);
+}
 
+
+@keyframes auroraMove3{
+
+    from{
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to{
+        transform:
+            translate(80px,-80px)
+            scale(1.25);
     }
 
 }
@@ -290,18 +425,35 @@ nav{
 
     align-items:center;
 
+    position:relative;
 
-    background:
+    z-index:10;
 
-    rgba(255,255,255,.06);
+
+    background:var(--glass);
 
 
     border:
+        1px solid
+        var(--glass-border);
 
-    1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
 
-    backdrop-filter:blur(25px);
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
 
 
     border-radius:40px;
@@ -322,7 +474,7 @@ nav{
 
 nav a{
 
-    color:#94a3b8;
+    color:var(--muted);
 
     text-decoration:none;
 
@@ -338,7 +490,7 @@ nav a{
 
 nav a:hover{
 
-    color:#17afa2;
+    color:var(--primary);
 
 }
 
@@ -350,6 +502,11 @@ nav a:hover{
 
 
 .login-container{
+
+
+    position:relative;
+
+    z-index:1;
 
 
     min-height:
@@ -382,19 +539,21 @@ nav a:hover{
     padding:45px;
 
 
-    background:
-
-    rgba(255,255,255,.07);
+    background:var(--glass);
 
 
     backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
-    blur(35px);
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
 
 
     border:
-
-    1px solid rgba(255,255,255,.15);
+        1px solid
+        var(--glass-border);
 
 
 
@@ -404,7 +563,11 @@ nav a:hover{
 
     box-shadow:
 
-    0 30px 80px rgba(0,0,0,.5);
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
 
 
 
@@ -494,7 +657,7 @@ transform:translateY(0);
 .login-card p{
 
 
-    color:#94a3b8;
+    color:var(--muted);
 
 
     line-height:1.7;
@@ -545,8 +708,8 @@ form{
 
 
     border:
-
-    1px solid rgba(255,255,255,.12);
+        1px solid
+        var(--glass-border);
 
 
     border-radius:18px;
@@ -562,7 +725,7 @@ form{
 .input-box:focus-within{
 
 
-    border-color:#17afa2;
+    border-color:var(--primary);
 
 
     box-shadow:
@@ -598,7 +761,7 @@ form{
 
     outline:none;
 
-    color:white;
+    color:var(--text);
 
     font-size:16px;
 
@@ -614,7 +777,7 @@ form{
 
     margin:0!important;
 
-    color:#94a3b8!important;
+    color:var(--muted)!important;
 
 }
 
@@ -641,7 +804,7 @@ form{
 
     linear-gradient(
     135deg,
-    #17afa2,
+    var(--primary),
     #0ea5e9
     );
 
@@ -754,7 +917,7 @@ form{
     flex:1;
 
     background:
-    rgba(255,255,255,.15);
+    var(--glass-border);
 
 }
 
@@ -765,7 +928,7 @@ form{
 
     padding:0 15px;
 
-    color:#94a3b8;
+    color:var(--muted);
 
 }
 
@@ -1053,7 +1216,7 @@ input.error{
 
     margin-top:10px;
 
-    color:#94a3b8;
+    color:var(--muted);
 
 }
 
@@ -1096,7 +1259,7 @@ input.error{
     height:2px;
 
 
-    background:#17afa2;
+    background:var(--primary);
 
 
     transition:.35s;
@@ -1109,7 +1272,7 @@ input.error{
 .register a:hover{
 
 
-    color:white;
+    color:var(--text);
 
 
 }

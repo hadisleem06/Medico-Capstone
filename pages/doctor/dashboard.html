@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medico | Doctor Dashboard</title>
+
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+     <link rel="stylesheet" href="../../assets/css/doctor.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     AURORA BACKGROUND
+========================================================= -->
+
+<div class="aurora">
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+    <div class="aurora-3"></div>
+</div>
+
+
+<!-- =========================================================
+     DOCTOR DASHBOARD
+========================================================= -->
+
+<div class="dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <button class="sidebar-toggle" aria-label="Toggle sidebar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+
+        <ul>
+
+            <li class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li data-page="appointments.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Appointments</span>
+            </li>
+
+            <li data-page="consultation.html">
+                <i class="fa-solid fa-stethoscope"></i>
+                <span>Consultation</span>
+            </li>
+
+            <li data-page="patients.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Patients</span>
+            </li>
+
+            <li data-page="icd10.html">
+                <i class="fa-solid fa-code"></i>
+                <span>ICD-10</span>
+            </li>
+
+            <li data-page="investigation.html">
+                <i class="fa-solid fa-microscope"></i>
+                <span>Investigation</span>
+            </li>
+
+            <li data-page="lab-analysis.html">
+                <i class="fa-solid fa-flask"></i>
+                <span>Lab Analysis</span>
+            </li>
+
+            <li data-page="radiology-analysis.html">
+                <i class="fa-solid fa-x-ray"></i>
+                <span>Radiology</span>
+            </li>
+
+            <li data-page="medication-assistant.html">
+                <i class="fa-solid fa-pills"></i>
+                <span>Medication AI</span>
+            </li>
+
+            <li data-page="patient-profile.html">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Patient Profile</span>
+            </li>
+
+            <li data-page="reports.html">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>Reports</span>
+            </li>
+
+            <li data-page="soap.html">
+                <i class="fa-solid fa-notes-medical"></i>
+                <span>SOAP Notes</span>
+            </li>
+
+        </ul>
+
+
+        <button class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="doctor-breadcrumb">
+                    <span>MEDICO</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    Doctor Workspace
+                </div>
+
+                <h2>Doctor Command Center</h2>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <div class="doctor-status">
+                    <span class="status-dot"></span>
+                    Available
+                </div>
+
+
+                <div class="profile-container">
+
+                    <div class="profile">
+
+                        <img
+                            src="https://i.pravatar.cc/100?img=12"
+                            alt="Doctor profile"
+                        >
+
+                        <div class="profile-info">
+                            <strong>Dr. Sarah Mitchell</strong>
+                            <span>Cardiology</span>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                    </div>
+
+
+                    <div class="profile-menu">
+
+                        <div class="profile-header">
+
+                            <img
+                                src="https://i.pravatar.cc/100?img=12"
+                                alt="Doctor profile"
+                            >
+
+                            <div>
+                                <h4>Dr. Sarah Mitchell</h4>
+                                <p>Cardiology Specialist</p>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="menu-item">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <span>My Profile</span>
+                        </div>
+
+                        <div class="menu-item">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span>
+                        </div>
+
+                        <div class="menu-item logout-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             COMMAND HEADER
+        ================================================== -->
+
+        <section class="doctor-command-header premium-glass">
+
+            <div class="command-copy">
+
+                <div class="command-eyebrow">
+                    <span class="pulse-ring"></span>
+                    AI-POWERED CLINICAL WORKSPACE
+                </div>
+
+                <h1>
+                    Good evening,
+                    <span>Dr. Mitchell.</span>
+                </h1>
+
+                <p>
+                    Your clinical command center is ready.
+                    Monitor today's patients, consultations and
+                    AI-assisted clinical insights from one workspace.
+                </p>
+
+                <div class="command-actions">
+
+                    <button
+                        class="primary-btn"
+                        data-doctor-action="start-consultation"
+                    >
+                        <i class="fa-solid fa-stethoscope"></i>
+                        Start Consultation
+                    </button>
+
+                    <button
+                        class="doctor-secondary-btn"
+                        data-doctor-action="view-appointments"
+                    >
+                        <i class="fa-solid fa-calendar-days"></i>
+                        View Schedule
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="command-visual">
+
+                <div class="clinical-orbit orbit-one"></div>
+                <div class="clinical-orbit orbit-two"></div>
+
+                <div class="doctor-core">
+
+                    <div class="core-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+
+                    <span>CLINICAL AI</span>
+
+                    <strong>ONLINE</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DOCTOR STATISTICS
+        ================================================== -->
+
+        <section class="doctor-stats-grid">
+
+
+            <article class="doctor-stat-card premium-glass">
+
+                <div class="doctor-stat-top">
+
+                    <div class="doctor-stat-icon teal">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <span class="doctor-stat-label">
+                        Today
+                    </span>
+
+                </div>
+
+                <div class="doctor-stat-number">
+                    <span class="doctor-counter" data-target="18">0</span>
+                </div>
+
+                <h4>Appointments</h4>
+
+                <p>
+                    6 remaining for today
+                </p>
+
+                <div class="stat-progress">
+                    <span style="width:67%"></span>
+                </div>
+
+            </article>
+
+
+            <article class="doctor-stat-card premium-glass">
+
+                <div class="doctor-stat-top">
+
+                    <div class="doctor-stat-icon purple">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+
+                    <span class="doctor-stat-label">
+                        Active
+                    </span>
+
+                </div>
+
+                <div class="doctor-stat-number">
+                    <span class="doctor-counter" data-target="124">0</span>
+                </div>
+
+                <h4>Patients</h4>
+
+                <p>
+                    +12 this month
+                </p>
+
+                <div class="stat-progress purple-progress">
+                    <span style="width:78%"></span>
+                </div>
+
+            </article>
+
+
+            <article class="doctor-stat-card premium-glass">
+
+                <div class="doctor-stat-top">
+
+                    <div class="doctor-stat-icon blue">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <span class="doctor-stat-label">
+                        Live
+                    </span>
+
+                </div>
+
+                <div class="doctor-stat-number">
+                    <span class="doctor-counter" data-target="3">0</span>
+                </div>
+
+                <h4>Consultations</h4>
+
+                <p>
+                    Currently active
+                </p>
+
+                <div class="stat-progress blue-progress">
+                    <span style="width:42%"></span>
+                </div>
+
+            </article>
+
+
+            <article class="doctor-stat-card premium-glass">
+
+                <div class="doctor-stat-top">
+
+                    <div class="doctor-stat-icon warning">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <span class="doctor-stat-label warning-text">
+                        Attention
+                    </span>
+
+                </div>
+
+                <div class="doctor-stat-number">
+                    <span class="doctor-counter" data-target="7">0</span>
+                </div>
+
+                <h4>Clinical Alerts</h4>
+
+                <p>
+                    Require review
+                </p>
+
+                <div class="alert-indicator">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    2 new alerts
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN COMMAND GRID
+        ================================================== -->
+
+        <section class="doctor-command-grid">
+
+
+            <!-- =============================================
+                 TODAY'S APPOINTMENTS
+            ============================================== -->
+
+            <article class="clinical-card appointments-panel premium-glass">
+
+                <div class="clinical-card-header">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            CLINICAL SCHEDULE
+                        </span>
+
+                        <h2>Today's Appointments</h2>
+
+                    </div>
+
+                    <button
+                        class="icon-action"
+                        data-doctor-action="view-appointments"
+                        title="View all appointments"
+                    >
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="appointment-list">
+
+
+                    <div class="doctor-appointment">
+
+                        <div class="appointment-time">
+                            <strong>09:00</strong>
+                            <span>AM</span>
+                        </div>
+
+                        <div class="appointment-line">
+                            <span></span>
+                        </div>
+
+                        <div class="appointment-patient">
+
+                            <div class="patient-mini-avatar avatar-teal">
+                                AM
+                            </div>
+
+                            <div>
+                                <strong>Amelia Morgan</strong>
+                                <span>Follow-up • Hypertension</span>
+                            </div>
+
+                        </div>
+
+                        <span class="appointment-status completed">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="doctor-appointment active-appointment">
+
+                        <div class="appointment-time">
+                            <strong>10:30</strong>
+                            <span>AM</span>
+                        </div>
+
+                        <div class="appointment-line">
+                            <span></span>
+                        </div>
+
+                        <div class="appointment-patient">
+
+                            <div class="patient-mini-avatar avatar-purple">
+                                JM
+                            </div>
+
+                            <div>
+                                <strong>James Miller</strong>
+                                <span>Consultation • Chest pain</span>
+                            </div>
+
+                        </div>
+
+                        <span class="appointment-status next">
+                            Next
+                        </span>
+
+                    </div>
+
+
+                    <div class="doctor-appointment">
+
+                        <div class="appointment-time">
+                            <strong>11:15</strong>
+                            <span>AM</span>
+                        </div>
+
+                        <div class="appointment-line">
+                            <span></span>
+                        </div>
+
+                        <div class="appointment-patient">
+
+                            <div class="patient-mini-avatar avatar-blue">
+                                OL
+                            </div>
+
+                            <div>
+                                <strong>Olivia Lewis</strong>
+                                <span>Follow-up • Arrhythmia</span>
+                            </div>
+
+                        </div>
+
+                        <span class="appointment-status waiting">
+                            Waiting
+                        </span>
+
+                    </div>
+
+
+                    <div class="doctor-appointment">
+
+                        <div class="appointment-time">
+                            <strong>01:30</strong>
+                            <span>PM</span>
+                        </div>
+
+                        <div class="appointment-line">
+                            <span></span>
+                        </div>
+
+                        <div class="appointment-patient">
+
+                            <div class="patient-mini-avatar avatar-pink">
+                                RB
+                            </div>
+
+                            <div>
+                                <strong>Robert Brooks</strong>
+                                <span>Review • ECG results</span>
+                            </div>
+
+                        </div>
+
+                        <span class="appointment-status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="panel-footer-action"
+                    data-doctor-action="view-appointments"
+                >
+                    View full schedule
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </article>
+
+
+
+            <!-- =============================================
+                 AI CLINICAL INTELLIGENCE
+            ============================================== -->
+
+            <article class="clinical-card ai-command-panel premium-glass">
+
+                <div class="ai-panel-glow"></div>
+
+                <div class="clinical-card-header">
+
+                    <div>
+
+                        <span class="section-kicker ai-kicker">
+                            MEDICO INTELLIGENCE
+                        </span>
+
+                        <h2>AI Clinical Insights</h2>
+
+                    </div>
+
+                    <div class="ai-live-badge">
+                        <span></span>
+                        LIVE
+                    </div>
+
+                </div>
+
+
+                <div class="ai-score">
+
+                    <div class="ai-score-ring">
+
+                        <div>
+                            <strong>94%</strong>
+                            <span>confidence</span>
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Clinical readiness</strong>
+
+                        <p>
+                            AI has reviewed today's
+                            clinical workload.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-insight">
+
+                    <div class="insight-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Priority insight
+                        </strong>
+
+                        <p>
+                            2 patients have lab values
+                            that may require review before
+                            their scheduled consultations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-insight purple-insight">
+
+                    <div class="insight-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Pattern detected
+                        </strong>
+
+                        <p>
+                            Recent patient data shows
+                            increased hypertension follow-ups
+                            this month.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="ai-action"
+                    data-doctor-action="open-ai"
+                >
+                    Open Clinical AI
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </article>
+
+
+
+            <!-- =============================================
+                 PATIENT RISK
+            ============================================== -->
+
+            <article class="clinical-card risk-panel premium-glass">
+
+                <div class="clinical-card-header">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            PATIENT INTELLIGENCE
+                        </span>
+
+                        <h2>Risk Overview</h2>
+
+                    </div>
+
+                    <button class="text-action">
+                        View patients
+                    </button>
+
+                </div>
+
+
+                <div class="risk-overview">
+
+
+                    <div class="risk-total">
+
+                        <div class="risk-circle">
+                            <strong>124</strong>
+                            <span>Total</span>
+                        </div>
+
+                        <div>
+                            <strong>Patient Population</strong>
+                            <p>Current active records</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="risk-bars">
+
+                        <div class="risk-row">
+
+                            <div>
+                                <span>High Risk</span>
+                                <strong>8</strong>
+                            </div>
+
+                            <div class="risk-bar">
+                                <span class="high-risk" style="width:24%"></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="risk-row">
+
+                            <div>
+                                <span>Moderate</span>
+                                <strong>31</strong>
+                            </div>
+
+                            <div class="risk-bar">
+                                <span class="medium-risk" style="width:46%"></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="risk-row">
+
+                            <div>
+                                <span>Stable</span>
+                                <strong>85</strong>
+                            </div>
+
+                            <div class="risk-bar">
+                                <span class="low-risk" style="width:82%"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =============================================
+                 RECENT PATIENTS
+            ============================================== -->
+
+            <article class="clinical-card recent-patients-panel premium-glass">
+
+                <div class="clinical-card-header">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            PATIENTS
+                        </span>
+
+                        <h2>Recent Patients</h2>
+
+                    </div>
+
+                    <button
+                        class="icon-action"
+                        data-doctor-action="view-patients"
+                    >
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="recent-patient-list">
+
+
+                    <div class="recent-patient">
+
+                        <div class="patient-mini-avatar avatar-teal">
+                            AM
+                        </div>
+
+                        <div class="recent-patient-info">
+                            <strong>Amelia Morgan</strong>
+                            <span>Hypertension</span>
+                        </div>
+
+                        <span class="risk-tag stable">
+                            Stable
+                        </span>
+
+                    </div>
+
+
+                    <div class="recent-patient">
+
+                        <div class="patient-mini-avatar avatar-purple">
+                            JM
+                        </div>
+
+                        <div class="recent-patient-info">
+                            <strong>James Miller</strong>
+                            <span>Chest pain</span>
+                        </div>
+
+                        <span class="risk-tag moderate">
+                            Moderate
+                        </span>
+
+                    </div>
+
+
+                    <div class="recent-patient">
+
+                        <div class="patient-mini-avatar avatar-blue">
+                            OL
+                        </div>
+
+                        <div class="recent-patient-info">
+                            <strong>Olivia Lewis</strong>
+                            <span>Arrhythmia</span>
+                        </div>
+
+                        <span class="risk-tag stable">
+                            Stable
+                        </span>
+
+                    </div>
+
+
+                    <div class="recent-patient">
+
+                        <div class="patient-mini-avatar avatar-pink">
+                            RB
+                        </div>
+
+                        <div class="recent-patient-info">
+                            <strong>Robert Brooks</strong>
+                            <span>Cardiac monitoring</span>
+                        </div>
+
+                        <span class="risk-tag high">
+                            High
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="panel-footer-action"
+                    data-doctor-action="view-patients"
+                >
+                    Open patient directory
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </article>
+
+
+
+            <!-- =============================================
+                 QUICK ACTIONS
+            ============================================== -->
+
+            <article class="clinical-card quick-actions-panel premium-glass">
+
+                <div class="clinical-card-header">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            WORKSPACE
+                        </span>
+
+                        <h2>Quick Actions</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-action-grid">
+
+
+                    <button
+                        class="quick-action"
+                        data-page="consultation.html"
+                    >
+                        <span class="quick-action-icon teal">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </span>
+                        <strong>Consultation</strong>
+                        <small>Start clinical session</small>
+                    </button>
+
+
+                    <button
+                        class="quick-action"
+                        data-page="patients.html"
+                    >
+                        <span class="quick-action-icon purple">
+                            <i class="fa-solid fa-user-group"></i>
+                        </span>
+                        <strong>Patients</strong>
+                        <small>Browse patient records</small>
+                    </button>
+
+
+                    <button
+                        class="quick-action"
+                        data-page="lab-analysis.html"
+                    >
+                        <span class="quick-action-icon blue">
+                            <i class="fa-solid fa-flask"></i>
+                        </span>
+                        <strong>Lab Analysis</strong>
+                        <small>Analyze lab results</small>
+                    </button>
+
+
+                    <button
+                        class="quick-action"
+                        data-page="medication-assistant.html"
+                    >
+                        <span class="quick-action-icon pink">
+                            <i class="fa-solid fa-pills"></i>
+                        </span>
+                        <strong>Medication AI</strong>
+                        <small>Review medications</small>
+                    </button>
+
+
+                    <button
+                        class="quick-action"
+                        data-page="radiology-analysis.html"
+                    >
+                        <span class="quick-action-icon orange">
+                            <i class="fa-solid fa-x-ray"></i>
+                        </span>
+                        <strong>Radiology</strong>
+                        <small>Review imaging</small>
+                    </button>
+
+
+                    <button
+                        class="quick-action"
+                        data-page="soap.html"
+                    >
+                        <span class="quick-action-icon green">
+                            <i class="fa-solid fa-notes-medical"></i>
+                        </span>
+                        <strong>SOAP Note</strong>
+                        <small>Document consultation</small>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =============================================
+                 CLINICAL ACTIVITY
+            ============================================== -->
+
+            <article class="clinical-card activity-panel premium-glass">
+
+                <div class="clinical-card-header">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            LIVE WORKSPACE
+                        </span>
+
+                        <h2>Recent Activity</h2>
+
+                    </div>
+
+                    <span class="activity-live">
+                        <span></span>
+                        Live
+                    </span>
+
+                </div>
+
+
+                <div class="activity-timeline">
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon teal">
+                            <i class="fa-solid fa-file-waveform"></i>
+                        </div>
+
+                        <div class="activity-content">
+
+                            <strong>
+                                Lab report analyzed
+                            </strong>
+
+                            <p>
+                                James Miller's blood panel
+                                was reviewed by Clinical AI.
+                            </p>
+
+                            <span>8 minutes ago</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon purple">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+
+                        <div class="activity-content">
+
+                            <strong>
+                                Consultation completed
+                            </strong>
+
+                            <p>
+                                Amelia Morgan's follow-up
+                                consultation was finalized.
+                            </p>
+
+                            <span>24 minutes ago</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon blue">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <div class="activity-content">
+
+                            <strong>
+                                Report generated
+                            </strong>
+
+                            <p>
+                                Cardiology report generated
+                                for Robert Brooks.
+                            </p>
+
+                            <span>41 minutes ago</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="doctor-footer">
+
+            <span>
+                MEDICO AI HEALTHCARE
+            </span>
+
+            <span>
+                Doctor Command Center
+                <i class="fa-solid fa-circle"></i>
+                Clinical AI Online
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<script  src="../../assets/js/global.js"></script>
+<script  src="../../assets/js/doctor.js"></script>
+
+</body>
+</html>

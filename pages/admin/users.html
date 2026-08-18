@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Users | Admin | Medico</title>
+
+
+    <!-- ===============================
+         GLOBAL CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/global.css"
+    >
+
+
+    <!-- ===============================
+         ADMIN CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/admin.css"
+    >
+
+
+    <!-- ===============================
+         RESPONSIVE CSS
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/responsive.css"
+    >
+
+
+    <!-- ===============================
+         FONT AWESOME
+    ================================ -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     AURORA BACKGROUND
+====================================================== -->
+
+<div class="aurora">
+
+    <div class="aurora-1"></div>
+
+    <div class="aurora-2"></div>
+
+    <div class="aurora-3"></div>
+
+</div>
+
+
+<!-- =====================================================
+     DASHBOARD
+====================================================== -->
+
+<div
+    class="dashboard"
+    id="dashboard"
+>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <button
+            type="button"
+            class="sidebar-toggle"
+            aria-label="Toggle sidebar"
+        >
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="theme-toggle"
+            aria-label="Toggle theme"
+        >
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+
+        <div class="logo">
+
+            🩺 Medico
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <ul>
+
+
+            <li
+                data-admin-action="dashboard"
+                data-tooltip="Dashboard"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </li>
+
+
+            <li
+                class="active"
+                data-admin-action="users"
+                data-tooltip="Users"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Users
+                </span>
+
+            </li>
+
+
+            <li
+                data-admin-action="audit-logs"
+                data-tooltip="Audit Logs"
+            >
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>
+                    Audit Logs
+                </span>
+
+            </li>
+
+
+        </ul>
+
+
+        <!-- Logout -->
+
+        <button
+            type="button"
+            class="logout"
+            data-tooltip="Logout"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <nav class="topbar">
+
+
+            <div class="page-title">
+
+                <div class="page-breadcrumb">
+                    <span>MEDICO</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    Admin Workspace
+                </div>
+
+                <h2>
+                    Users
+                </h2>
+
+            </div>
+
+
+            <div class="top-actions">
+
+
+                <div class="profile-container">
+
+
+                    <div class="profile">
+
+                        <img
+                            src="../../assets/images/avatar.png"
+                            alt="Admin profile"
+                        >
+
+                        <span>
+                            Hadi
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+
+
+                    <div class="profile-menu">
+
+
+                        <div class="profile-header">
+
+                            <img
+                                src="../../assets/images/avatar.png"
+                                alt="Profile"
+                            >
+
+                            <div>
+
+                                <h4>
+                                    Hadi
+                                </h4>
+
+                                <p>
+                                    Administrator Account
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <hr>
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            My Profile
+
+                        </div>
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            Security
+
+                        </div>
+
+
+                        <div class="menu-item">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            Settings
+
+                        </div>
+
+
+                        <div class="menu-item logout-item">
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Logout
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <section class="page-hero">
+
+
+            <div class="page-hero-content">
+
+                <span class="page-eyebrow">
+                    <i class="fa-solid fa-users-gear"></i>
+                    USER MANAGEMENT
+                </span>
+
+                <h1>
+                    Manage every
+                    <span>account.</span>
+                </h1>
+
+                <p>
+                    View, search and manage all registered
+                    Medico users across the platform.
+                </p>
+
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    data-admin-modal="add-user"
+                >
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Add User
+
+                </button>
+
+            </div>
+
+
+            <div class="page-hero-visual">
+                <i class="fa-solid fa-users-gear page-hero-glyph"></i>
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             USER STATISTICS
+        ================================================== -->
+
+        <section class="stats-grid admin-user-stats">
+
+
+            <!-- Total -->
+
+            <div class="stat-card premium-glass">
+
+                <div class="stat-icon admin-users">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2>
+                        156
+                    </h2>
+
+                    <h4>
+                        Total Users
+                    </h4>
+
+                    <p>
+                        All registered accounts
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Patients -->
+
+            <div class="stat-card premium-glass">
+
+                <div class="stat-icon admin-patients">
+
+                    <i class="fa-solid fa-user-injured"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2>
+                        112
+                    </h2>
+
+                    <h4>
+                        Patients
+                    </h4>
+
+                    <p>
+                        Registered patients
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Doctors -->
+
+            <div class="stat-card premium-glass">
+
+                <div class="stat-icon admin-doctors">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2>
+                        28
+                    </h2>
+
+                    <h4>
+                        Doctors
+                    </h4>
+
+                    <p>
+                        Medical staff
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Nurses -->
+
+            <div class="stat-card premium-glass">
+
+                <div class="stat-icon admin-nurses">
+
+                    <i class="fa-solid fa-user-nurse"></i>
+
+                </div>
+
+
+                <div class="stat-info">
+
+                    <h2>
+                        16
+                    </h2>
+
+                    <h4>
+                        Nurses
+                    </h4>
+
+                    <p>
+                        Nursing staff
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             USERS CARD
+        ================================================== -->
+
+        <section class="health-overview premium-glass admin-users-card">
+
+
+            <!-- Header -->
+
+            <div class="health-header">
+
+
+                <div>
+
+                    <span>
+                        REGISTERED USERS
+                    </span>
+
+                    <h2>
+                        User List
+                    </h2>
+
+                </div>
+
+
+                <span
+                    class="admin-user-count"
+                    id="userCount"
+                >
+                    6 Users
+                </span>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TOOLBAR
+            ================================================== -->
+
+            <div class="admin-users-toolbar">
+
+
+                <!-- Search -->
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="userSearch"
+                        placeholder="Search users..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+
+                <!-- Role Filter -->
+
+                <div
+                    class="admin-filter"
+                    id="roleFilter"
+                >
+
+
+                    <button
+                        type="button"
+                        class="filter-trigger"
+                        id="roleFilterTrigger"
+                    >
+
+                        <span>
+                            All Roles
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="filter-menu">
+
+
+                        <button
+                            type="button"
+                            class="filter-option active"
+                            data-value=""
+                        >
+                            All Roles
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="patient"
+                        >
+                            Patients
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="doctor"
+                        >
+                            Doctors
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="nurse"
+                        >
+                            Nurses
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="admin"
+                        >
+                            Administrators
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Status Filter -->
+
+                <div
+                    class="admin-filter"
+                    id="statusFilter"
+                >
+
+
+                    <button
+                        type="button"
+                        class="filter-trigger"
+                        id="statusFilterTrigger"
+                    >
+
+                        <span>
+                            All Status
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="filter-menu">
+
+
+                        <button
+                            type="button"
+                            class="filter-option active"
+                            data-value=""
+                        >
+                            All Status
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="active"
+                        >
+                            Active
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="inactive"
+                        >
+                            Inactive
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="pending"
+                        >
+                            Pending
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Refresh -->
+
+                <button
+                    type="button"
+                    class="refresh-btn"
+                    id="refreshUsers"
+                    aria-label="Refresh users"
+                >
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 USER LIST
+            ================================================== -->
+
+            <div
+                class="admin-users-list"
+                id="usersList"
+            >
+
+
+                <!-- =================================================
+                     USER 1
+                ================================================== -->
+
+                <div
+                    class="admin-management-row"
+                    data-user-id="PT-1024"
+                    data-role="patient"
+                    data-status="active"
+                    data-name="Ahmad Mansour"
+                    data-email="ahmad@example.com"
+                    data-phone="+961 70 000 000"
+                    data-joined="Aug 08, 2026"
+                    data-activity="Today · 10:42 AM"
+                >
+
+
+                    <div class="admin-management-user">
+
+
+                        <div class="admin-management-avatar">
+                            AM
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Ahmad Mansour
+                            </h3>
+
+                            <p>
+                                PT-1024
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="admin-role-badge patient">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Patient
+
+                    </div>
+
+
+
+                    <div class="admin-status-badge active">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Active
+
+                    </div>
+
+
+
+                    <div class="admin-management-actions">
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="View user"
+                            aria-label="View Ahmad Mansour"
+                            data-user-action="view"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="Edit user"
+                            aria-label="Edit Ahmad Mansour"
+                            data-user-action="edit"
+                        >
+
+                            <i class="fa-solid fa-pen"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn danger"
+                            title="Deactivate user"
+                            aria-label="Deactivate Ahmad Mansour"
+                            data-user-action="deactivate"
+                        >
+
+                            <i class="fa-solid fa-user-slash"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     USER 2
+                ================================================== -->
+
+                <div
+                    class="admin-management-row"
+                    data-user-id="DOC-204"
+                    data-role="doctor"
+                    data-status="active"
+                    data-name="Dr. Lina Nassar"
+                    data-email="lina.nassar@example.com"
+                    data-phone="+961 71 000 001"
+                    data-joined="Jul 20, 2026"
+                    data-activity="Today · 09:18 AM"
+                >
+
+
+                    <div class="admin-management-user">
+
+
+                        <div class="admin-management-avatar doctor">
+                            LN
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Dr. Lina Nassar
+                            </h3>
+
+                            <p>
+                                DOC-204
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="admin-role-badge doctor">
+
+                        <i class="fa-solid fa-user-doctor"></i>
+
+                        Doctor
+
+                    </div>
+
+
+
+                    <div class="admin-status-badge active">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Active
+
+                    </div>
+
+
+
+                    <div class="admin-management-actions">
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="View user"
+                            aria-label="View Dr. Lina Nassar"
+                            data-user-action="view"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="Edit user"
+                            aria-label="Edit Dr. Lina Nassar"
+                            data-user-action="edit"
+                        >
+
+                            <i class="fa-solid fa-pen"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn danger"
+                            title="Deactivate user"
+                            aria-label="Deactivate Dr. Lina Nassar"
+                            data-user-action="deactivate"
+                        >
+
+                            <i class="fa-solid fa-user-slash"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     USER 3
+                ================================================== -->
+
+                <div
+                    class="admin-management-row"
+                    data-user-id="NUR-118"
+                    data-role="nurse"
+                    data-status="active"
+                    data-name="Sarah Nehme"
+                    data-email="sarah.nehme@example.com"
+                    data-phone="+961 76 000 002"
+                    data-joined="Jul 15, 2026"
+                    data-activity="Yesterday · 04:25 PM"
+                >
+
+
+                    <div class="admin-management-user">
+
+
+                        <div class="admin-management-avatar nurse">
+                            SN
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Sarah Nehme
+                            </h3>
+
+                            <p>
+                                NUR-118
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="admin-role-badge nurse">
+
+                        <i class="fa-solid fa-user-nurse"></i>
+
+                        Nurse
+
+                    </div>
+
+
+
+                    <div class="admin-status-badge active">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Active
+
+                    </div>
+
+
+
+                    <div class="admin-management-actions">
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="View user"
+                            aria-label="View Sarah Nehme"
+                            data-user-action="view"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="Edit user"
+                            aria-label="Edit Sarah Nehme"
+                            data-user-action="edit"
+                        >
+
+                            <i class="fa-solid fa-pen"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn danger"
+                            title="Deactivate user"
+                            aria-label="Deactivate Sarah Nehme"
+                            data-user-action="deactivate"
+                        >
+
+                            <i class="fa-solid fa-user-slash"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     USER 4
+                ================================================== -->
+
+                <div
+                    class="admin-management-row"
+                    data-user-id="PT-1092"
+                    data-role="patient"
+                    data-status="active"
+                    data-name="Joseph Khoury"
+                    data-email="joseph.khoury@example.com"
+                    data-phone="+961 70 000 003"
+                    data-joined="Jun 28, 2026"
+                    data-activity="Today · 08:51 AM"
+                >
+
+
+                    <div class="admin-management-user">
+
+
+                        <div class="admin-management-avatar">
+                            JK
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Joseph Khoury
+                            </h3>
+
+                            <p>
+                                PT-1092
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="admin-role-badge patient">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Patient
+
+                    </div>
+
+
+
+                    <div class="admin-status-badge active">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Active
+
+                    </div>
+
+
+
+                    <div class="admin-management-actions">
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="View user"
+                            aria-label="View Joseph Khoury"
+                            data-user-action="view"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="Edit user"
+                            aria-label="Edit Joseph Khoury"
+                            data-user-action="edit"
+                        >
+
+                            <i class="fa-solid fa-pen"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn danger"
+                            title="Deactivate user"
+                            aria-label="Deactivate Joseph Khoury"
+                            data-user-action="deactivate"
+                        >
+
+                            <i class="fa-solid fa-user-slash"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     USER 5
+                ================================================== -->
+
+                <div
+                    class="admin-management-row"
+                    data-user-id="DOC-219"
+                    data-role="doctor"
+                    data-status="pending"
+                    data-name="Dr. Joseph Haddad"
+                    data-email="joseph.haddad@example.com"
+                    data-phone="+961 71 000 004"
+                    data-joined="Aug 10, 2026"
+                    data-activity="Pending verification"
+                >
+
+
+                    <div class="admin-management-user">
+
+
+                        <div class="admin-management-avatar doctor">
+                            JH
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Dr. Joseph Haddad
+                            </h3>
+
+                            <p>
+                                DOC-219
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="admin-role-badge doctor">
+
+                        <i class="fa-solid fa-user-doctor"></i>
+
+                        Doctor
+
+                    </div>
+
+
+
+                    <div class="admin-status-badge pending">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Pending
+
+                    </div>
+
+
+
+                    <div class="admin-management-actions">
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="View user"
+                            aria-label="View Dr. Joseph Haddad"
+                            data-user-action="view"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="Edit user"
+                            aria-label="Edit Dr. Joseph Haddad"
+                            data-user-action="edit"
+                        >
+
+                            <i class="fa-solid fa-pen"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn success"
+                            title="Activate user"
+                            aria-label="Activate Dr. Joseph Haddad"
+                            data-user-action="activate"
+                        >
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     USER 6
+                ================================================== -->
+
+                <div
+                    class="admin-management-row"
+                    data-user-id="PT-1101"
+                    data-role="patient"
+                    data-status="inactive"
+                    data-name="Rami Haddad"
+                    data-email="rami.haddad@example.com"
+                    data-phone="+961 70 000 005"
+                    data-joined="May 18, 2026"
+                    data-activity="Inactive account"
+                >
+
+
+                    <div class="admin-management-user">
+
+
+                        <div class="admin-management-avatar">
+                            RH
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Rami Haddad
+                            </h3>
+
+                            <p>
+                                PT-1101
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="admin-role-badge patient">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Patient
+
+                    </div>
+
+
+
+                    <div class="admin-status-badge inactive">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Inactive
+
+                    </div>
+
+
+
+                    <div class="admin-management-actions">
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="View user"
+                            aria-label="View Rami Haddad"
+                            data-user-action="view"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn"
+                            title="Edit user"
+                            aria-label="Edit Rami Haddad"
+                            data-user-action="edit"
+                        >
+
+                            <i class="fa-solid fa-pen"></i>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-icon-btn success"
+                            title="Activate user"
+                            aria-label="Activate Rami Haddad"
+                            data-user-action="activate"
+                        >
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Empty State -->
+
+            <div
+                class="admin-empty-state"
+                id="emptyUsers"
+            >
+
+                <i class="fa-solid fa-users-slash"></i>
+
+                <h3>
+                    No users found
+                </h3>
+
+                <p>
+                    Try changing your search or filters.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     ADD / EDIT USER MODAL
+====================================================== -->
+
+<div
+    class="admin-modal-overlay"
+    id="userFormModal"
+>
+
+    <div
+        class="admin-modal user-form-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="userFormModalTitle"
+    >
+
+
+        <!-- Modal Header -->
+
+        <div class="admin-modal-header">
+
+
+            <div>
+
+                <span>
+                    USER MANAGEMENT
+                </span>
+
+                <h2 id="userFormModalTitle">
+                    Add New User
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="admin-modal-close"
+                id="closeUserFormModal"
+                aria-label="Close modal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- Modal Body -->
+
+        <form
+            id="userForm"
+            class="admin-modal-form"
+        >
+
+
+            <input
+                type="hidden"
+                id="editingUserId"
+                value=""
+            >
+
+
+
+            <!-- Full Name -->
+
+            <div class="admin-form-group">
+
+                <label for="userFullName">
+                    Full Name
+                </label>
+
+
+                <div class="admin-input-wrapper">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="userFullName"
+                        placeholder="Enter full name"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <small
+                    class="admin-field-error"
+                    id="userFullNameError"
+                ></small>
+
+            </div>
+
+
+
+            <!-- Email -->
+
+            <div class="admin-form-group">
+
+                <label for="userEmail">
+                    Email Address
+                </label>
+
+
+                <div class="admin-input-wrapper">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="userEmail"
+                        placeholder="Enter email address"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <small
+                    class="admin-field-error"
+                    id="userEmailError"
+                ></small>
+
+            </div>
+
+
+
+            <!-- Phone -->
+
+            <div class="admin-form-group">
+
+                <label for="userPhone">
+                    Phone Number
+                </label>
+
+
+                <div class="admin-input-wrapper">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <input
+                        type="tel"
+                        id="userPhone"
+                        placeholder="Enter phone number"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <small
+                    class="admin-field-error"
+                    id="userPhoneError"
+                ></small>
+
+            </div>
+
+
+
+            <!-- Role -->
+
+            <div class="admin-form-group">
+
+                <label>
+                    Role
+                </label>
+
+
+                <div
+                    class="admin-filter admin-modal-dropdown"
+                    id="userRoleDropdown"
+                >
+
+
+                    <button
+                        type="button"
+                        class="filter-trigger"
+                        id="userRoleTrigger"
+                    >
+
+                        <span>
+                            Select role...
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="filter-menu">
+
+
+                        <button
+                            type="button"
+                            class="filter-option active"
+                            data-value=""
+                        >
+                            Select role...
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="patient"
+                        >
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Patient
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="doctor"
+                        >
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                            Doctor
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="nurse"
+                        >
+
+                            <i class="fa-solid fa-user-nurse"></i>
+
+                            Nurse
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="admin"
+                        >
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            Admin
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <input
+                    type="hidden"
+                    id="userRole"
+                    value=""
+                >
+
+
+                <small
+                    class="admin-field-error"
+                    id="userRoleError"
+                ></small>
+
+
+            </div>
+
+
+
+            <!-- Status -->
+
+            <div class="admin-form-group">
+
+                <label>
+                    Account Status
+                </label>
+
+
+                <div
+                    class="admin-filter admin-modal-dropdown"
+                    id="userStatusDropdown"
+                >
+
+
+                    <button
+                        type="button"
+                        class="filter-trigger"
+                        id="userStatusTrigger"
+                    >
+
+                        <span>
+                            Active
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+
+                    <div class="filter-menu">
+
+
+                        <button
+                            type="button"
+                            class="filter-option active"
+                            data-value="active"
+                        >
+                            Active
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="filter-option"
+                            data-value="inactive"
+                        >
+                            Inactive
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <input
+                    type="hidden"
+                    id="userStatus"
+                    value="active"
+                >
+
+
+            </div>
+
+
+
+            <!-- Password -->
+
+            <div
+                class="admin-form-row"
+                id="passwordFields"
+            >
+
+
+                <div class="admin-form-group">
+
+                    <label for="userPassword">
+                        Password
+                    </label>
+
+
+                    <div class="admin-input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="userPassword"
+                            placeholder="Create password"
+                            autocomplete="new-password"
+                        >
+
+                    </div>
+
+
+                    <small
+                        class="admin-field-error"
+                        id="userPasswordError"
+                    ></small>
+
+                </div>
+
+
+
+                <div class="admin-form-group">
+
+                    <label for="userConfirmPassword">
+                        Confirm Password
+                    </label>
+
+
+                    <div class="admin-input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="userConfirmPassword"
+                            placeholder="Confirm password"
+                            autocomplete="new-password"
+                        >
+
+                    </div>
+
+
+                    <small
+                        class="admin-field-error"
+                        id="userConfirmPasswordError"
+                    ></small>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Modal Footer -->
+
+            <div class="admin-modal-footer">
+
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelUserForm"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    id="saveUserButton"
+                >
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    <span>
+                        Create User
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     VIEW USER MODAL
+====================================================== -->
+
+<div
+    class="admin-modal-overlay"
+    id="viewUserModal"
+>
+
+    <div
+        class="admin-modal user-view-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="viewUserModalTitle"
+    >
+
+
+        <div class="admin-modal-header">
+
+
+            <div>
+
+                <span>
+                    USER DETAILS
+                </span>
+
+                <h2 id="viewUserModalTitle">
+                    User Information
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="admin-modal-close"
+                id="closeViewUserModal"
+                aria-label="Close modal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="user-profile-preview">
+
+
+            <div
+                class="user-modal-avatar"
+                id="viewUserAvatar"
+            >
+                AM
+            </div>
+
+
+            <div>
+
+                <h3 id="viewUserName">
+                    Ahmad Mansour
+                </h3>
+
+                <p id="viewUserRole">
+                    Patient
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="user-details-grid">
+
+
+            <div class="user-detail-item">
+
+                <span>
+                    User ID
+                </span>
+
+                <strong id="viewUserId">
+                    PT-1024
+                </strong>
+
+            </div>
+
+
+
+            <div class="user-detail-item">
+
+                <span>
+                    Status
+                </span>
+
+                <strong
+                    id="viewUserStatus"
+                    class="user-detail-status active"
+                >
+                    Active
+                </strong>
+
+            </div>
+
+
+
+            <div class="user-detail-item">
+
+                <span>
+                    Email
+                </span>
+
+                <strong id="viewUserEmail">
+                    ahmad@example.com
+                </strong>
+
+            </div>
+
+
+
+            <div class="user-detail-item">
+
+                <span>
+                    Phone
+                </span>
+
+                <strong id="viewUserPhone">
+                    +961 70 000 000
+                </strong>
+
+            </div>
+
+
+
+            <div class="user-detail-item">
+
+                <span>
+                    Joined
+                </span>
+
+                <strong id="viewUserJoined">
+                    Aug 08, 2026
+                </strong>
+
+            </div>
+
+
+
+            <div class="user-detail-item">
+
+                <span>
+                    Last Activity
+                </span>
+
+                <strong id="viewUserActivity">
+                    Today · 10:42 AM
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="admin-modal-footer">
+
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="closeViewUserButton"
+            >
+                Close
+            </button>
+
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="viewEditUserButton"
+            >
+
+                <i class="fa-solid fa-pen"></i>
+
+                Edit User
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     USER STATUS CONFIRMATION MODAL
+====================================================== -->
+
+<div
+    class="admin-modal-overlay"
+    id="deleteUserModal"
+>
+
+    <div
+        class="admin-modal delete-user-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deleteUserModalTitle"
+    >
+
+
+        <div class="delete-modal-icon">
+
+            <i
+                class="fa-solid fa-user-slash"
+                id="statusModalIcon"
+            ></i>
+
+        </div>
+
+
+        <h2 id="deleteUserModalTitle">
+            Deactivate User?
+        </h2>
+
+
+        <p>
+
+            Are you sure you want to
+            <strong id="statusActionText">
+                deactivate
+            </strong>
+
+            <strong id="deleteUserName">
+                this user
+            </strong>?
+
+        </p>
+
+
+        <span id="statusModalDescription">
+            The user will no longer be able to access their account.
+        </span>
+
+
+        <div class="admin-modal-footer">
+
+
+            <button
+                type="button"
+                class="secondary-btn"
+                id="cancelDeleteUser"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                class="danger-btn"
+                id="confirmDeleteUser"
+            >
+
+                <i
+                    class="fa-solid fa-user-slash"
+                    id="confirmStatusIcon"
+                ></i>
+
+                <span id="confirmStatusText">
+                    Deactivate User
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+    src="../../assets/js/global.js"
+></script>
+
+
+<script
+    src="../../assets/js/admin.js"
+></script>
+
+
+</body>
+
+</html>
