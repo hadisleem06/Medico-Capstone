@@ -1,0 +1,146 @@
+/* =========================================================
+   MEDICO — REACT EXTRAS
+
+   The ONLY hand-written CSS in the React port. Everything
+   else is copied verbatim from the original assets/css.
+
+   This file holds styles that the original applied from
+   JavaScript at runtime, moved here so behaviour is
+   identical without injecting <style> tags at runtime:
+
+     1. The button arrow nudge (global.js "BUTTON ARROW
+        ANIMATION") — was set inline on mouseenter/leave.
+     2. The admin toast styles (admin.js "ADMIN MESSAGE
+        STYLES") — were injected as a <style id="adminMessageStyles">.
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   BUTTON ARROW ANIMATION  (from global.js)
+   Original nudged `i.fa-arrow-right` inside a <button> by
+   6px on hover with a .3s ease transition, easing back on
+   leave. Expressed as CSS with identical scope + values.
+--------------------------------------------------------- */
+
+button i.fa-arrow-right {
+    transition: transform 0.3s ease;
+}
+
+button:hover i.fa-arrow-right {
+    transform: translateX(6px);
+}
+
+
+/* ---------------------------------------------------------
+   ADMIN MESSAGE (toast) STYLES  (verbatim from admin.js)
+--------------------------------------------------------- */
+
+.admin-message-container {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.admin-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 280px;
+    max-width: 380px;
+    padding: 13px 15px;
+    border: 1px solid var(--glass-border);
+    border-radius: 13px;
+    background: rgba(15, 23, 26, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+    color: var(--text);
+    font-size: 12px;
+    pointer-events: auto;
+    animation: adminMessageIn 0.3s ease forwards;
+}
+
+.admin-message > i {
+    color: var(--primary);
+    font-size: 15px;
+}
+
+.admin-message.error > i {
+    color: #ef4444;
+}
+
+.admin-message.warning > i {
+    color: #f59e0b;
+}
+
+.admin-message span {
+    flex: 1;
+}
+
+.admin-message-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.admin-message-close:hover {
+    color: var(--text);
+}
+
+.admin-message.hide {
+    animation: adminMessageOut 0.25s ease forwards;
+}
+
+@keyframes adminMessageIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes adminMessageOut {
+
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .admin-message-container {
+        top: 15px;
+        right: 15px;
+        left: 15px;
+    }
+
+    .admin-message {
+        min-width: 0;
+        width: 100%;
+    }
+
+}

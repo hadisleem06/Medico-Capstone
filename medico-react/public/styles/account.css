@@ -1,0 +1,963 @@
+/* =========================================================
+   MEDICO
+   ACCOUNT PAGES  (My Profile / Settings)
+
+   These two pages have no equivalent in the original static
+   demo, so this stylesheet has no original to mirror. It is
+   built entirely on the shared theme tokens (see global.css)
+   so it adapts to light mode automatically and looks identical
+   across the doctor / nurse / admin chrome areas — the account
+   pages are role-shared, so their styling must be role-neutral.
+
+   Everything is scoped under .account-* class names to stay
+   clear of the per-role page styles that share generic names.
+   The hero, .premium-glass and .primary-btn come from
+   global.css; this file adds the cards, field grid, inputs,
+   switches, the theme segment and the button chrome.
+========================================================= */
+
+
+/* =========================================================
+   FORM SHELL
+========================================================= */
+
+.account-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.account-card{
+
+    padding:35px;
+
+    border-radius:30px;
+
+}
+
+
+/* stack cards on the Settings page (not wrapped in a form) */
+
+.account-card + .account-card{
+
+    margin-top:25px;
+
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.account-card-head{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-bottom:28px;
+
+}
+
+
+.account-card-icon{
+
+    flex-shrink:0;
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    color:#ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(23,175,162,.30);
+
+}
+
+
+.account-card-kicker{
+
+    display:block;
+
+    color:#5eead4;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.7px;
+
+    margin-bottom:8px;
+
+}
+
+
+.account-card-head h2{
+
+    font-size:24px;
+
+    margin-bottom:6px;
+
+}
+
+
+.account-card-head p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.account-avatar-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:26px;
+
+}
+
+
+.account-avatar{
+
+    width:96px;
+
+    height:96px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:
+        3px solid
+        var(--primary);
+
+    box-shadow:
+        0 12px 34px
+        rgba(23,175,162,.30);
+
+}
+
+
+.account-avatar-actions{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+}
+
+
+/* the "Change photo" primary button wraps a hidden file input */
+
+.account-upload{
+
+    position:relative;
+
+    padding:13px 24px;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+}
+
+
+.account-hint{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   FIELD GRID
+========================================================= */
+
+.account-field-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+.account-field{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:9px;
+
+}
+
+
+/* full-width field spans both grid columns */
+
+.account-field.full{
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+.account-field label{
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:var(--muted);
+
+}
+
+
+/* =========================================================
+   INPUTS  (mirrors the role forms' input conventions)
+========================================================= */
+
+.account-input{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+.account-input > i{
+
+    position:absolute;
+
+    left:16px;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    pointer-events:none;
+
+}
+
+
+.account-input input,
+.account-input select,
+.account-field textarea{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    border-radius:14px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:var(--text);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:15px;
+
+    transition:
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+/* leave room for the leading icon */
+
+.account-input input,
+.account-input select{
+
+    padding-left:44px;
+
+}
+
+
+/* leave room for the select caret on the right */
+
+.account-input select{
+
+    padding-right:42px;
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+}
+
+
+.account-field textarea{
+
+    resize:vertical;
+
+    min-height:110px;
+
+    line-height:1.6;
+
+}
+
+
+.account-input input::placeholder,
+.account-field textarea::placeholder{
+
+    color:var(--muted);
+
+}
+
+
+.account-input input:focus,
+.account-input select:focus,
+.account-field textarea:focus{
+
+    outline:none;
+
+    border-color:
+        rgba(23,175,162,.65);
+
+    background:
+        rgba(23,175,162,.06);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(23,175,162,.14);
+
+}
+
+
+/* select caret (icon sits on the right, clicks fall through) */
+
+.account-select-caret{
+
+    left:auto;
+
+    right:16px;
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   FIELD ERRORS
+========================================================= */
+
+.account-field .field-error{
+
+    color:#f87171;
+
+    font-size:12px;
+
+    min-height:14px;
+
+}
+
+
+.account-field.has-error input,
+.account-field.has-error select,
+.account-field.has-error textarea{
+
+    border-color:#f87171;
+
+    background:
+        rgba(248,113,113,.07);
+
+}
+
+
+.account-field.has-error input:focus,
+.account-field.has-error select:focus,
+.account-field.has-error textarea:focus{
+
+    box-shadow:
+        0 0 0 4px
+        rgba(248,113,113,.16);
+
+}
+
+
+/* =========================================================
+   TOGGLE ROWS  (settings)
+========================================================= */
+
+.account-toggle-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:24px;
+
+    padding:18px 0;
+
+    border-bottom:
+        1px solid
+        var(--glass-border);
+
+}
+
+
+/* first row sits right under the card header, last needs no rule */
+
+.account-toggle-row:last-of-type{
+
+    border-bottom:none;
+
+    padding-bottom:0;
+
+}
+
+
+.account-toggle-copy{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+
+.account-toggle-copy strong{
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+
+.account-toggle-copy span{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.5;
+
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.account-switch{
+
+    flex-shrink:0;
+
+    position:relative;
+
+    width:52px;
+
+    height:30px;
+
+    padding:0;
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    cursor:pointer;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease;
+
+}
+
+
+.account-switch-knob{
+
+    position:absolute;
+
+    top:3px;
+
+    left:3px;
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    box-shadow:
+        0 2px 6px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.account-switch.on{
+
+    background:
+        var(--primary);
+
+    border-color:
+        var(--primary);
+
+}
+
+
+.account-switch.on .account-switch-knob{
+
+    transform:
+        translateX(22px);
+
+}
+
+
+.account-switch:focus-visible{
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(23,175,162,.25);
+
+}
+
+
+/* =========================================================
+   THEME SEGMENT
+========================================================= */
+
+.account-segment{
+
+    display:inline-flex;
+
+    gap:4px;
+
+    padding:4px;
+
+    border-radius:14px;
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    background:
+        rgba(255,255,255,.05);
+
+}
+
+
+.account-segment-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:9px 18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:transparent;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+
+}
+
+
+.account-segment-btn:hover{
+
+    color:var(--text);
+
+}
+
+
+.account-segment-btn.active{
+
+    background:
+        var(--primary);
+
+    color:#ffffff;
+
+    box-shadow:
+        0 8px 22px
+        rgba(23,175,162,.30);
+
+}
+
+
+/* =========================================================
+   DIVIDER + SUBHEAD  (security card)
+========================================================= */
+
+.account-divider{
+
+    border:none;
+
+    height:1px;
+
+    background:
+        var(--glass-border);
+
+    margin:26px 0;
+
+}
+
+
+.account-subhead{
+
+    display:block;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+
+.account-password-actions{
+
+    display:flex;
+
+    margin-top:22px;
+
+}
+
+
+/* =========================================================
+   GHOST / SECONDARY BUTTON
+========================================================= */
+
+.account-ghost-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 28px;
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+
+}
+
+
+.account-ghost-btn:hover{
+
+    background:
+        rgba(255,255,255,.10);
+
+    border-color:
+        rgba(23,175,162,.45);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================================
+   ACTION BAR
+========================================================= */
+
+.account-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:16px;
+
+    margin-top:5px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =========================================================
+   DISABLED BUTTON STATE  (during a save)
+========================================================= */
+
+.account-actions .primary-btn:disabled,
+.account-ghost-btn:disabled{
+
+    opacity:.55;
+
+    cursor:not-allowed;
+
+}
+
+
+.account-actions .primary-btn:disabled:hover{
+
+    transform:none;
+
+    background:
+        var(--primary);
+
+    box-shadow:
+        0 10px 30px
+        rgba(23,175,162,.25);
+
+}
+
+
+.account-ghost-btn:disabled:hover{
+
+    transform:none;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border-color:
+        var(--glass-border);
+
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   Token-driven bits already adapt; these are the surfaces
+   whose fills are hand-set above (inputs, switch track,
+   segment) and need a lighter treatment.
+========================================================= */
+
+.light-mode .account-input input,
+.light-mode .account-input select,
+.light-mode .account-field textarea{
+
+    background:
+        rgba(255,255,255,.65);
+
+}
+
+
+.light-mode .account-input input:focus,
+.light-mode .account-input select:focus,
+.light-mode .account-field textarea:focus{
+
+    background:
+        rgba(23,175,162,.08);
+
+}
+
+
+.light-mode .account-switch{
+
+    background:
+        rgba(15,23,42,.14);
+
+}
+
+
+.light-mode .account-segment,
+.light-mode .account-ghost-btn{
+
+    background:
+        rgba(255,255,255,.6);
+
+}
+
+
+.light-mode .account-ghost-btn:hover{
+
+    background:
+        rgba(255,255,255,.85);
+
+}
+
+
+.light-mode .account-ghost-btn:disabled:hover{
+
+    background:
+        rgba(255,255,255,.6);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .account-card{
+
+        padding:28px;
+
+    }
+
+
+    .account-field-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .account-field.full{
+
+        grid-column:1;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .account-avatar-row{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+    .account-toggle-row{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:14px;
+
+    }
+
+
+    .account-actions{
+
+        flex-direction:column-reverse;
+
+    }
+
+
+    .account-actions .primary-btn,
+    .account-actions .account-ghost-btn{
+
+        width:100%;
+
+    }
+
+}

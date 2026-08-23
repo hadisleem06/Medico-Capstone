@@ -1,0 +1,2152 @@
+/* =========================================================
+                    ADMIN DASHBOARD
+========================================================= */
+
+
+/* =========================================================
+                    ADMIN STATISTICS
+========================================================= */
+
+.admin-stats .stat-card{
+    position:relative;
+}
+
+.admin-stats .stat-icon{
+    flex-shrink:0;
+}
+
+
+/* Users */
+
+.admin-users{
+    background:rgba(23,175,162,0.12);
+    color:var(--primary);
+}
+
+
+/* Patients */
+
+.admin-patients{
+    background:rgba(37,99,235,0.12);
+    color:#60a5fa;
+}
+
+
+/* Doctors */
+
+.admin-doctors{
+    background:rgba(139,92,246,0.12);
+    color:#a78bfa;
+}
+
+
+/* Nurses */
+
+.admin-nurses{
+    background:rgba(20,184,166,0.12);
+    color:#2dd4bf;
+}
+
+
+/* =========================================================
+                    USER OVERVIEW
+========================================================= */
+
+.admin-user-overview{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin:25px 0;
+}
+
+
+.admin-overview-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+
+.admin-overview-info{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-width:0;
+}
+
+
+.admin-overview-info strong{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    color:var(--text);
+}
+
+
+.admin-overview-info p{
+    margin-top:4px;
+    font-size:11px;
+    color:var(--muted);
+}
+
+
+.admin-overview-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    flex-shrink:0;
+    border-radius:11px;
+    font-size:14px;
+}
+
+
+.admin-overview-icon.patients{
+    background:rgba(37,99,235,0.12);
+    color:#60a5fa;
+}
+
+
+.admin-overview-icon.doctors{
+    background:rgba(139,92,246,0.12);
+    color:#a78bfa;
+}
+
+
+.admin-overview-icon.nurses{
+    background:rgba(20,184,166,0.12);
+    color:#2dd4bf;
+}
+
+
+.admin-overview-value{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-width:110px;
+}
+
+
+.admin-overview-value strong{
+    min-width:30px;
+    font-size:11px;
+    font-weight:600;
+    text-align:right;
+    color:var(--text);
+}
+
+
+.admin-progress{
+    width:70px;
+    height:5px;
+    overflow:hidden;
+    border-radius:20px;
+    background:rgba(255,255,255,0.07);
+}
+
+
+.admin-progress span{
+    display:block;
+    height:100%;
+    border-radius:20px;
+    background:var(--primary);
+}
+
+
+/* =========================================================
+                    ADMIN ACTIVITY
+========================================================= */
+
+.admin-activity-card{
+    display:flex;
+    flex-direction:column;
+}
+
+
+.admin-activity-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin:22px 0;
+}
+
+
+.admin-activity-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+
+.admin-activity-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+    border-radius:10px;
+    font-size:12px;
+}
+
+
+.admin-activity-icon.user{
+    background:rgba(23,175,162,0.12);
+    color:var(--primary);
+}
+
+
+.admin-activity-icon.doctor{
+    background:rgba(139,92,246,0.12);
+    color:#a78bfa;
+}
+
+
+.admin-activity-icon.security{
+    background:rgba(37,99,235,0.12);
+    color:#60a5fa;
+}
+
+
+.admin-activity-icon.nurse{
+    background:rgba(20,184,166,0.12);
+    color:#2dd4bf;
+}
+
+
+.admin-activity-item strong{
+    display:block;
+    font-size:11px;
+    font-weight:600;
+    color:var(--text);
+}
+
+
+.admin-activity-item p{
+    margin-top:4px;
+    font-size:10px;
+    color:var(--muted);
+}
+
+
+.admin-text-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    width:max-content;
+    padding:0;
+    border:none;
+    background:transparent;
+    color:var(--primary);
+    font-family:inherit;
+    font-size:11px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+
+.admin-text-btn i{
+    font-size:9px;
+    transition:transform 0.25s ease;
+}
+
+
+.admin-text-btn:hover{
+    color:var(--primary-hover);
+}
+
+
+.admin-text-btn:hover i{
+    transform:translateX(3px);
+}
+
+
+/* =========================================================
+                    RECENT USERS
+========================================================= */
+
+.admin-user-list{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+
+
+.admin-user-row{
+    display:grid;
+    grid-template-columns:minmax(220px,1fr) 120px 100px 80px;
+    align-items:center;
+    gap:20px;
+    padding:16px 0;
+    border-bottom:1px solid var(--glass-border);
+}
+
+
+.admin-user-row:last-child{
+    border-bottom:none;
+}
+
+
+.admin-user-info{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-width:0;
+}
+
+
+.admin-user-avatar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    flex-shrink:0;
+    border:1px solid rgba(23,175,162,0.2);
+    border-radius:50%;
+    background:rgba(23,175,162,0.1);
+    color:var(--primary);
+    font-size:12px;
+    font-weight:700;
+}
+
+
+.admin-user-avatar.doctor{
+    border-color:rgba(139,92,246,0.2);
+    background:rgba(139,92,246,0.1);
+    color:#a78bfa;
+}
+
+
+.admin-user-avatar.nurse{
+    border-color:rgba(20,184,166,0.2);
+    background:rgba(20,184,166,0.1);
+    color:#2dd4bf;
+}
+
+
+.admin-user-info h3{
+    font-size:12px;
+    font-weight:600;
+    color:var(--text);
+}
+
+
+.admin-user-info p{
+    margin-top:4px;
+    font-size:10px;
+    color:var(--muted);
+}
+
+
+/* =========================================================
+                    USER ROLE
+========================================================= */
+
+.admin-user-role{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    width:max-content;
+    padding:6px 9px;
+    border-radius:8px;
+    background:rgba(23,175,162,0.08);
+    color:var(--primary);
+    font-size:10px;
+    font-weight:600;
+}
+
+
+.admin-user-role.doctor{
+    background:rgba(139,92,246,0.08);
+    color:#a78bfa;
+}
+
+
+.admin-user-role.nurse{
+    background:rgba(20,184,166,0.08);
+    color:#2dd4bf;
+}
+
+
+.admin-user-role i{
+    font-size:9px;
+}
+
+
+/* =========================================================
+                    USER STATUS
+========================================================= */
+
+.admin-user-status{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:10px;
+    font-weight:500;
+}
+
+
+.admin-user-status i{
+    font-size:6px;
+}
+
+
+.admin-user-status.active{
+    color:#2dd4bf;
+}
+
+
+.admin-user-status.active i{
+    color:#2dd4bf;
+}
+
+
+.admin-user-time{
+    color:var(--muted);
+    font-size:10px;
+    text-align:right;
+}
+
+
+/* =========================================================
+                    ADMIN RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .admin-user-row{
+        grid-template-columns:minmax(180px,1fr) 100px 80px;
+    }
+
+    .admin-user-time{
+        display:none;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .admin-overview-row{
+        gap:10px;
+    }
+
+    .admin-overview-value{
+        min-width:80px;
+        gap:7px;
+    }
+
+    .admin-progress{
+        width:45px;
+    }
+
+    .admin-user-row{
+        grid-template-columns:1fr auto;
+        gap:12px;
+    }
+
+    .admin-user-role{
+        grid-column:2;
+        grid-row:1;
+    }
+
+    .admin-user-status{
+        grid-column:2;
+        grid-row:2;
+    }
+
+    .admin-user-info{
+        grid-column:1;
+        grid-row:1 / span 2;
+    }
+
+}
+/* =========================================================
+                    ADMIN NOTIFICATIONS
+========================================================= */
+
+.admin-message-container{
+    position:fixed;
+    top:25px;
+    right:25px;
+    z-index:99999;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    pointer-events:none;
+}
+
+
+.admin-message{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:280px;
+    max-width:380px;
+    padding:13px 15px;
+    border:1px solid var(--glass-border);
+    border-radius:13px;
+    background:rgba(15,23,26,0.88);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:var(--shadow);
+    color:var(--text);
+    font-size:12px;
+    pointer-events:auto;
+    animation:adminMessageIn 0.3s ease forwards;
+}
+
+
+.admin-message > i{
+    color:var(--primary);
+    font-size:15px;
+}
+
+
+.admin-message.error > i{
+    color:#ef4444;
+}
+
+
+.admin-message.warning > i{
+    color:#f59e0b;
+}
+
+
+.admin-message span{
+    flex:1;
+}
+
+
+.admin-message-close{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:24px;
+    height:24px;
+    border:none;
+    background:transparent;
+    color:var(--muted);
+    cursor:pointer;
+    transition:color 0.2s ease;
+}
+
+
+.admin-message-close:hover{
+    color:var(--text);
+}
+
+
+.admin-message.hide{
+    animation:adminMessageOut 0.25s ease forwards;
+}
+
+
+@keyframes adminMessageIn{
+
+    from{
+        opacity:0;
+        transform:translateX(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+
+@keyframes adminMessageOut{
+
+    from{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+    to{
+        opacity:0;
+        transform:translateX(20px);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .admin-message-container{
+        top:15px;
+        right:15px;
+        left:15px;
+    }
+
+
+    .admin-message{
+        min-width:0;
+        width:100%;
+    }
+
+}
+
+
+
+/* =========================================================
+   ADMIN USER MANAGEMENT
+========================================================= */
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.page-header > div{
+    min-width:0;
+}
+
+.page-header > div > span{
+    display:block;
+    margin-bottom:7px;
+    color:var(--primary);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
+
+.page-header h1{
+    margin-bottom:7px;
+    font-size:32px;
+    font-weight:700;
+}
+
+.page-header p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   ADMIN USER STATISTICS
+========================================================= */
+
+.admin-user-stats{
+    margin-bottom:30px;
+}
+
+.admin-user-stats .stat-card{
+    min-height:135px;
+}
+
+.admin-user-stats .stat-icon{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:16px;
+    font-size:20px;
+    flex-shrink:0;
+}
+
+.admin-users{
+    color:#17afa2;
+    background:rgba(23,175,162,.12);
+    border:1px solid rgba(23,175,162,.18);
+}
+
+.admin-patients{
+    color:#60a5fa;
+    background:rgba(37,99,235,.12);
+    border:1px solid rgba(37,99,235,.18);
+}
+
+.admin-doctors{
+    color:#a78bfa;
+    background:rgba(139,92,246,.12);
+    border:1px solid rgba(139,92,246,.18);
+}
+
+.admin-nurses{
+    color:#2dd4bf;
+    background:rgba(45,212,191,.12);
+    border:1px solid rgba(45,212,191,.18);
+}
+
+
+/* =========================================================
+   USERS CARD
+========================================================= */
+
+.admin-users-card{
+    position:relative;
+    z-index:1;
+    overflow:visible;
+}
+
+.admin-users-card .health-header{
+    margin-bottom:25px;
+}
+
+.admin-user-count{
+    padding:7px 12px;
+    border:1px solid var(--glass-border);
+    border-radius:10px;
+    color:var(--muted);
+    background:rgba(255,255,255,.04);
+    font-size:12px;
+    font-weight:600;
+}
+
+
+/* =========================================================
+   USERS TOOLBAR
+========================================================= */
+
+.admin-users-toolbar{
+    position:relative;
+    z-index:50;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:22px;
+    overflow:visible;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.admin-users-toolbar .search-box{
+    position:relative;
+    flex:1;
+    min-width:180px;
+}
+
+.admin-users-toolbar .search-box i{
+    position:absolute;
+    top:50%;
+    left:16px;
+    transform:translateY(-50%);
+    color:var(--muted);
+    pointer-events:none;
+}
+
+.admin-users-toolbar .search-box input{
+    width:100%;
+    height:46px;
+    padding:0 16px 0 43px;
+    border:1px solid var(--glass-border);
+    border-radius:13px;
+    outline:none;
+    color:var(--text);
+    background:rgba(255,255,255,.045);
+    font-size:13px;
+    transition:.25s ease;
+}
+
+.admin-users-toolbar .search-box input::placeholder{
+    color:var(--muted);
+}
+
+.admin-users-toolbar .search-box input:focus{
+    border-color:rgba(23,175,162,.5);
+    box-shadow:0 0 0 3px rgba(23,175,162,.08);
+}
+
+
+/* =========================================================
+   ADMIN FILTERS
+========================================================= */
+
+.admin-filter{
+    position:relative;
+    z-index:100;
+    min-width:150px;
+}
+
+.admin-filter .filter-trigger{
+    width:100%;
+    height:46px;
+    padding:0 14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    border:1px solid var(--glass-border);
+    border-radius:13px;
+    color:var(--text);
+    background:rgba(255,255,255,.045);
+    cursor:pointer;
+    font-size:13px;
+    transition:.25s ease;
+}
+
+.admin-filter .filter-trigger:hover{
+    border-color:rgba(23,175,162,.4);
+    background:rgba(255,255,255,.07);
+}
+
+.admin-filter .filter-trigger i{
+    color:var(--muted);
+    font-size:11px;
+    transition:.25s ease;
+}
+
+.admin-filter.open .filter-trigger i{
+    transform:rotate(180deg);
+}
+
+.admin-filter .filter-menu{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0;
+    right:0;
+    z-index:9999;
+    display:none;
+    padding:6px;
+    border:1px solid var(--glass-border);
+    border-radius:14px;
+    background:rgba(20,25,35,.96);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    box-shadow:var(--shadow);
+}
+
+.admin-filter.open .filter-menu{
+    display:block;
+}
+
+.admin-filter .filter-option{
+    width:100%;
+    padding:10px 11px;
+    border:0;
+    border-radius:9px;
+    color:var(--muted);
+    background:transparent;
+    text-align:left;
+    cursor:pointer;
+    font-size:12px;
+    transition:.2s ease;
+}
+
+.admin-filter .filter-option:hover{
+    color:var(--text);
+    background:rgba(255,255,255,.06);
+}
+
+.admin-filter .filter-option.active{
+    color:var(--primary);
+    background:rgba(23,175,162,.09);
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.admin-users-toolbar .refresh-btn{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border:1px solid var(--glass-border);
+    border-radius:13px;
+    color:var(--muted);
+    background:rgba(255,255,255,.045);
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.admin-users-toolbar .refresh-btn:hover{
+    color:var(--primary);
+    border-color:rgba(23,175,162,.4);
+    background:rgba(23,175,162,.07);
+}
+
+.admin-users-toolbar .refresh-btn.loading i{
+    animation:adminRefreshSpin .7s linear infinite;
+}
+
+@keyframes adminRefreshSpin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   USERS LIST
+========================================================= */
+
+.admin-users-list{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+
+/* =========================================================
+   USER ROW
+========================================================= */
+
+.admin-management-row{
+    min-height:78px;
+    display:grid;
+    grid-template-columns:minmax(230px,1.7fr) 150px 130px auto;
+    align-items:center;
+    gap:20px;
+    padding:14px 16px;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:15px;
+    background:rgba(255,255,255,.025);
+    transition:.25s ease;
+}
+
+.admin-management-row:hover{
+    border-color:rgba(23,175,162,.2);
+    background:rgba(255,255,255,.045);
+    transform:translateY(-1px);
+}
+
+
+/* =========================================================
+   USER INFORMATION
+========================================================= */
+
+.admin-management-user{
+    min-width:0;
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.admin-management-avatar{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border:1px solid rgba(23,175,162,.18);
+    border-radius:13px;
+    color:var(--primary);
+    background:rgba(23,175,162,.1);
+    font-size:12px;
+    font-weight:700;
+}
+
+.admin-management-avatar.doctor{
+    color:#a78bfa;
+    border-color:rgba(139,92,246,.18);
+    background:rgba(139,92,246,.1);
+}
+
+.admin-management-avatar.nurse{
+    color:#2dd4bf;
+    border-color:rgba(45,212,191,.18);
+    background:rgba(45,212,191,.1);
+}
+
+.admin-management-user h3{
+    margin-bottom:4px;
+    color:var(--text);
+    font-size:14px;
+    font-weight:600;
+}
+
+.admin-management-user p{
+    color:var(--muted);
+    font-size:11px;
+}
+
+
+/* =========================================================
+   ROLE BADGE
+========================================================= */
+
+.admin-role-badge{
+    width:max-content;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 10px;
+    border:1px solid rgba(23,175,162,.16);
+    border-radius:9px;
+    color:var(--primary);
+    background:rgba(23,175,162,.07);
+    font-size:11px;
+    font-weight:600;
+}
+
+.admin-role-badge.doctor{
+    color:#a78bfa;
+    border-color:rgba(139,92,246,.18);
+    background:rgba(139,92,246,.08);
+}
+
+.admin-role-badge.nurse{
+    color:#2dd4bf;
+    border-color:rgba(45,212,191,.18);
+    background:rgba(45,212,191,.08);
+}
+
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.admin-status-badge{
+    width:max-content;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:11px;
+    font-weight:600;
+}
+
+.admin-status-badge i{
+    font-size:6px;
+}
+
+.admin-status-badge.active{
+    color:#34d399;
+}
+
+.admin-status-badge.inactive{
+    color:#94a3b8;
+}
+
+.admin-status-badge.pending{
+    color:#fbbf24;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.admin-management-actions{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:7px;
+}
+
+.admin-icon-btn{
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid var(--glass-border);
+    border-radius:9px;
+    color:var(--muted);
+    background:rgba(255,255,255,.035);
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.admin-icon-btn:hover{
+    color:var(--primary);
+    border-color:rgba(23,175,162,.35);
+    background:rgba(23,175,162,.07);
+}
+
+.admin-icon-btn.success:hover{
+    color:#34d399;
+    border-color:rgba(52,211,153,.35);
+    background:rgba(52,211,153,.07);
+}
+
+.admin-icon-btn.danger:hover{
+    color:#fb7185;
+    border-color:rgba(251,113,133,.35);
+    background:rgba(251,113,133,.07);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.admin-empty-state{
+    display:none;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.admin-empty-state.visible{
+    display:block;
+}
+
+.admin-empty-state > i{
+    margin-bottom:15px;
+    color:var(--muted);
+    font-size:30px;
+}
+
+.admin-empty-state h3{
+    margin-bottom:6px;
+    font-size:16px;
+}
+
+.admin-empty-state p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+
+/* =========================================================
+   USER ROW HIDDEN STATE
+========================================================= */
+
+.admin-management-row.hidden{
+    display:none;
+}
+
+
+/* =========================================================
+   ADMIN MESSAGE
+========================================================= */
+
+.admin-message-container{
+    position:fixed;
+    top:25px;
+    right:25px;
+    z-index:10000;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.admin-message{
+    min-width:280px;
+    max-width:380px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 17px;
+    border:1px solid var(--glass-border);
+    border-radius:13px;
+    color:var(--text);
+    background:rgba(20,25,35,.92);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:var(--shadow);
+    font-size:13px;
+    animation:adminMessageIn .3s ease;
+}
+
+.admin-message.success i{
+    color:#34d399;
+}
+
+.admin-message.error i{
+    color:#fb7185;
+}
+
+.admin-message.info i{
+    color:var(--primary);
+}
+
+@keyframes adminMessageIn{
+    from{
+        opacity:0;
+        transform:translateX(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE ADMIN USERS
+========================================================= */
+
+@media(max-width:900px){
+
+    .page-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .admin-users-toolbar{
+        flex-wrap:wrap;
+    }
+
+    .admin-users-toolbar .search-box{
+        flex-basis:100%;
+    }
+
+    .admin-filter{
+        flex:1;
+    }
+
+    .admin-management-row{
+        grid-template-columns:minmax(200px,1fr) 130px auto;
+    }
+
+    .admin-status-badge{
+        display:none;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .page-header h1{
+        font-size:26px;
+    }
+
+    .page-header .primary-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .admin-users-toolbar{
+        display:grid;
+        grid-template-columns:1fr 1fr auto;
+    }
+
+    .admin-users-toolbar .search-box{
+        grid-column:1 / -1;
+    }
+
+    .admin-filter{
+        min-width:0;
+    }
+
+    .admin-management-row{
+        grid-template-columns:1fr auto;
+        gap:12px;
+        padding:14px;
+    }
+
+    .admin-role-badge{
+        display:none;
+    }
+
+    .admin-management-actions{
+        grid-column:2;
+        grid-row:1;
+    }
+
+    .admin-management-user{
+        grid-column:1;
+        grid-row:1;
+    }
+
+    .admin-message-container{
+        top:15px;
+        right:15px;
+        left:15px;
+    }
+
+    .admin-message{
+        min-width:0;
+        width:100%;
+    }
+
+}
+
+/* =========================================================
+   ADMIN AUDIT LOGS
+========================================================= */
+
+/* =========================================================
+   LOG STATISTICS
+========================================================= */
+
+.admin-log-stats{
+    margin-bottom:30px;
+}
+
+
+/* =========================================================
+   LOG CARD
+========================================================= */
+
+.admin-logs-card{
+    position:relative;
+    z-index:1;
+    overflow:visible;
+}
+
+.admin-logs-card .health-header{
+    margin-bottom:25px;
+}
+
+.admin-log-count{
+    padding:7px 12px;
+    border:1px solid var(--glass-border);
+    border-radius:10px;
+    color:var(--muted);
+    background:rgba(255,255,255,.04);
+    font-size:12px;
+    font-weight:600;
+}
+
+
+/* =========================================================
+   LOG TOOLBAR
+========================================================= */
+
+.admin-logs-toolbar{
+    position:relative;
+    z-index:50;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:22px;
+    overflow:visible;
+}
+
+.admin-logs-toolbar .search-box{
+    position:relative;
+    flex:1;
+    min-width:180px;
+}
+
+.admin-logs-toolbar .search-box i{
+    position:absolute;
+    top:50%;
+    left:16px;
+    transform:translateY(-50%);
+    color:var(--muted);
+    pointer-events:none;
+}
+
+.admin-logs-toolbar .search-box input{
+    width:100%;
+    height:46px;
+    padding:0 16px 0 43px;
+    border:1px solid var(--glass-border);
+    border-radius:13px;
+    outline:none;
+    color:var(--text);
+    background:rgba(255,255,255,.045);
+    font-size:13px;
+    transition:.25s ease;
+}
+
+.admin-logs-toolbar .search-box input::placeholder{
+    color:var(--muted);
+}
+
+.admin-logs-toolbar .search-box input:focus{
+    border-color:rgba(23,175,162,.5);
+    box-shadow:0 0 0 3px rgba(23,175,162,.08);
+}
+
+
+/* =========================================================
+   LOG LIST
+========================================================= */
+
+.admin-logs-list{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+
+/* =========================================================
+   LOG ROW
+========================================================= */
+
+.admin-log-row{
+    min-height:78px;
+    display:grid;
+    grid-template-columns:48px minmax(0,1fr) auto;
+    align-items:center;
+    gap:15px;
+    padding:14px 16px;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:15px;
+    background:rgba(255,255,255,.025);
+    transition:.25s ease;
+}
+
+.admin-log-row:hover{
+    border-color:rgba(23,175,162,.2);
+    background:rgba(255,255,255,.045);
+    transform:translateY(-1px);
+}
+
+
+/* =========================================================
+   LOG ICON
+========================================================= */
+
+.admin-log-icon{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:13px;
+    font-size:15px;
+}
+
+.admin-log-icon.login{
+    color:var(--primary);
+    border:1px solid rgba(23,175,162,.18);
+    background:rgba(23,175,162,.1);
+}
+
+.admin-log-icon.user{
+    color:#60a5fa;
+    border:1px solid rgba(37,99,235,.18);
+    background:rgba(37,99,235,.1);
+}
+
+.admin-log-icon.record{
+    color:#a78bfa;
+    border:1px solid rgba(139,92,246,.18);
+    background:rgba(139,92,246,.1);
+}
+
+.admin-log-icon.security{
+    color:#fbbf24;
+    border:1px solid rgba(251,191,36,.18);
+    background:rgba(251,191,36,.1);
+}
+
+
+/* =========================================================
+   LOG INFORMATION
+========================================================= */
+
+.admin-log-info{
+    min-width:0;
+}
+
+.admin-log-info h3{
+    margin-bottom:5px;
+    overflow:hidden;
+    color:var(--text);
+    font-size:13px;
+    font-weight:600;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.admin-log-info p{
+    overflow:hidden;
+    color:var(--muted);
+    font-size:11px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   LOG META
+========================================================= */
+
+.admin-log-meta{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:6px;
+    color:var(--muted);
+    font-size:10px;
+    white-space:nowrap;
+}
+
+.admin-log-status{
+    padding:5px 8px;
+    border-radius:7px;
+    font-size:10px;
+    font-weight:600;
+}
+
+.admin-log-status.success{
+    color:#34d399;
+    background:rgba(52,211,153,.08);
+}
+
+.admin-log-status.warning{
+    color:#fbbf24;
+    background:rgba(251,191,36,.08);
+}
+
+.admin-log-status.danger{
+    color:#fb7185;
+    background:rgba(251,113,133,.08);
+}
+
+
+/* =========================================================
+   HIDDEN LOG
+========================================================= */
+
+.admin-log-row.hidden{
+    display:none;
+}
+
+
+/* =========================================================
+   AUDIT LOG RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .admin-logs-toolbar{
+        flex-wrap:wrap;
+    }
+
+    .admin-logs-toolbar .search-box{
+        flex-basis:100%;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .admin-logs-toolbar{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .admin-logs-toolbar .search-box{
+        grid-column:1 / -1;
+    }
+
+    .admin-log-row{
+        grid-template-columns:44px minmax(0,1fr);
+        gap:12px;
+    }
+
+    .admin-log-meta{
+        grid-column:2;
+        align-items:flex-start;
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .admin-log-info h3{
+        white-space:normal;
+    }
+
+}
+
+
+.admin-logs-toolbar .refresh-btn.loading i,
+#refreshLogs.loading i{
+    animation:adminRefreshSpin .7s linear infinite;
+}
+
+
+/* =========================================================
+   ADMIN USER MODALS
+========================================================= */
+
+.admin-modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    background:rgba(2,8,23,.72);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    opacity:0;
+    visibility:hidden;
+    transition:.25s ease;
+}
+
+.admin-modal-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.admin-modal{
+    width:min(620px,100%);
+    max-height:90vh;
+    overflow-y:auto;
+    padding:28px;
+    border:1px solid var(--glass-border);
+    border-radius:24px;
+    background:var(--glass);
+    box-shadow:var(--shadow);
+    transform:translateY(20px) scale(.98);
+    transition:.25s ease;
+}
+
+.admin-modal-overlay.active .admin-modal{
+    transform:translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.admin-modal-header{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.admin-modal-header span{
+    display:block;
+    margin-bottom:7px;
+    color:var(--primary);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
+
+.admin-modal-header h2{
+    color:var(--text);
+    font-size:22px;
+}
+
+.admin-modal-close{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border:1px solid var(--glass-border);
+    border-radius:12px;
+    color:var(--muted);
+    background:rgba(255,255,255,.05);
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.admin-modal-close:hover{
+    color:#f87171;
+    background:rgba(239,68,68,.12);
+    border-color:rgba(239,68,68,.28);
+    transform:rotate(90deg);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.admin-modal-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.admin-form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.admin-form-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.admin-form-group label{
+    color:var(--text);
+    font-size:12px;
+    font-weight:600;
+}
+
+.admin-input-wrapper{
+    position:relative;
+}
+
+.admin-input-wrapper > i{
+    position:absolute;
+    top:50%;
+    left:15px;
+    color:var(--muted);
+    font-size:13px;
+    transform:translateY(-50%);
+    pointer-events:none;
+}
+
+.admin-input-wrapper input{
+    width:100%;
+    height:46px;
+    padding:0 15px 0 42px;
+    border:1px solid var(--glass-border);
+    border-radius:12px;
+    outline:none;
+    color:var(--text);
+    background:rgba(255,255,255,.04);
+    font-family:inherit;
+    font-size:13px;
+    transition:.25s ease;
+}
+
+.admin-input-wrapper input::placeholder{
+    color:var(--muted);
+}
+
+.admin-input-wrapper input:focus{
+    border-color:rgba(23,175,162,.55);
+    box-shadow:0 0 0 3px rgba(23,175,162,.08);
+}
+
+.admin-field-error{
+    min-height:12px;
+    color:#fb7185;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   MODAL DROPDOWNS
+========================================================= */
+
+.admin-modal-dropdown{
+    position:relative;
+    z-index:100;
+}
+
+.admin-modal-dropdown .filter-trigger{
+    width:100%;
+    min-height:46px;
+}
+
+.admin-modal-dropdown .filter-menu{
+    z-index:99999;
+}
+
+.admin-modal-dropdown .filter-option{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.admin-modal-footer{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:10px;
+    margin-top:10px;
+    padding-top:20px;
+    border-top:1px solid var(--glass-border);
+}
+
+.admin-modal-footer .primary-btn,
+.admin-modal-footer .secondary-btn,
+.admin-modal-footer .danger-btn{
+    min-height:42px;
+}
+
+
+/* =========================================================
+   VIEW USER
+========================================================= */
+
+.user-profile-preview{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:22px;
+    padding:17px;
+    border:1px solid var(--glass-border);
+    border-radius:16px;
+    background:rgba(255,255,255,.03);
+}
+
+.user-modal-avatar{
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border:1px solid rgba(23,175,162,.25);
+    border-radius:17px;
+    color:var(--primary);
+    background:rgba(23,175,162,.1);
+    font-size:17px;
+    font-weight:700;
+}
+
+.user-profile-preview h3{
+    margin-bottom:5px;
+    color:var(--text);
+    font-size:17px;
+}
+
+.user-profile-preview p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.user-details-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.user-detail-item{
+    min-width:0;
+    padding:14px;
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:13px;
+    background:rgba(255,255,255,.025);
+}
+
+.user-detail-item span{
+    display:block;
+    margin-bottom:6px;
+    color:var(--muted);
+    font-size:10px;
+}
+
+.user-detail-item strong{
+    display:block;
+    overflow:hidden;
+    color:var(--text);
+    font-size:12px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.user-detail-status.active{
+    color:#34d399;
+}
+
+.user-detail-status.inactive{
+    color:#fb7185;
+}
+
+
+/* =========================================================
+   DELETE MODAL
+========================================================= */
+
+.delete-user-modal{
+    max-width:420px;
+    text-align:center;
+}
+
+.delete-modal-icon{
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 18px;
+    border:1px solid rgba(251,113,133,.2);
+    border-radius:17px;
+    color:#fb7185;
+    background:rgba(251,113,133,.08);
+    font-size:20px;
+}
+
+.delete-user-modal h2{
+    margin-bottom:10px;
+    color:var(--text);
+    font-size:21px;
+}
+
+.delete-user-modal p{
+    margin-bottom:8px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+}
+
+.delete-user-modal p strong{
+    color:var(--text);
+}
+
+.delete-user-modal > span{
+    color:#fb7185;
+    font-size:11px;
+}
+
+.delete-user-modal .admin-modal-footer{
+    justify-content:center;
+}
+
+
+/* =========================================================
+   DANGER BUTTON
+========================================================= */
+
+.danger-btn{
+    min-height:42px;
+    padding:0 16px;
+    border:1px solid rgba(251,113,133,.25);
+    border-radius:11px;
+    color:#fff;
+    background:rgba(251,113,133,.14);
+    font-family:inherit;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.danger-btn:hover{
+    background:rgba(251,113,133,.22);
+    border-color:rgba(251,113,133,.4);
+    transform:translateY(-1px);
+}
+
+
+/* =========================================================
+   MODAL RESPONSIVE
+========================================================= */
+
+@media(max-width:600px){
+
+    .admin-modal-overlay{
+        padding:15px;
+    }
+
+    .admin-modal{
+        padding:21px;
+        border-radius:20px;
+    }
+
+    .admin-form-row{
+        grid-template-columns:1fr;
+    }
+
+    .user-details-grid{
+        grid-template-columns:1fr;
+    }
+
+    .admin-modal-footer{
+        flex-direction:column-reverse;
+    }
+
+    .admin-modal-footer button{
+        width:100%;
+    }
+
+}
+/* =========================================
+   ADMIN CANCEL BUTTON
+========================================= */
+
+#cancelUserForm{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-width:110px;
+    height:42px;
+    padding:0 18px;
+    border:1px solid rgba(239,68,68,0.35);
+    border-radius:12px;
+    background:rgba(239,68,68,0.08);
+    color:#ef4444;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+#cancelUserForm:hover{
+    background:rgba(239,68,68,0.16);
+    border-color:rgba(239,68,68,0.55);
+    color:#f87171;
+    transform:translateY(-1px);
+    box-shadow:0 6px 18px rgba(239,68,68,0.12);
+}
+
+#cancelUserForm:active{
+    transform:translateY(0);
+}
+
+
+#closeViewUserButton{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-width:110px;
+    height:42px;
+    padding:0 18px;
+    border:1px solid rgba(239,68,68,0.35);
+    border-radius:12px;
+    background:rgba(239,68,68,0.08);
+    color:#ef4444;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.25s ease;
+}
+
+#closeViewUserButton:hover{
+    background:rgba(239,68,68,0.16);
+    border-color:rgba(239,68,68,0.55);
+    color:#f87171;
+    transform:translateY(-1px);
+    box-shadow:0 6px 18px rgba(239,68,68,0.12);
+}
+
+#closeViewUserButton:active{
+    transform:translateY(0);
+}
+
+/* =========================================================
+   ADMIN MODAL DROPDOWN LAYERING
+========================================================= */
+
+.admin-modal-overlay .admin-filter {
+    position: relative;
+    z-index: 10;
+}
+
+.admin-modal-overlay .admin-filter.open {
+    z-index: 1000;
+}
+
+.admin-modal-overlay .admin-filter.open .filter-menu {
+    z-index: 1001;
+}
+
+
+/* =========================================================
+   SUCCESS BUTTON
+   Teal counterpart to .danger-btn, used for the "Activate
+   User" state of the status-confirmation modal.
+========================================================= */
+
+.success-btn{
+    min-height:42px;
+    padding:0 16px;
+    border:1px solid rgba(23,175,162,.3);
+    border-radius:11px;
+    color:#fff;
+    background:rgba(23,175,162,.16);
+    font-family:inherit;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.success-btn:hover{
+    background:rgba(23,175,162,.26);
+    border-color:rgba(23,175,162,.5);
+    transform:translateY(-1px);
+}
+
+
+/* Confirm buttons carry an icon + label — keep them aligned */
+
+.admin-modal-footer .danger-btn,
+.admin-modal-footer .success-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   The admin area predated the shared light theme: its
+   surfaces hardcode faint white-on-dark fills that vanish
+   on the light background, plus two dark popover panels
+   (filter menu, toast) that clash with it. Re-tint them
+   here so admin matches the token-driven light mode used
+   across the rest of the app. Dark mode is untouched.
+========================================================= */
+
+/* Dark popover panels -> light glass */
+
+.light-mode .admin-filter .filter-menu,
+.light-mode .admin-message{
+    background:var(--glass-strong);
+}
+
+
+/* Faint white-tint surfaces -> subtle dark tint */
+
+.light-mode .admin-user-count,
+.light-mode .admin-log-count,
+.light-mode .search-box input,
+.light-mode .admin-input-wrapper input,
+.light-mode .admin-filter .filter-trigger,
+.light-mode .admin-users-toolbar .refresh-btn,
+.light-mode .admin-icon-btn,
+.light-mode .admin-modal-close{
+    background:rgba(15,23,42,.04);
+}
+
+
+/* Progress track needs a touch more contrast */
+
+.light-mode .admin-progress{
+    background:rgba(15,23,42,.10);
+}
+
+
+/* List rows: faint fill + white border both need re-tinting */
+
+.light-mode .admin-management-row,
+.light-mode .admin-log-row,
+.light-mode .user-detail-item{
+    border-color:rgba(15,23,42,.08);
+    background:rgba(15,23,42,.025);
+}
+
+.light-mode .user-profile-preview{
+    background:rgba(15,23,42,.03);
+}
+
+
+/* White-tint hovers -> dark tint (teal hovers are left as-is) */
+
+.light-mode .admin-filter .filter-trigger:hover{
+    background:rgba(15,23,42,.07);
+}
+
+.light-mode .admin-filter .filter-option:hover{
+    background:rgba(15,23,42,.06);
+}
+
+.light-mode .admin-management-row:hover,
+.light-mode .admin-log-row:hover{
+    background:rgba(15,23,42,.05);
+}

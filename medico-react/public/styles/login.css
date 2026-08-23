@@ -1,0 +1,1544 @@
+/* =========================================================
+   MEDICO
+   GLASS LOGIN UI
+   (aligned to the global design system:
+    Inter · tokens · animated aurora · glass recipe)
+========================================================= */
+
+
+/* =========================================================
+   THEME VARIABLES
+   (mirrors assets/css/global.css)
+========================================================= */
+
+:root{
+
+    --bg:#020617;
+
+    --text:#ffffff;
+
+    --muted:#94a3b8;
+
+
+    --primary:#17afa2;
+
+    --primary-hover:#20cbbd;
+
+
+    --purple:#8b5cf6;
+
+    --blue:#2563eb;
+
+
+    --glass:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.035)
+        );
+
+
+    --glass-strong:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.045)
+        );
+
+
+    --glass-border:
+        rgba(255,255,255,.14);
+
+
+    --shadow:
+        0 25px 70px rgba(0,0,0,.35);
+
+}
+
+
+/* RESET */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+body{
+
+    min-height:100vh;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    /* only the horizontal axis is clipped (the aurora blobs bleed
+       off-screen); vertical must scroll so the taller register
+       card — 5 fields + role picker — is reachable on short
+       viewports. the original locked both axes, which clipped it. */
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+}
+
+
+
+/* =====================================
+        AURORA BACKGROUND
+        (identical system to the dashboard pages)
+===================================== */
+
+
+.background{
+
+    /* fixed (not absolute) so the aurora fills the viewport and
+       stays put while a tall card scrolls the page */
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+
+.background::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(23,175,162,.18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(139,92,246,.16),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(37,99,235,.14),
+            transparent 30%
+        );
+
+}
+
+
+
+/* Aurora glows */
+
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(140px);
+
+}
+
+
+
+.blob-one{
+
+    width:600px;
+
+    height:600px;
+
+    background:var(--primary);
+
+    top:-230px;
+
+    left:-220px;
+
+    opacity:.30;
+
+    animation:
+        auroraMove1 22s
+        infinite alternate
+        ease-in-out;
+
+}
+
+
+
+.blob-two{
+
+    width:550px;
+
+    height:550px;
+
+    background:var(--purple);
+
+    right:-190px;
+
+    top:70px;
+
+    opacity:.27;
+
+    animation:
+        auroraMove2 25s
+        infinite alternate
+        ease-in-out;
+
+}
+
+
+
+.blob-three{
+
+    width:550px;
+
+    height:550px;
+
+    background:var(--blue);
+
+    bottom:-250px;
+
+    left:35%;
+
+    opacity:.22;
+
+    filter:blur(150px);
+
+    animation:
+        auroraMove3 28s
+        infinite alternate
+        ease-in-out;
+
+}
+
+
+
+@keyframes auroraMove1{
+
+    from{
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to{
+        transform:
+            translate(100px,70px)
+            scale(1.25);
+    }
+
+}
+
+
+@keyframes auroraMove2{
+
+    from{
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to{
+        transform:
+            translate(-90px,70px)
+            scale(1.2);
+    }
+
+}
+
+
+@keyframes auroraMove3{
+
+    from{
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to{
+        transform:
+            translate(80px,-80px)
+            scale(1.25);
+    }
+
+}
+
+
+
+/* =====================================
+        FLOATING MEDICAL ICONS
+===================================== */
+
+
+.medical-icons span{
+
+
+    position:absolute;
+
+    font-size:40px;
+
+    opacity:.12;
+
+    animation:floatIcon 14s infinite ease-in-out;
+
+    filter:blur(.2px);
+
+}
+
+
+
+.medical-icons span:nth-child(1){
+
+    top:15%;
+
+    left:10%;
+
+}
+
+
+
+.medical-icons span:nth-child(2){
+
+    top:25%;
+
+    right:15%;
+
+    animation-delay:2s;
+
+}
+
+
+
+.medical-icons span:nth-child(3){
+
+    bottom:20%;
+
+    left:15%;
+
+    animation-delay:4s;
+
+}
+
+
+
+.medical-icons span:nth-child(4){
+
+    top:65%;
+
+    right:10%;
+
+    animation-delay:6s;
+
+}
+
+
+
+.medical-icons span:nth-child(5){
+
+    top:40%;
+
+    left:5%;
+
+    animation-delay:8s;
+
+}
+
+
+
+.medical-icons span:nth-child(6){
+
+    bottom:10%;
+
+    right:25%;
+
+    animation-delay:3s;
+
+}
+
+
+
+.medical-icons span:nth-child(7){
+
+    top:12%;
+
+    right:45%;
+
+    animation-delay:5s;
+
+}
+
+
+
+
+@keyframes floatIcon{
+
+
+    0%,100%{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+    }
+
+
+
+    50%{
+
+        transform:
+        translateY(-60px)
+        rotate(180deg);
+
+    }
+
+
+}
+
+
+
+/* =====================================
+        NAVBAR
+===================================== */
+
+
+nav{
+
+    margin:25px 70px;
+
+    height:70px;
+
+    padding:0 35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:10;
+
+
+    background:var(--glass);
+
+
+    border:
+        1px solid
+        var(--glass-border);
+
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
+
+
+    border-radius:40px;
+
+}
+
+
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+
+
+nav a{
+
+    color:var(--muted);
+
+    text-decoration:none;
+
+    display:flex;
+
+    gap:10px;
+
+    transition:.3s;
+
+}
+
+
+
+nav a:hover{
+
+    color:var(--primary);
+
+}
+
+
+
+/* =====================================
+        LOGIN CONTAINER
+===================================== */
+
+
+.login-container{
+
+
+    position:relative;
+
+    z-index:1;
+
+
+    min-height:
+
+    calc(100vh - 120px);
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    /* side gutters keep the card off the edges on phones; the
+       vertical padding gives a tall card breathing room when it
+       grows past the viewport and the page scrolls */
+    padding:20px;
+
+
+}
+
+
+
+/* =====================================
+        GLASS CARD
+===================================== */
+
+
+.login-card{
+
+
+    width:100%;
+
+    max-width:450px;
+
+
+    padding:45px;
+
+
+    background:var(--glass);
+
+
+    backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(180%);
+
+
+    border:
+        1px solid
+        var(--glass-border);
+
+
+
+    border-radius:30px;
+
+
+
+    box-shadow:
+
+        inset
+        0 1px 1px
+        rgba(255,255,255,.12),
+
+        var(--shadow);
+
+
+
+    animation:
+
+    cardShow .8s ease;
+
+
+}
+
+
+
+@keyframes cardShow{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+/* =====================================
+        TEXT
+===================================== */
+
+
+.brand span{
+
+
+    display:inline-block;
+
+
+    padding:8px 15px;
+
+
+    border-radius:30px;
+
+
+    background:
+
+    rgba(23,175,162,.15);
+
+
+    color:#5eead4;
+
+
+    font-size:12px;
+
+
+    letter-spacing:2px;
+
+
+}
+
+
+
+.login-card h1{
+
+
+    font-size:48px;
+
+
+    margin:25px 0 15px;
+
+
+}
+
+
+
+.login-card p{
+
+
+    color:var(--muted);
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+/* =====================================
+        INPUTS
+===================================== */
+
+
+form{
+
+
+    margin-top:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+.input-box{
+
+
+    height:60px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    padding:0 20px;
+
+
+    background:
+
+    rgba(255,255,255,.05);
+
+
+    border:
+        1px solid
+        var(--glass-border);
+
+
+    border-radius:18px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.input-box:focus-within{
+
+
+    border-color:var(--primary);
+
+
+    box-shadow:
+
+    0 0 25px rgba(23,175,162,.3);
+
+
+}
+
+
+
+.input-box i{
+
+
+    color:#5eead4;
+
+
+    margin-right:15px;
+
+
+}
+
+
+
+.input-box input{
+
+
+    flex:1;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    color:var(--text);
+
+    font-size:16px;
+
+
+}
+
+
+
+.toggle-password{
+
+
+    cursor:pointer;
+
+    margin:0!important;
+
+    color:var(--muted)!important;
+
+}
+
+
+
+/* =====================================
+        BUTTON
+===================================== */
+
+
+.login-btn{
+
+
+    height:60px;
+
+
+    border:none;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--primary),
+    #0ea5e9
+    );
+
+
+    color:white;
+
+
+    font-size:17px;
+
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.login-btn:hover{
+
+
+    transform:translateY(-4px);
+
+
+    box-shadow:
+
+    0 15px 40px rgba(23,175,162,.5);
+
+
+}
+
+
+
+
+/* =====================================
+        OPTIONS
+===================================== */
+
+
+.options{
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+.options a{
+
+
+    color:#5eead4;
+
+    text-decoration:none;
+
+}
+
+
+
+/* =====================================
+        DIVIDER
+===================================== */
+
+
+.divider{
+
+
+    display:flex;
+
+    align-items:center;
+
+    margin:30px 0;
+
+}
+
+
+
+.divider::before,
+.divider::after{
+
+
+    content:"";
+
+    height:1px;
+
+    flex:1;
+
+    background:
+    var(--glass-border);
+
+}
+
+
+
+.divider span{
+
+
+    padding:0 15px;
+
+    color:var(--muted);
+
+}
+
+
+
+/* =====================================
+        SECURITY
+===================================== */
+
+
+.security{
+
+
+    margin-top:25px;
+
+
+    padding:15px;
+
+
+    border-radius:16px;
+
+
+    text-align:center;
+
+
+    color:#5eead4;
+
+
+    background:
+
+    rgba(23,175,162,.1);
+
+
+    border:
+
+    1px solid rgba(23,175,162,.2);
+
+
+}
+
+
+/* =====================================
+        CUSTOM VALIDATION ALERT
+===================================== */
+
+
+.error-message{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+
+    margin-top:12px;
+
+
+    padding:12px 16px;
+
+
+    width:100%;
+
+
+    color:#ff8a8a;
+
+
+    background:
+
+    rgba(239,68,68,.12);
+
+
+    border:
+
+    1px solid rgba(239,68,68,.35);
+
+
+
+    border-radius:14px;
+
+
+    font-size:13px;
+
+
+    font-weight:500;
+
+
+    backdrop-filter:blur(12px);
+
+
+
+    box-shadow:
+
+    0 0 20px rgba(239,68,68,.2);
+
+
+
+    animation:
+
+    errorAppear .35s ease;
+
+}
+
+
+
+/* Warning circle */
+
+.error-message::before{
+
+
+    content:"!";
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    min-width:22px;
+
+
+    height:22px;
+
+
+    border-radius:50%;
+
+
+    background:#ef4444;
+
+
+    color:white;
+
+
+    font-weight:bold;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+/* Input red state */
+
+
+.input-box:has(input.error){
+
+
+    border-color:#ef4444;
+
+
+    background:
+
+    rgba(239,68,68,.06);
+
+
+
+    box-shadow:
+
+    0 0 20px rgba(239,68,68,.25);
+
+
+}
+
+
+
+/* Shake animation */
+
+input.error{
+
+
+    animation:shake .35s ease;
+
+}
+
+
+
+@keyframes errorAppear{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-10px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+@keyframes shake{
+
+
+    0%,100%{
+
+        transform:translateX(0);
+
+    }
+
+
+    25%{
+
+        transform:translateX(-6px);
+
+    }
+
+
+    50%{
+
+        transform:translateX(6px);
+
+    }
+
+
+    75%{
+
+        transform:translateX(-4px);
+
+    }
+
+}
+
+/* =====================================
+        AI BADGE GLOW
+===================================== */
+
+
+.brand span{
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:
+    badgeGlow 3s infinite ease-in-out;
+
+}
+
+
+@keyframes badgeGlow{
+
+
+    0%,100%{
+
+        box-shadow:
+        0 0 0 rgba(23,175,162,0);
+
+    }
+
+
+    50%{
+
+        box-shadow:
+        0 0 25px rgba(23,175,162,.45);
+
+    }
+
+
+}
+
+/* =====================================
+        REGISTER LINK
+===================================== */
+
+
+.register{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    color:var(--muted);
+
+}
+
+
+
+.register a{
+
+    color:#5eead4;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    position:relative;
+
+    transition:.35s;
+
+}
+
+
+
+.register a::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:0;
+
+
+    bottom:-4px;
+
+
+    width:0;
+
+
+    height:2px;
+
+
+    background:var(--primary);
+
+
+    transition:.35s;
+
+
+}
+
+
+
+.register a:hover{
+
+
+    color:var(--text);
+
+
+}
+
+
+
+.register a:hover::after{
+
+
+    width:100%;
+
+
+}
+
+
+
+/* =====================================
+        ROLE SELECTION (register page)
+        only /register renders this markup;
+        login / forgot-password never do
+===================================== */
+
+
+.role-selection > p{
+
+    margin-bottom:14px;
+
+    font-size:14px;
+
+}
+
+
+
+.role-options{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+
+
+.role-option{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:16px 10px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.role-option i{
+
+    font-size:20px;
+
+    color:#5eead4;
+
+}
+
+
+
+/* the whole chip is the control — hide the native radio dot */
+
+.role-option input{
+
+    display:none;
+
+}
+
+
+
+.role-option:hover{
+
+    border-color:var(--primary);
+
+    background:rgba(23,175,162,.08);
+
+}
+
+
+
+/* selected state (same :has() technique as .input-box:has(input.error)) */
+
+.role-option:has(input:checked){
+
+    border-color:var(--primary);
+
+    background:rgba(23,175,162,.15);
+
+    color:var(--text);
+
+    box-shadow:
+        0 0 20px rgba(23,175,162,.25);
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+   (the original login/register/forgot-password stylesheet had
+   no media queries — the nav margins, fixed 450px card and
+   48px heading overflowed narrow phones. these scale the
+   chrome down; the page scrolls vertically thanks to the
+   body overflow change above.)
+========================================================= */
+
+
+@media(max-width:900px){
+
+    nav{
+
+        margin:20px 28px;
+
+        padding:0 26px;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    nav{
+
+        margin:16px;
+
+        height:64px;
+
+        padding:0 20px;
+
+        border-radius:26px;
+
+    }
+
+
+    .logo{
+
+        font-size:24px;
+
+    }
+
+
+    .login-container{
+
+        min-height:
+
+        calc(100vh - 96px);
+
+        padding:16px;
+
+    }
+
+
+    .login-card{
+
+        padding:34px 26px;
+
+        border-radius:26px;
+
+    }
+
+
+    .login-card h1{
+
+        font-size:38px;
+
+        margin:20px 0 12px;
+
+    }
+
+
+    .login-card p{
+
+        font-size:14px;
+
+    }
+
+
+    form{
+
+        margin-top:28px;
+
+    }
+
+}
+
+
+@media(max-width:400px){
+
+    .logo{
+
+        font-size:22px;
+
+    }
+
+
+    .login-card{
+
+        padding:28px 20px;
+
+    }
+
+
+    .login-card h1{
+
+        font-size:31px;
+
+    }
+
+
+    .input-box,
+    .login-btn{
+
+        height:54px;
+
+    }
+
+
+    /* stack the three role chips so their labels stay legible */
+
+    .role-options{
+
+        flex-direction:column;
+
+    }
+
+}
